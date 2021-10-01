@@ -1,7 +1,6 @@
 * {
   box-sizing: border-box;
 }
-
 body {
   font-family: Arial, Helvetica, serif;
   font-size: 1vw;
@@ -9,17 +8,8 @@ body {
   background: #4169e1;
 }
 
-header {
-  background: #191970;
-  color: #4169e1;
-  font-family: Copperplate, fantasy;
-  font-size: 2vw;
-  padding: 1vw;
-  text-align: center;
-}
-
 nav {
-  overflow: hidden;
+  position: fixed;
   background-color: black;
 }
 
@@ -27,7 +17,7 @@ nav a {
   float: left;
   display: block;
   color: #4169e1;
-  text-aling; center;
+  text-align: center;
   padding: 1vw 1.5vw;
   text-decoration: none;
 }
@@ -40,6 +30,16 @@ nav a:hover:not(active) {
   background-color: #451971;
 }
 
+header {
+  background: #191970;
+  color: #4169e1;
+  font-family: Copperplate, fantasy;
+  font-size: 2vw;
+  padding: 1vw;
+  text-align: center;
+  overflow: hidden;
+}
+
 article {
   float: left;
   width: 60%;
@@ -48,6 +48,7 @@ article {
   color: #bcc9f6;
   padding: 1vw;
   margin-top: 1vw;
+  overflow: hidden;
 }
 
 .sisältö {
@@ -61,21 +62,25 @@ aside {
   color: #bcc9f6;
   padding: 1vw;
   margin-top: 1vw;
+  overflow: hidden;
 }
-
-row:after {
+.minusta1 {
+  margin-top: 10vw;
+}
+::after{
   content: "";
   display: table;
   clear: both;
 }
 
 footer {
+  padding: 1vw;
+  margin-bottom: 0vw;
   background-color: black;
   color: #bcc9f6;
   text-align: center;
-  font-size: 1vw;
-  padding: 1vw;
 }
+
 
 @media only screen and (max-width: 1050px) {
   article, aside {
