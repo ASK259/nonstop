@@ -10,7 +10,8 @@ body {
 
 nav {
   position: fixed;
-  background-color: black;
+  background: transparent;
+  border-radius: 0.5vw;
 }
 
 nav a {
@@ -22,39 +23,40 @@ nav a {
   text-decoration: none;
 }
 
-nav a:hover:not(active) {
-  background-color: #c2c2d2;
+nav a:hover {
+  color: #c2c2d2;
 }
 
-.active {
-  background-color: #451971;
+nav a:active {
+  color: #7987b1;
 }
+
+nav a:visited {
+  color: #4169e1;
+}
+
+
 
 header {
   background: #191970;
   color: #4169e1;
   font-family: Copperplate, fantasy;
   font-size: 2vw;
-  padding: 1vw;
+  padding: 0.5vw;
   text-align: center;
-  overflow: hidden;
+  border-radius: 0.5vw;
 }
 
 article {
   float: left;
   width: 60%;
-  padding-right: 2vw;
   background: #191970;
   color: #bcc9f6;
-  padding: 1vw;
-  margin-top: 1vw;
-  overflow: hidden;
+  padding: 1vw 1vw 1vw 1vw;
+  margin: 1vw 0vw;
+  border-radius: 1vw;
 }
 
-.sisältö {
-  background: #4169e1;
-  width: 100%;
-}
 aside {
   float: right;
   width: 30%;
@@ -62,30 +64,68 @@ aside {
   color: #bcc9f6;
   padding: 1vw;
   margin-top: 1vw;
-  overflow: hidden;
+  border-radius: 1vw;
 }
+
+#la {
+  text-align: center;
+}
+
+.sisältö {
+  background: #4169e1;
+  width: 100%;
+}
+
+.esivu{
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.esivu .kuval{
+  width: 33.33%;
+  margin: 2vw 0.1vw;
+}
+
 .minusta1 {
   margin-top: 10vw;
+  padding: 0.1vw;
 }
-::after{
+:after{
   content: "";
   display: table;
   clear: both;
 }
 
+a:link {
+  color:  #4169e1;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #bcc9f6;
+  text-decoration: none;
+}
+
 footer {
-  padding: 1vw;
-  margin-bottom: 0vw;
   background-color: black;
   color: #bcc9f6;
   text-align: center;
+  display: flex;
+  flex-wrap: nowrap;
+  border-radius: 0.5vw;
+}
+
+.si {
+  width: 33.33%;
+  margin: 2vw 0.1vw;
+  list-style-type: none;
 }
 
 
 @media only screen and (max-width: 1050px) {
   article, aside {
     width: 100%;
-    padding: 0;
+    float: none;
   }
 }
 
