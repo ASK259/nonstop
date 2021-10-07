@@ -23,19 +23,13 @@ nav a {
   text-decoration: none;
 }
 
-nav a:hover {
-  color: #c2c2d2;
-}
-
-nav a:active {
-  color: #7987b1;
-}
-
 nav a:visited {
   color: #4169e1;
 }
 
-
+nav a:hover {
+  color: #c2c2d2;
+}
 
 header {
   background: #191970;
@@ -67,10 +61,6 @@ aside {
   border-radius: 1vw;
 }
 
-#la {
-  text-align: center;
-}
-
 .sisältö {
   background: #4169e1;
   width: 100%;
@@ -90,24 +80,15 @@ aside {
   margin-top: 10vw;
   padding: 0.1vw;
 }
+
 :after{
   content: "";
   display: table;
   clear: both;
 }
 
-a:link {
-  color:  #4169e1;
-  text-decoration: none;
-}
-
-a:visited {
-  color: #bcc9f6;
-  text-decoration: none;
-}
-
 footer {
-  background-color: black;
+  background: black;
   color: #bcc9f6;
   text-align: center;
   display: flex;
@@ -121,11 +102,26 @@ footer {
   list-style-type: none;
 }
 
+footer a {
+  color: #4169e1;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #bcc9f6;
+}
+
+a:hover {
+  color: #c2c2d2;
+}
 
 @media only screen and (max-width: 1050px) {
   article, aside {
     width: 100%;
     float: none;
+  }
+  .esivu {
+    flex-direction: column;
   }
 }
 
@@ -133,3 +129,8 @@ footer {
   nav a {
     float: none;
     width: 100%;
+  }
+  .esivu {
+    flex-direction: column;
+  }
+}
