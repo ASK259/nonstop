@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="utf-8">
+    <script src="toiminnot.js"></script>
+    <title>Harjoitukset viikko 2</title>
+  </head>
+  <body>
+    <h1>Tehtävä 1</h1>
+    <p>Pyydetään käyttäjältä lukuja ja järjestetään ne pienimmästä suurimpaan.</p>
+    <form class"" action="index.html" method="post">
+        <label>Anna 1. numero:</label>
+        <input type="text" id="numero1" name="luku1" value="">
+        <br>
+        <label>Anna 2. numero:</label>
+        <input type="text" id="numero2" name="luku2" value="">
+        <br>
+        <label>Anna 3. numero:</label>
+        <input type="text" id="numero3" name="luku3" value="">
+        <br>
+        <button type="button" onclick="järjestä()">Järjestä luvut</button>
+    </form>
+    <br>
+    <p id='aloitus'></p>
+    <p id="tulos"></p>
+    <p>alle tulostuu jotain.</p>
+    <p id="testi">Korvaantuu</p>
+    <button type="button" onclick="test()">Kokeile</button>
+    <br>
+    <br>
+    <h1>Tehtävä 2</h1>
+    <p>Anna viisi(5) lukua. Suurin tulostuu</p>
+    <form class"" action="index.html" method="post">
+        <label>Anna 1. luku:</label>
+        <input type="text" id="luku1" name="luku1" value="">
+        <br>
+        <label>Anna 2. luku:</label>
+        <input type="text" id="luku2" name="luku2" value="">
+        <br>
+        <label>Anna 3. luku:</label>
+        <input type="text" id="luku3" name="luku3" value="">
+        <br>
+        <label>Anna 4. luku:</label>
+        <input type="text" id="luku4" name="luku4" value="">
+        <br>
+        <label>Anna 5. luku:</label>
+        <input type="text" id="luku5" name="luku5" value="">
+        <br>
+        <button type="button" onclick="suurin()">Etsi suurin</button>
+    </form>
+    <br>
+    <p id='luSu'></p>
+    <br>
+    <br>
+    <h1>Tehtävä 3</h1>
+    <p>Tarkastetaanko onko luku parillinen vai pariton?</p>
+    <form class"" action="index.html" method="post">
+        <label>Anna luku:</label>
+        <input type="text" id="luku" name="luku" value="">
+        <br>
+        <button type="button" onclick="paTon()">Tarkista</button>
+    </form>
+    <br>
+    <p id='pari'></p>
+    <br>
+    <br>
+    <h1>Tehtävä 4</h1>
+    <p>Mitä ajoneuvoa saa ajaa?</p>
+    <form class"" action="index.html" method="post">
+        <label>Anna ikäsi:</label>
+        <input type="text" id="ikä" name="ikä" value="">
+        <br>
+        <button type="button" onclick="oikeus()">Tarkista</button>
+    </form>
+    <br>
+    <p id='oik'></p>
+    <br>
+    <br>
+    <h1>Tehtävä 5</h1>
+    <form class"" name= 'oForm' action="index.html" method="post">
+      <label>Valitse kieli</label>
+      <select name='kieli'>
+        <option value='1'>Englanti</option>
+        <option value='2'>Ruotsi</option>
+        <option value='3'>Espanja</option>
+      </select>
+      <button type="button" onclick="käännös()">Käännä</button>
+    </form>
+    <br>
+    <p id='kään'></p>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font:  8px Arial, Helvetica, sans-serif;
+  color: #777;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+h2 {
+  font-family: 'Zhi Mang Xing', cursive;
+  display: inherit;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+.tausta-1, .tausta-2 {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tausta-1 {
+    background-image: url("harrastuskuva.jpg");
+    min-height: 100%;
+}
+
+.tausta-2 {
+  background-image: url("muokattu1.2,2500.jpg");
+  min-height: 75%;
+}
+
+.otsikko {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+}
+
+.otsikko mark.border{
+  background: transparent; /* vaihda tilalle väri */
+  padding: 18px;
+  font-size: 18px;
+}
+
+.otsikko mark.border-2{
+  background: transparent;
+  padding: 18px;
+  font-size: 20px;
+}
+
+.te {
+  background: aqua;
+  position: relative;
+  font-size: 15px;
+  padding: 20px 30px;
+}
+
+/* h2 {
+  font-family: 'Zhi Mang Xing', cursive;
+} */

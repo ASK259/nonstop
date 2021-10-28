@@ -1,0 +1,131 @@
+// Tehtävä 1
+function laskeYhteen(lu1, lu2) {
+  console.log(lu1 + lu2);
+}
+
+laskeYhteen(2, 3);
+
+// Tehtävä 2
+
+var taulukko = [34,566,71,89];
+function ekaMuuttuja() {
+  console.log(taulukko[0]);
+}
+ekaMuuttuja();
+
+// Tehtävä 3
+
+function summa(su1,su2) {
+  var su3 = su1 + su2;
+    if (su3 < 100) {
+      console.log('Lukujen summa on alle 100');
+    } else {
+      console.log('Luvut ovat liian suuria, jotta pystyisin laskemaan niitä!');
+    }
+}
+
+summa(50,40);
+summa(60,60);
+
+// Tehtävä 4
+
+function samat(sa1,sa2) {
+  if (sa1 === sa2) {
+    console.log('Samat');
+  } else {
+    console.log('Eri luvut');
+  }
+
+}
+samat(2,3);
+samat(2,2);
+
+// Tehtävä 5
+
+function sekunneiksi(se1,se2,se3) {
+  se1 = se1 * 3600;
+  se2 = se2 * 60;
+   var se4 = se1 + se2 + se3;
+  console.log(se4);
+
+}
+
+sekunneiksi(10,10,10);
+sekunneiksi(48,30,24);
+
+// Tehtävä 6
+// Tehty 1.9.2021
+function ikaPaivina(pp, kk, vu) {
+  ika = 2021 - vu - 1;
+  console.log(ika);
+  vup = ika * 365.25;
+  console.log(vup);
+  var kkp = 0;
+
+  switch (kk) {
+    case 1:
+      kkp = 31;
+      break;
+    case 2:
+      kkp = 59;
+      break;
+    case 3:
+      kkp = 90;
+      break;
+    case 4:
+      kkp = 120;
+      break;
+    case 5:
+      kkp = 151;
+      break;
+    case 6:
+      kkp = 181;
+      break;
+    case 7:
+      kkp = 212;
+      break;
+    case 8:
+      kkp = 243;
+      break;
+    case 9:
+      kkp = 273;
+      break;
+    case 10:
+      kkp = 304;
+      break;
+    case 11:
+      kkp = 334;
+      break;
+    case 12:
+      kkp = 365;
+      break;
+  }
+  console.log(kkp);
+ var pvKk = 0;
+
+ switch (kk) {
+   case 6:
+   case 9:
+   case 11:
+   case 4:
+   pvKk = 30;
+   break;
+   case 1:
+   case 3:
+   case 5:
+   case 7:
+   case 8:
+   case 10:
+   case 12:
+   pvKk = 31;
+   break;
+   default:
+   pvKk = 28;
+ }
+console.log(pvKk);
+ var iNP = pvKk - pp;
+ var iKP = vup + kkp + iNP;
+ console.log(iKP);
+}
+// syötä muodossa: päivät, kuukaudet, vuodet
+ikaPaivina(20, 11, 1995)
