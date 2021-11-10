@@ -1,26 +1,27 @@
 // Tehtävä 1
 function laskeYhteen(lu1, lu2) {
-  console.log(lu1 + lu2);
+  return console.log(lu1 + lu2);
 }
 
 laskeYhteen(2, 3);
 
 // Tehtävä 2
 
-var taulukko = [34,566,71,89];
-function ekaMuuttuja() {
-  console.log(taulukko[0]);
+const taulukko = [34,566,71,89];
+
+function ekaMuuttuja(arr) {
+  return console.log(arr[0]);
 }
-ekaMuuttuja();
+ekaMuuttuja(taulukko);
 
 // Tehtävä 3
 
 function summa(su1,su2) {
   var su3 = su1 + su2;
     if (su3 < 100) {
-      console.log('Lukujen summa on alle 100');
+      return console.log('Lukujen summa on alle 100');
     } else {
-      console.log('Luvut ovat liian suuria, jotta pystyisin laskemaan niitä!');
+      return console.log('Luvut ovat liian suuria, jotta pystyisin laskemaan niitä!');
     }
 }
 
@@ -31,9 +32,9 @@ summa(60,60);
 
 function samat(sa1,sa2) {
   if (sa1 === sa2) {
-    console.log('Samat');
+    return console.log('Samat');
   } else {
-    console.log('Eri luvut');
+    return console.log('Eri luvut');
   }
 
 }
@@ -45,8 +46,8 @@ samat(2,2);
 function sekunneiksi(se1,se2,se3) {
   se1 = se1 * 3600;
   se2 = se2 * 60;
-   var se4 = se1 + se2 + se3;
-  console.log(se4);
+  let se4 = se1 + se2 + se3;
+  return console.log(se4);
 
 }
 
@@ -54,14 +55,14 @@ sekunneiksi(10,10,10);
 sekunneiksi(48,30,24);
 
 // Tehtävä 6
-// Tehty 1.9.2021
 function ikaPaivina(pp, kk, vu) {
-  ika = 2021 - vu - 1;
-  console.log(ika);
-  vup = ika * 365.25;
-  console.log(vup);
-  var kkp = 0;
-
+  const d = new Date();
+  let vuNyt = d.getFullYear();
+  let kkNyt = d.getMonth() + 1;
+  let ppNyt = d.getDate();
+  let ika = vuNyt - vu - 1;
+  let vup = ika * 365.25;
+  let kkp = 0;
   switch (kk) {
     case 1:
       kkp = 31;
@@ -100,9 +101,7 @@ function ikaPaivina(pp, kk, vu) {
       kkp = 365;
       break;
   }
-  console.log(kkp);
- var pvKk = 0;
-
+ let pvKk = 0;
  switch (kk) {
    case 6:
    case 9:
@@ -122,10 +121,9 @@ function ikaPaivina(pp, kk, vu) {
    default:
    pvKk = 28;
  }
-console.log(pvKk);
- var iNP = pvKk - pp;
- var iKP = vup + kkp + iNP;
- console.log(iKP);
+ let iNP = pvKk - pp;
+ let iKP = vup + kkp + iNP;
+ return console.log(iKP);
 }
 // syötä muodossa: päivät, kuukaudet, vuodet
-ikaPaivina(20, 11, 1995)
+ikaPaivina(20, 11, 1995);
