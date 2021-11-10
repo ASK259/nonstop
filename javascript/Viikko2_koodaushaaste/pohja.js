@@ -2,43 +2,27 @@
 var taulukko = [8,5,2,6,9,4]
 
 function pieninSuurin (ko) {
- ko.sort();
- console.log(ko);
- var eka = ko[0];
- var vika = ko[ko.length - 1];
- console.log(eka,vika);
- return eka, vika;
+  let tu = [];
+  ko.sort();
+  var eka = ko[0];
+  var vika = ko[ko.length - 1];
+  tu.push(eka,vika);
+  return tu.toString().replace(","," ");
 }
-
-pieninSuurin (taulukko);
 console.log(pieninSuurin(taulukko));
 
 // Tehtävä 2
 
 function paTon(lu) {
-
-  switch (lu) {
-    case 0:
-    case 2:
-    case 4:
-    case 6:
-    case 8:
-      lu = 'parillinen';
-      break;
-    case 1:
-    case 3:
-    case 5:
-    case 7:
-    case 9:
-      lu = 'pariton';
-      break;
-    return lu;
+  let tu;
+  if (Number.isSafeInteger(lu/2) == true ) {
+    tu = "parillinen";
+  } else {
+    tu = "pariton";
   }
-
-
+  return tu;
 }
-paTon(15);
-console.log(paTon(15));
+console.log(paTon(146));
 
 // Tehtävä 3
 
@@ -89,46 +73,27 @@ console.log(kkNu(11));
 
 
 // Tehtävä 4
-function Tiedot(etunimi,sukunimi,osoite,postinumero,postitoimipaikka,puhelin,sahkoposti)
-{
-  this.etunimi = etunimi;
-  this.sukunimi = sukunimi;
+function Henkilo(etunimi, sukunimi, osoite, postinumero, postitoimipaikka, puhelin, sähköposti) {
+  this.etuNimi = etunimi;
+  this.sukuNimi = sukunimi;
   this.osoite = osoite;
   this.postinumero = postinumero;
   this.postitoimipaikka = postitoimipaikka;
   this.puhelin = puhelin;
-  this.sahkoposti = sahkoposti;
+  this.sähköposti = sähköposti;
+  }
 
-  this.tiedot = NyT;
+  const henkilo = new Henkilo("Eka", "Snim", "Katu 7", "04533", "Jokin", "0344024901", "eww@ji.csc");
+  const toinenHenkilo = new Henkilo("Toka", "Sni", "Kuja 10", "34932", "Jossain", "4955306420", "erf@erb.fi");
+  const kolmasHenkilo = new Henkilo("Kolmas", "Snimi", "Tie 564", "85203", "Tuolla", "4934603475", "rsg@eb.net");
 
-}
-
-function NyT()
-{
-  var etunimi = this.etunimi;
-  var sukunimi = this.sukunimi;
-  var osoite = this.osoite;
-  var postinumero = this.postinumero;
-  var postitoimipaikka = this.postitoimipaikka;
-  var puhelin = this.puhelin;
-  var sahkoposti = this.sahkoposti;
-    document.write('Yhteystiedot ovat ' + etunimi + ' ' + sukunimi + ' ' +
-    'asuu' + osoite + ' ' + postinumero + ' ' + postitoimipaikka +
-    ' puhelin ' + puhelin + ' sähköposti ' + sahkoposti);
-}
-
-var He1 = new Tiedot('Henkilö', 'Ensimmäinen', 'Katu 3225', 4589, 'Jossain', 9034523435, 'HE@ko.com');
-var He2 = new Tiedot('Person', 'Toinen', 'Tie 796', 9065, 'Tuolla', 0534538437, 'PT@op.net');
-var He3 = new Tiedot('Ihminen', 'Kolmas', 'Katu 945', 5843, 'Siellä', 9438524375, 'IK@sp.fi');
-
-
-console.log(Tiedot.NyT);
+  console.log(henkilo);
 // Tehtävä 5
 
 function käänAak(aak) {
-  var aak2 = Array.from(aak);
+  let aak2 = Array.from(aak);
   aak2.sort();
-  var aak3 = aak2.join('');
+  let aak3 = aak2.join('');
   return aak3;
 }
 
