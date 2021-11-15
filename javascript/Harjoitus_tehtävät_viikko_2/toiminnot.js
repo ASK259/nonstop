@@ -3,10 +3,8 @@ function järjestä()
   let st1 = document.getElementById('numero1').value;
   let st2 = document.getElementById('numero2').value;
   let st3 = document.getElementById('numero3').value;
-  console.log(st1, st2, st3);
   let sty = [];
   sty.push(st1), sty.push(st2), sty.push(st3);
-  console.log(sty);
   sty.sort(function(a, b){return a-b});
   document.getElementById('aloitus').innerHTML = 'Annoit luvut: ' + st1 + ',' + st2 + ',' + st3;
   document.getElementById('tulos').innerHTML = "Järjestys on: " + sty;
@@ -25,18 +23,19 @@ function suurin() {
   let lu5 = document.getElementById('luku5').value;
   let tau = [];
   tau.push(lu1,lu2,lu3,lu4,lu5);
-  console.log(tau);
   tau.sort(function(a, b){return a-b});
-  console.log(tau);
   let tu = tau.pop();
-  console.log(tu);
   document.getElementById('luSu').innerHTML = "Suurin on: " + tu;
 }
 
 function paTon() {
   let lu = document.getElementById('luku').value;
-  let lu2 =
-  document.getElementById('pari').innerHTML = "Luku on: ";
+  if (Number.isSafeInteger(lu/2) == true ) {
+    return document.getElementById('pari').innerHTML = "Luku on: parillinen";
+  } else {
+    return document.getElementById('pari').innerHTML = "Luku on: pariton";
+  }
+
 }
 
 function oikeus() {
@@ -53,27 +52,19 @@ function oikeus() {
   }
 }
 
-/*function käännös() {
-  var oForm = document.getElementsByName('kieli').value;
 
-  var selected_option_value = oSelectOne.options[index].value;
-  var selected_index = oForm.elements['kieli'].selectedIndex;
-
-  if(selected_index > 0)
-  {
-    var selected_option_value = oForm.elements['kieli'].options[selected_index].value;
+  function käännös() {
+  let ti1 = document.getElementById('kLista');
+  let ti2 = ti1.value;
+  switch (ti2) {
+    case "0":
+      return document.getElementById('kään').innerHTML = "Hello World";
+      break;
+    case "1":
+      return document.getElementById('kään').innerHTML = "Hej Värld";
+      break;
+    case "2":
+      return document.getElementById('kään').innerHTML = "Hola Mundo";
+      break;
   }
-  else {
-    alert('Valitse kieli!');
-  }
-  document.getElementById('kään').innerHTML = "Saat ";
-
 }
-
-oSelectOne = oForm.elements['select_one_element_name'];
-index = oSelectOne.selectedIndex;
-
-function functionName() {
-
-  var etunimi = document.getElementsByName('name').value
-} */

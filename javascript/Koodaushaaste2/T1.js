@@ -126,4 +126,4 @@ function ikaPaivina(pp, kk, vu) {
  return console.log(iKP);
 }
 // syötä muodossa: päivät, kuukaudet, vuodet
-ikaPaivina(20, 11, 1995);
+ikaPaivina(14,9,1990 );

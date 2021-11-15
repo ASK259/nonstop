@@ -12,11 +12,14 @@
         <label>Anna 1. numero:</label>
         <input type="text" id="numero1" name="luku1" value="">
         <br>
+        <br>
         <label>Anna 2. numero:</label>
         <input type="text" id="numero2" name="luku2" value="">
         <br>
+        <br>
         <label>Anna 3. numero:</label>
         <input type="text" id="numero3" name="luku3" value="">
+        <br>
         <br>
         <button type="button" onclick="järjestä()">Järjestä luvut</button>
     </form>
@@ -34,20 +37,26 @@
         <label>Anna 1. luku:</label>
         <input type="text" id="luku1" name="luku1" value="">
         <br>
+        <br>
         <label>Anna 2. luku:</label>
         <input type="text" id="luku2" name="luku2" value="">
+        <br>
         <br>
         <label>Anna 3. luku:</label>
         <input type="text" id="luku3" name="luku3" value="">
         <br>
+        <br>
         <label>Anna 4. luku:</label>
         <input type="text" id="luku4" name="luku4" value="">
+        <br>
         <br>
         <label>Anna 5. luku:</label>
         <input type="text" id="luku5" name="luku5" value="">
         <br>
+        <br>
         <button type="button" onclick="suurin()">Etsi suurin</button>
     </form>
+    <br>
     <br>
     <p id='luSu'></p>
     <br>
@@ -57,6 +66,7 @@
     <form class"" action="index.html" method="post">
         <label>Anna luku:</label>
         <input type="text" id="luku" name="luku" value="">
+        <br>
         <br>
         <button type="button" onclick="paTon()">Tarkista</button>
     </form>
@@ -70,6 +80,7 @@
         <label>Anna ikäsi:</label>
         <input type="text" id="ikä" name="ikä" value="">
         <br>
+        <br>
         <button type="button" onclick="oikeus()">Tarkista</button>
     </form>
     <br>
@@ -77,12 +88,12 @@
     <br>
     <br>
     <h1>Tehtävä 5</h1>
-    <form class"" name= 'oForm' action="index.html" method="post">
+    <form class"" action="index.html" method="post">
       <label>Valitse kieli</label>
-      <select name='kieli'>
-        <option value='1'>Englanti</option>
-        <option value='2'>Ruotsi</option>
-        <option value='3'>Espanja</option>
+      <select name='kieli' id="kLista">
+        <option value="0">Englanti</option>
+        <option value="1">Ruotsi</option>
+        <option value="2">Espanja</option>
       </select>
       <button type="button" onclick="käännös()">Käännä</button>
     </form>
