@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>DOM Harjoituksia</title>
+    <script src="koodi.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>DOM harjoituksia w3resourcesta</h1>
+
+    <h2>1.</h2>
+    <input type="button" value="muokkaa" onclick="t1()">
+    <p>tekstiä, jota muokataan</p>
+    <h2>2.</h2>
+    <form id="lom1" onsubmit="tieto()">
+      <label>Etunimi:</label>
+      <input type="text" name="enimi" value="jokin">
+      <br>
+      <label>Sukunimi:</label>
+      <input type="text" name="snimi" value="jotain">
+      <input type="submit" value="lähetä">
+    </form>
+    <h2>3.</h2>
+    <input type="button" value="Tekstin tautaväri vaihtuu, kun painat" onclick="tVari()">
+    <p>Testi rivi 1.</p>
+    <p>Testi rivi 2.</p>
+
+    <h2>4.</h2>
+
+
+    <h2>5.</h2>
+    <table id="sTa" border="1">
+      <tr><td>row1 cell1</td>
+      <td>row1 cell2</td></tr>
+      <tr><td>row2 cell1</td>
+      <td>row2 cell2</td></tr>
+    </table><br>
+    <input type="button" onclick="liRi()" value="lisää rivi">
+    <h2>6.</h2>
+    <table id="myTa" border="1">
+      <tr><td>row1 cell1</td>
+      <td>row1 cell2</td></tr>
+      <tr><td>row2 cell1</td>
+      <td>row2 cell2</td></tr>
+      <tr><td>row3 cell1</td>
+      <td>row3 cell2</td></tr>
+    </table><form>
+      <input type="button" onclick="vSi()" value="Vaihda sisältö">
+    </form>
+    <h2>7.</h2>
+    <table id="myTa2"></table>
+    <form action="index.html" method="post">
+      <label>taulukon rows: </label>
+      <input type="text" name="rows_q" value="">
+      <label>taulukon cols: </label>
+      <input type="text" name="cols_q" value="">
+      <input type="button" onclick="luoTAP()" value="Luo">
+    </form>
+    <h2>8.</h2>
+    <form>
+      Select color :
+      <select id="varivalikko1">
+        <option >Red</option>
+        <option >Green</option>
+        <option >Blue</option>
+        <option >White</option>
+      </select>
+      <input type="button" onclick="removeC()" value="remove">
+    </form>
+    <h2>9.</h2>
+    <form>
+      Select your favourite color :
+      <select id="varivalikko2">
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="white">White</option>
+      </select>
+      <input type="button" onclick="lNa()" value="laske ja näytä">
+    </form>
+    <h2>10.</h2>
+    <fieldset>
+      <legend>Input radius and get value of a sphere</legend>
+      <label>Radius</label>
+      <br>
+      <input type="text" name="radius" value="">
+      <br>
+      <label>Volume</label>
+      <br>
+      <input type="text" name="volume" value="">
+      <br>
+      <button type="button" onclick="laskeV()" >Calculate</button>
+    </fieldset>
+    <h2>11.</h2>
+    <p>Kuvan vaihto tehtävä</p>
+    <h2>12.</h2>
+    <p>Alla olevan tekstin korostus</p>
+    <p>[<a href="#" onmouseover="korosta()" onmouseout="normaali()">On mouse over here bold words of the following paragraph will be highlighted]</a>]</p>
+    <p><strong>We</strong> have just started <strong>this</strong> section for the users (<strong>beginner</strong> to intermediate) who <strong>want</strong> to work with <strong>various</strong> JavaScript <strong>problems</strong> and write scripts online to <strong>test</strong> their JavaScript <strong>skill</strong>.</p>
+    <h2>13.</h2>
+    <p id="vika"><button type="button" name="button" onclick="respo()" >Test</button> </p>
+  </body>
+</html>
