@@ -28,6 +28,19 @@ function tVari() {
   ta2.style.background = "yellow";
 }
 
+function atAr() {
+  let al = document.getElementById("w3r");
+  console.log(al);
+  let ty = al.attributes[1].value;
+  let hrl = al.attributes[2].value;
+  let rel = al.attributes[3].value;
+  let ta = al.attributes[4].value;
+  let hr = al.attributes[5].value;
+  console.log(ty, hrl, rel, ta, hr);
+  let tu = document.getElementById("t4T");
+  tu.textContent = ty + " " + hrl + " " + rel + " " + ta + " " + hr;
+}
+
 function liRi() {
   let alk  = document.getElementById("sTa");
   let tbl = document.createElement("table");
@@ -36,7 +49,7 @@ function liRi() {
     let row = document.createElement("tr");
     for (let j = 0; j < 2; j++) {
       let cll = document.createElement("td");
-      let clTe = document.createTextNode("row" + i +",cell"+ j);
+      let clTe = document.createTextNode("new" + ",cell");
       cll.appendChild(clTe);
       row.appendChild(cll);
     }
@@ -55,12 +68,13 @@ function vSi() {
 }
 
 function luoTAP() {
-  let al = document.forms[2];
-  let rM = al.elements["rows_q"].value;
-  let cM = al.elements["cols_q"].value;
-  let body = document.getElementsByTagName("body")[0];
-  let boEl = body.getElementsByTagName("table")[2];
-  let tbo = document.createElement("tbody");
+  let al = document.getElementById("myTa2")
+  let rM = al.nextElementSibling[0].value;
+  let cM = al.nextElementSibling[1].value;
+  console.log(rM, cM);
+  let alk  = document.getElementById("myTa2");
+  let tbl = document.createElement("table");
+  let tBo = document.createElement("tbody");
   for (let i = 0; i < rM; i++) {
     let row = document.createElement("tr");
     for (let j = 0; j < cM; j++) {
@@ -69,10 +83,11 @@ function luoTAP() {
       cll.appendChild(clTe);
       row.appendChild(cll);
     }
-    tbo.appendChild(row);
+    tBo.appendChild(row);
   }
-  boEl.appendChild(tbo);
-  console.log(boEl);
+  tbl.appendChild(tBo);
+  alk.appendChild(tbl);
+  tbl.setAttribute("border", "2");
 }
 
 function removeC() {
@@ -112,6 +127,37 @@ function laskeV() {
   console.log(su);
   console.log(vo);
 }
+function piilota() {
+    let ku1 = document.getElementsByTagName("img")[0];
+    let ku2 = document.getElementsByTagName("img")[1];
+    let ku3 = document.getElementsByTagName("img")[2];
+    ku1.hidden = true;
+    ku2.hidden = true;
+    ku3.hidden = true;
+}
+
+function vaKu() {
+  function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+  let mu = getRandomIntInclusive(1, 3);
+  console.log(mu);
+  switch (mu) {
+    case 1:
+      document.getElementsByTagName("img")[0].hidden = false;
+      break;
+    case 2:
+      document.getElementsByTagName("img")[1].hidden = false;
+      break;
+    case 3:
+      document.getElementsByTagName("img")[2].hidden = false;
+      break;
+    default:
+
+  }
+}
 
 function korosta() {
   let bo = document.getElementsByTagName("body")[0];
@@ -133,9 +179,10 @@ function normaali() {
 
 function respo() {
 
-  let wi = VisualViewport.width;
-  let he = VisualViewport.height;
-  console.log(wi, he);
-  VisualViewport.onresize = function() {
-};
+  let wii = window.innerWidth;
+  let hei = window.innerHeight;
+  let wio = window.outerWidth;
+  let heo = window.outerHeight;
+  let tu = document.getElementById("vika");
+  tu.textContent = "innerWidth: "+wii+" innerHeight: "+hei+" outerWidth: "+wio+" outerHeight: "+heo;
 }

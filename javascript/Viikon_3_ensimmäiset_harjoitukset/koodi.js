@@ -8,16 +8,22 @@ function parilliset() {
   return document.getElementById("te1T").innerHTML = tu;
 }
 
-function salasana() {
+/*function salasana() {
   let sana = document.getElementById("te2").value;
   let tau2 = Array.from(sana);
   let ki = "Ö";
-  for (let i = 0; i < tau2.length; i+= 2) {
+  for (let i = 0; i < tau2.length; i++) {
     tau2.push(ki);
     console.log(tau2);
   }
+  for (let i = 0; i < tau2.length; i++) {
+    if (i%2 == 0) {
+      console.log( alk[i-1].textContent, alk.length );
+      alk[i-1].remove();
+    }
+    }
   return document.getElementById("te2T").innerHTML = tau2.toString().replaceAll(",", "");
-}
+}*/
 
 function onko() {
   let sana = document.getElementById("te3").value;
@@ -127,8 +133,6 @@ function paPaEr() {
   console.log(arr);
   console.log(typeof arr[0], typeof arr[1], typeof arr[2]);
   let kor = arr.shift();
-  kor.parseInt();
-  arr.unshift(kor);
   console.log(arr);
   for (let j = 0; j <= arr.length; j++) {
     if (Number.isSafeInteger(arr[j]/2) == true ) {
@@ -139,17 +143,18 @@ function paPaEr() {
       console.log(typeof arr3[0]);
     }
   }
+  arr3.pop();
   console.log(arr2);
   console.log(arr3);
   for (let k = 0; k < arr2.length; k++) {
-    paSu += k;
+    paSu + k;
     console.log(paSu);
   }
   for (let l = 0; l < arr3.length; l++) {
-    parSu += l;
+    parSu + l;
     console.log(parSu);
   }
-  console.log(typeof paSu, typeof parSu);
-  document.getElementById("t11T").innerHTML = "Parilliset " + arr2.toString().replaceAll(",", " ") + " ja niiden summa " + paSu;
-  document.getElementById("t11T2").innerHTML = "Parittomat " + arr3.toString().replaceAll(",", " ") + " ja niiden summa " + parSu;
+  console.log(paSu, typeof parSu);
+  document.getElementById("t11T").innerHTML = "Parilliset " + arr2.toString().replaceAll(",", " ") + " ja niiden summa " + paSu.toString();
+  document.getElementById("t11T2").innerHTML = "Parittomat " + arr3.toString().replaceAll(",", " ") + " ja niiden summa " + parSu.toString();
 }

@@ -5,7 +5,7 @@
     <title>DOM Harjoituksia</title>
     <script src="koodi.js" charset="utf-8"></script>
   </head>
-  <body>
+  <body onresize="respo()">
     <h1>DOM harjoituksia w3resourcesta</h1>
 
     <h2>1.</h2>
@@ -24,10 +24,10 @@
     <input type="button" value="Tekstin tautaväri vaihtuu, kun painat" onclick="tVari()">
     <p>Testi rivi 1.</p>
     <p>Testi rivi 2.</p>
-
     <h2>4.</h2>
-
-
+    <p><a id="w3r" type="text/html" hreflang="en-us" rel="nofollow" target="_self" href="https://www.w3resource.com/">w3resource</a></p>
+    <button onclick="atAr()">Click here to get  attributes value</button>
+    <p id="t4T"></p>
     <h2>5.</h2>
     <table id="sTa" border="1">
       <tr><td>row1 cell1</td>
@@ -93,11 +93,15 @@
     </fieldset>
     <h2>11.</h2>
     <p>Kuvan vaihto tehtävä</p>
+    <button type="button" onclick="vaKu()">Arvo kuva</button>
+    <img src= "http://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg" alt="kuva1" style=width: "240", height: "160" onload="piilota()">
+    <img src="http://farm1.staticflickr.com/33/45336904_1aef569b30_n.jpg" alt="kuva2" style=width: "320", height: "195">
+    <img src="http://farm6.staticflickr.com/5211/5384592886_80a512e2c9.jpg" alt="kuva3" style=width: "500", height: "343">
     <h2>12.</h2>
     <p>Alla olevan tekstin korostus</p>
     <p>[<a href="#" onmouseover="korosta()" onmouseout="normaali()">On mouse over here bold words of the following paragraph will be highlighted]</a>]</p>
     <p><strong>We</strong> have just started <strong>this</strong> section for the users (<strong>beginner</strong> to intermediate) who <strong>want</strong> to work with <strong>various</strong> JavaScript <strong>problems</strong> and write scripts online to <strong>test</strong> their JavaScript <strong>skill</strong>.</p>
     <h2>13.</h2>
-    <p id="vika"><button type="button" name="button" onclick="respo()" >Test</button> </p>
+    <p id="vika"></p>
   </body>
 </html>
