@@ -8,22 +8,12 @@ function parilliset() {
   return document.getElementById("te1T").innerHTML = tu;
 }
 
-/*function salasana() {
+function salasana() {
   let sana = document.getElementById("te2").value;
-  let tau2 = Array.from(sana);
-  let ki = "Ö";
-  for (let i = 0; i < tau2.length; i++) {
-    tau2.push(ki);
-    console.log(tau2);
-  }
-  for (let i = 0; i < tau2.length; i++) {
-    if (i%2 == 0) {
-      console.log( alk[i-1].textContent, alk.length );
-      alk[i-1].remove();
-    }
-    }
-  return document.getElementById("te2T").innerHTML = tau2.toString().replaceAll(",", "");
-}*/
+  let tau = Array.from(sana);
+  tau = tau.map(function(i) {return i + "Ö"});
+  return document.getElementById("te2T").innerText = tau.toString().replaceAll(",", "");
+}
 
 function onko() {
   let sana = document.getElementById("te3").value;
@@ -87,7 +77,7 @@ function kymE() {
 
 function kymY() {
   let lu = 0;
-  for (var i = 0; i <=10; i++) {
+  for (let i = 0; i <=10; i++) {
     lu += i;
   }
   return document.getElementById("t7T").innerHTML = lu;
@@ -112,15 +102,51 @@ function suPi() {
   return document.getElementById("t9T").innerHTML = "Pienin luku: " + pi + " ja suurin luku: " + sur;
 }
 
+function aakTauEN(kirA, kirZ) {
+  let a = [];
+  let i = kirA.charCodeAt(0);
+  let j = kirZ.charCodeAt(0);
+  for (; i <= j; ++i) {
+    a.push(String.fromCharCode(i));
+  }
+  return a;
+}
+
 function salasanaToka() {
-let sa = document.getElementById("t10").value;
-return document.getElementById("t10T").innerHTML = sa.toString();
+  let sana = document.getElementById("t10").value;
+  let tau = Array.from(sana);
+  let kirTau = Array.from(aakTauEN("a", "z"));
+  console.log(kirTau);
+  tau = tau.map(function(i) {return i + kirTau[Math.floor(Math.random() * 25)]});
+  console.log(tau);
+  return document.getElementById("t10T").innerText = tau.toString().replaceAll(",", "");
 }
 
 function paPaEr() {
   let pi = document.getElementById("t11E").value;
   let su = document.getElementById("t11To").value;
-  let arr = [];
+  let tau = [];
+  let i = parseInt(pi);
+  for (; i <= su ; i++) {
+    tau.push(i);
+  }
+  let tau2 = [];
+  let tau3 = [];
+  for (let j = 0; j < tau.length; j++) {
+    if (Number.isSafeInteger(tau[j]/2) == true) {
+        tau2.push(tau[j]);
+      } else {
+        tau3.push(tau[j]);
+      }
+  }
+  console.log(tau2, tau3);
+  const summa = (lu, ko) => ko += lu;
+  let pasu = tau2.reduce(summa);
+  let parsu = tau3.reduce(summa);
+  console.log(pasu);
+  document.getElementById("t11T").innerText = "Parilliset " + tau2.toString().replaceAll(",", " ") + " ja niiden summa " + pasu;
+  document.getElementById("t11T2").innerText = "Parittomat " + tau3.toString().replaceAll(",", " ") + " ja niiden summa " + parsu;
+  /*let arr = [];
   let arr2 = [];
   let arr3 = [];
   let paSu;
@@ -156,5 +182,5 @@ function paPaEr() {
   }
   console.log(paSu, typeof parSu);
   document.getElementById("t11T").innerHTML = "Parilliset " + arr2.toString().replaceAll(",", " ") + " ja niiden summa " + paSu.toString();
-  document.getElementById("t11T2").innerHTML = "Parittomat " + arr3.toString().replaceAll(",", " ") + " ja niiden summa " + parSu.toString();
+  document.getElementById("t11T2").innerHTML = "Parittomat " + arr3.toString().replaceAll(",", " ") + " ja niiden summa " + parSu.toString();*/
 }
