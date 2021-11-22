@@ -101,7 +101,7 @@ function removeC() {
   window.confirm(alk.textContent);
   for (let i = alk.length; i > 0; i--) {
     if (i%2 == 0) {
-      console.log( alk[i-1].textContent, alk.length );
+      console.log( alk[i-1].innerText, alk.length );
       alk[i-1].remove();
     } else {
       alk.remove();

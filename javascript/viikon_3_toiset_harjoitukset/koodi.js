@@ -1,36 +1,68 @@
 function te1() {
-
-  let ul = document.getElementsByTagName("ul");
-  console.log(ul);
-  function nodeListIteration(li) {
-    if (li == null)
-    return;
-    for (let i = 0; i < li.childNodes.length; i++) {
-    return nodeListIteration(li.childNodes[i]);
+    let sa = document.getElementsByTagName("input")[0].value;
+    let pi = 0;
+    let ar = document.getElementsByTagName("article")[0];
+    let li = ar.getElementsByTagName("li");
+    let tau = Array.from(li);
+    let te = [];
+    for (let i = 0; i < tau.length; i++) {
+      te.push(tau[i].innerText);
     }
-  }
-  console.log(nodeListIteration(ul));
-  let kirjaimet;
-  /*let to = document.getElementsByTagName("li")[0].firstChild.textContent;
-  let to1 = document.getElementsByTagName("li")[1].firstChild.textContent;
-  let to2 = document.getElementsByTagName("li")[2].firstChild.textContent;
-  let to3 = document.getElementsByTagName("li")[3].firstChild.textContent;
-  let to4 = document.getElementsByTagName("li")[4].firstChild.textContent;
-  let to5 = document.getElementsByTagName("li")[5].firstChild.textContent;
-  let to6 = document.getElementsByTagName("li")[6].firstChild.textContent;
-  let to7 = document.getElementsByTagName("li")[7].firstChild.textContent;
-  let kirjaimet = /[A-Z]/g;
-  let mu = to.match(kirjaimet);
-  let mu1 = to1.match(kirjaimet);
-  let mu2 = to2.match(kirjaimet);
-  let mu3 = to3.match(kirjaimet);
-  let mu4 = to4.match(kirjaimet);
-  let mu5 = to5.match(kirjaimet);
-  let mu6 = to6.match(kirjaimet);
-  let mu7 = to7.match(kirjaimet);*/
-  let sa = document.getElementsByTagName("input")[0].value;
-  console.log(sa);
+    let eht1 = /A, E, I, N, S, T/ig;
+    console.log(te);
+    let sa2 = Array.from(sa);
+    for (let i = 0; i < sa2.length; i++) {
+      switch (sa2[i]) {
+        case "a":
+        case "e":
+        case "i":
+        case "n":
+        case "s":
+        case "t":
+          pi += 1;
+          break;
+        case "o":
+        case "ä":
+        case "k":
+        case "l":
+          pi += 2;
+          break;
+        case "u":
+        case "m":
+          pi += 3;
+          break;
+        case "y":
+        case "h":
+        case "j":
+        case "p":
+        case "r":
+        case "v":
+          pi += 4;
+          break;
+        case "ö":
+        case "d":
+          pi += 7;
+          break;
+        case "b":
+        case "f":
+        case "g":
+          pi += 8;
+          break;
+        case "c":
+          pi += 10;
+          break;
+        default:
+          pi += 12;
+          break;
+      }
+    }
+    console.log(pi);
+    let tu =  document.createTextNode("Sanan " + sa + " pisteet ovat: " + pi);
+    let tek = document.createElement("p");
+    tek.appendChild(tu);
+    ar.appendChild(tek);
 }
+
 
 function te2() {
   function getRandomIntInclusive(min, max) {
@@ -65,27 +97,38 @@ function te3() {
   }
   tbl.appendChild(tBo);
   boEl.appendChild(tbl);
-  tbl.setAttribute("border", "2");
+  tbl.setAttribute("border", "1");
 }
 
 function te4() {
-  let maat =  ['&#9828;', '&#9827;', "&#9826;", "&#9825;"];
+  function sat(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+  let maat =  ["♥", "♦", "♣", "♠"];
+  console.log(maat);
   let bo = document.getElementsByTagName("article"[3]);
   let numerot = [];
   function luvut(alk, lop) {
     return Array(lop - alk + 1).fill().map((_, idx) => alk + idx);
   }
-  numerot = luvut(1, 13);
+  numerot = luvut(1, 14);
+  /*const vaih = lu => (lu == 11 || lu == 12 || lu == 13 || lu == 14) => lu = "J" : lu = "Q" : 13 = "K" : 14 = "A";*/
+  console.log(numerot);
   let ko = [];
-  for (let i = 0; i < numerot.length; i++) {
-    for (let j = 0; j < maat.length; j++) {
-      ko.push(Math.floor(Math.random())
+  for (let i = 1; i < numerot.length; i++) {
+    for (let j = 0; j < 4; j++) {
+      ko.push(numerot[i] + maat[j]);
     }
   }
+  console.log(ko);
+  let tau = [];
+  let tu = []
+  for (let i = 0; i < 5; i++) {
+    tau.push(ko[sat(0, 51)]);
+  }
 
-  document.getElementById("t4T").innerText = maat;
-  /*let te = document.createElement("p");
-  let tu = document.createTextNode("rbsbebe");
-  te.appendChild(tu);
-  console.log(te);*/
+  console.log(tau);
+  document.getElementById("t4T").innerText = tau;
 }
