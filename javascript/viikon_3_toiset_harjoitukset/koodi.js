@@ -124,11 +124,14 @@ function te4() {
   }
   console.log(ko);
   let tau = [];
-  let tu = []
+  let tu;
   for (let i = 0; i < 5; i++) {
     tau.push(ko[sat(0, 51)]);
   }
-
-  console.log(tau);
-  document.getElementById("t4T").innerText = tau;
+  tu = tau.toString();
+  const ehdot = {11:"J", 12:"Q", 13:"K", 14:"A"};
+  console.log(tu);
+  document.getElementById("t4T").innerText = tu.replace(/11|12|13|14/g,function(matched){
+    return ehdot[matched];
+  });
 }

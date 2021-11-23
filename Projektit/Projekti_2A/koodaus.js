@@ -15,7 +15,7 @@ function lVastaukset() {
       return false;
     }
   }
-  let va = ["c", "b", "d", "a", "c"];
+  let va = ["a", "a", "b", "c", "c"];
   for (let j  = 1; j <= yh; j++) {
     if (eval("k" + j) == va [j-1]) {
       pi++;
