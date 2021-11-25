@@ -91,20 +91,19 @@ function luoTAP() {
 }
 
 function removeC() {
-  let alk = document.getElementsByTagName("select")[0];
+  let alk = document.getElementById("varivalikko1");
   let seu = alk.getElementsByTagName("option");
   let co = 1;
   for (let node of alk.childNodes) {
     console.log(co++, node.nodeValue);
   }
   console.log(alk.textContent);
-  window.confirm(alk.textContent);
   for (let i = alk.length; i > 0; i--) {
-    if (i%2 == 0) {
-      console.log( alk[i-1].innerText, alk.length );
-      alk[i-1].remove();
+    if (i % 2 == 0) {
+      console.log(alk[i-1].textContent, alk.length);
+      alk.remove([i]);
     } else {
-      alk.remove();
+      alk.remove([i-1]);
     }
   }
 }
@@ -127,6 +126,7 @@ function laskeV() {
   console.log(su);
   console.log(vo);
 }
+
 function piilota() {
     let ku1 = document.getElementsByTagName("img")[0];
     let ku2 = document.getElementsByTagName("img")[1];
@@ -134,6 +134,15 @@ function piilota() {
     ku1.hidden = true;
     ku2.hidden = true;
     ku3.hidden = true;
+}
+
+function piU() {
+  let ku1 = document.getElementsByTagName("img")[0];
+  let ku2 = document.getElementsByTagName("img")[1];
+  let ku3 = document.getElementsByTagName("img")[2];
+  ku1.hidden = true;
+  ku2.hidden = true;
+  ku3.hidden = true;
 }
 
 function vaKu() {
@@ -184,5 +193,5 @@ function respo() {
   let wio = window.outerWidth;
   let heo = window.outerHeight;
   let tu = document.getElementById("vika");
-  tu.textContent = "innerWidth: "+wii+" innerHeight: "+hei+" outerWidth: "+wio+" outerHeight: "+heo;
+  tu.textContent = "innerWidth: " + wii + " innerHeight: " + hei + " outerWidth: " + wio + " outerHeight: " + heo;
 }
