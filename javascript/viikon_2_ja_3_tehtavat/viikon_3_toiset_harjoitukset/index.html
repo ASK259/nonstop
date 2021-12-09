@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fi" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="koodi.js" charset="utf-8"></script>
+    <title>Viikko 3 toiset</title>
+  </head>
+  <body>
+    <main>
+      <article class="teht1">
+        <h2>Tehtävä 1</h2>
+        <p>Kirjaimille pisteet laskeva peli</p>
+        <ul id="pisLi">
+          <li>A, E, I, N, S, T = 1p</li>
+          <li>O, Ä, K, L = 2p</li>
+          <li>U, M = 3p</li>
+          <li>Y, H, J, P, R, V = 4p</li>
+          <li>Ö, D =7p</li>
+          <li>B, F, G = 8p</li>
+          <li>C = 10p</li>
+          <li>loput kirjaimet = 12p</li>
+        </ul>
+        <label>Anna sana, jonka pisteet lasketaan:</label>
+        <input type="text" name="tehtava1" value="">
+        <br>
+        <button type="button" onclick="te1()" >Laske kirjainpisteet</button>
+        <br>
+        </article>
+        <article class="teht2">
+          <h2>Tehtävä 2</h2>
+          <p>Ohjelma arpoo "lottonumerot".</p>
+          <br>
+          <button type="button" onclick="te2()" >Arvo numerot</button>
+          <br>
+          <p id="t2T"></p>
+        </article>
+        <article class="teht3">
+          <h2>Tehtävä 3</h2>
+          <p>Ohjelma luo taulukon numeroilla täytettynä.</p>
+          <button type="button" onclick="te3()" >Luo taulukko</button>
+        </article>
+        <article class="teht4">
+          <h2>Tehtävä 4</h2>
+          <p>Ohjelma arpoo korttipakasta 5 korttia.</p>
+          <br>
+          <button type="button" onclick="te4()" >Arvo 5 korttia</button>
+          <br>
+          <br>
+          <p id="t4T"></p>
+        </article>
+    </main>
+  </body>
+</html>
