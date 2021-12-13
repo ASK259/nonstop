@@ -1,7 +1,10 @@
 function t1() {
   let bo = document.getElementsByTagName("body")[0];
+  console.log(bo);
   let te = bo.getElementsByTagName("p");
+  console.log(te);
   let tes = te[0];
+  console.log(tes);
   tes.style.fontFamily = "Arial";
   tes.style.fontSize = "2.5vw";
   tes.style.color = "yellow";

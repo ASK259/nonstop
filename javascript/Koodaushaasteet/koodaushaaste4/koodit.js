@@ -28,8 +28,10 @@ function ha4() {
 }
 
 function ha5() {
-let nu = document.getElementsByTagName("input")[4].value;
-let tau = Array.from(nu);
+//let nu = document.getElementsByTagName("input")[4].value;
+//console.log(nu);
+let tau = Array.from(document.getElementsByTagName("input")[4].value);
+console.log(tau);
 const tark = (arv) => (arv.length == 5) ? "On" : "Ei ole";
 document.getElementById("t5T").innerText = tark(tau);
 }

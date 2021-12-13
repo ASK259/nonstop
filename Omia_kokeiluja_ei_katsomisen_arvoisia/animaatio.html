@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="utf-8">
+    <title>Animaatiokokeilu</title>
+    <link rel="stylesheet" href="animaatio.css">
+    <script src="animaatio.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Kokeiluja</h1>
+      <h2>Eka kokeilu</h2>
+      <div class="an" id="#ko" ontouchstart="this.classList.toggle("hover");">
+        <div class="ka">
+          <div class="etu">
+            <img src="harrastuskuva.jpg" alt="etu" style="width:300px;height:200px">
+          </div>
+          <div class="taka">
+            <img src="muokattu1,2500.jpg" alt="taka" style="width:300px;height:200px">
+          </div>
+        </div>
+      </div>
+      <button type="button" name="button" onclick="kaan()">käännä</button>
+      <h2>toka kokeilu</h2>
+      <div class="ve" ontouchstart="this.classList.toggle("hov")">
+        <div class="veA">
+          <div class="etu1">
+            <img src="harrastuskuva.jpg" alt="etu" style="width:300px;height:200px">
+          </div>
+          <div class="taka1">
+            <img src="muokattu1,2500.jpg" alt="taka" style="width:300px;height:200px">
+          </div>
+        </div>
+      </div>
+      <button type="button" name="button" onclick="kaan2()">käännä</button>
+      <section>
+        <table class="ve" ontouchstart="this.classList.toggle("hov")">
+          <tbody>
+            <tr>
+              <td class="veA"><img class="et" src="harrastuskuva.jpg" alt="etu" style="width:300px;height:200px"></td>
+              <td class="veA"><img class="et" src="harrastuskuva.jpg" alt="etu" style="width:300px;height:200px"></td>
+            </tr>
+            <tr>
+              <td class="veA"><img class="et" src="harrastuskuva.jpg" alt="etu" style="width:300px;height:200px"></td>
+              <td class="veA"><img class="et" src="harrastuskuva.jpg" alt="etu" style="width:300px;height:200px"></td>
+            </tr>
+          </tbody>
+        </table>
+        <button type="button" name="button" onclick="kaan3()">käännä</button>
+      </section>
+    </main>
+  </body>
+</html>

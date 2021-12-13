@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="koodi.js" charset="utf-8"></script>
+    <title></title>
+  </head>
+  <body>
+    <h1>malli</h1>
+
+    <form class="" id="" action="index.html" method="post">
+      <label>Pudotus valikko</label>
+      <select name="lista" id="lista">
+        <option value="1">Jotain</option>
+        <option value="2">jotain</option>
+        <option value="3">taas</option>
+        <option value="4">vielä</option>
+      </select>
+      <button type="button" onclick="testi()" >paina</button>
+    <br>
+    <p id="listaT"></p>
+    <p id="listat"></p>
+    <!-- Pudotusvalikko DOM:ssa -->
+      <label for="myCheck">Checkbox:</label>
+      <input type="checkbox" id="myCheck" onclick="myFunction()">
+      <p id="text" style="display:none">Checkbox is CHECKED!</p>
+      <br><br><br>
+    </form>
+    <form class="" id="oForm" action="" method="post">
+
+    </form>
+    <input type="checkbox" name="email_alerts" id="chk_email_alerts" value="ON" checked><label for='chk_email_alerts'>Email me matching jobs everyday</label>
+    <input type="checkbox" name="recruiter_contact" id="chk_recruiter_contact" value="ON"><label for='chk_recruiter_contact'>Enable Recruiters to directly contact me</label>
+  </body>
+</html>
