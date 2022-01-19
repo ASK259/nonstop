@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="utf-8">
+    <title>Muistipeli javascriptistä</title>
+    <link rel="stylesheet" href="tyyli.css">
+    <script src="uusi.js" charset="utf-8"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Muistipeli JavaScriptistä">
+    <meta name="keywords" content="Muistipeli,JavaScript">
+    <meta name="author" content="Antti Kuusisto,Iina Hakala">
+  </head>
+  <body onresize="respo()"> <!-- Responsiivisuuden aputyökalu joka ei ole näkyvissä julkisesti -->
+    <main>
+      <header> <!-- sivuston sivut ja pelin toiminto näppäimet -->
+        <p id="vika"></p> <!-- Responsiivisuus työkalun näyttö -->
+        <nav class="navi">
+          <a href="index.html">Etusivu</a>
+          <a class="active" href="peli.html">Muistipeli</a>
+        </nav>
+        <label class="pVal1" for="">Valitse peli: </label>
+        <select class="pVal2" id="pelivalikko" name="">
+          <option class="pVal"value="" onclick="nollaa()">Valitse peli</option>
+          <option class="pVal" onclick="luoPeli();piTe();foMu()" value="4*4">4X4</option>
+          <option class="pVal" onclick="luoPeli();piTe();foMu()" value="4*6">4X6</option>
+          <option class="pVal" onclick="luoPeli();piTe();foMu()" value="6*6">6X6</option>
+        </select>
+        <button id="no"type="button" name="button" onclick="nollaa()">Nollaa peli</button>
+      </header>
+      <h2 id="peO">Valitse peli ja se tulostuu tähän</h2>
+      <section id="peli"></section> <!-- pelille "korvamerkitty alue" -->
+      <footer> <!-- footer -->
+        <ul class="tekijat"> <!-- tekijät -->
+          <li>Antti: HTML, CSS, JavaScript</li>
+          <li>Iina: kuvat</li>
+          <li>Johanna</li>
+        </ul>
+      </footer>
+    </main>
+  </body>
+</html>

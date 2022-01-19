@@ -120,6 +120,7 @@ function getRating(watchList) {
    let rObj = {}
    rObj.Director = obj.Director
    rObj.rating = obj.imdbRating *1
+   console.log(rObj);
    return rObj
 });
   let va = vali.filter(obj => obj.Director == "Christopher Nolan");

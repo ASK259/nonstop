@@ -1,0 +1,170 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html, main {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  size: 1.5vw;
+  color: white;
+  background: #2f893f;
+}
+
+header { /* Otsikko alueen muotoilu  */
+  background: #156d25;
+  color: #191970;
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 2vw;
+  padding: 0.5vw;
+  margin: 0.2%;
+  border-radius: 1vw;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.navi { /* Navigointialueen muotoilu */
+  margin: 2.5% 0 2.5% 2.5%;
+  list-style-type: none;
+  width: 40%;
+  }
+
+/* Sivulinkkien muotoilu  */
+.navi, a:link {
+  display: flex;               /* a:hover MUST come after a:link and a:visited */
+  color: #55a963;              /* a:active MUST come after a:hover */
+  padding: 0.5vh 2vw;
+  text-decoration: none;
+
+  }
+
+ a:visited {
+  color: #86c892;
+  }
+
+ a:hover {
+  color: #c2c2d2;
+  }
+
+ a.active {
+    color: #024b0f;
+  }
+
+.pVal1 { /* Valitse peli - tekstin alue ja muotoilu */
+  display: flex;
+  width: 15%;
+  margin: 2.5% 0 2.5% 10%;
+  padding: 1vh 0 1vh 2vh;
+  color: #86c892;
+}
+
+.pVal2 { /* pelivalikon alue ja muotoilu */
+  display: inline-block;
+  background-color: #024b0f;
+  color: #86c892;
+  border: 0;
+  border-radius: 0.25vw;
+  width: 10%;
+  font-size: 1.25vw;
+  margin: 2.5% 2.5% 2.5% 0;
+  padding: 1vh 2vh 1vh 0;
+}
+
+#no { /* Nollaa peli - painikkeen alue ja muotoilu */
+  display: inline-block;
+  background-color: #024b0f;
+  color: #86c892;
+  border: 0;
+  border-radius: 0.25vw;
+  width: 10%;
+  font-size: 1.25vw;
+  margin: 2.5% 2.5% 2.5% 2.5%;
+}
+
+h1 {
+  text-align: center;
+}
+
+.etu { /* Etisivun peliohje alueen muotoilu */
+  width: 60%;
+  margin: 5% 20% 0 20%;
+  position: relative;
+}
+
+footer { /* footerin muotoilut */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  color: #DCDCDC;
+  background: #024b0f;
+ }
+
+.tekijat { /* Tekijät alueen muotoilu */
+   width: 19%;
+   list-style-type: none;
+   padding: 0 0 0 3.5%;
+   background: #024b0f;
+ }
+
+#ai { /* kello alueen muotoilu */
+  width: 10%;
+  font-size: 1.5vw;
+  background: #024b0f;
+}
+
+#pi { /* pistealueen muotoilu */
+  width: 11%;
+  font-size: 1.5vw;
+  background: #024b0f;
+}
+
+#peO { /* Muotoilu alueelle, jossa pelialueella on teksti */
+  text-align: center;
+  margin: 5% 0 0 0;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#peli { /* Alue jolle peli tulee */
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+aside { /* Alue pisteille ja kellolle */
+  position: fixed;
+  color: #024b0f;
+  width: 12%;
+  margin: 8% 0 0 5%;
+  padding: 0 5% 0 0;
+}
+
+.pohja { /* Korttien alueen muotoilu */
+  width: 70%;
+  perspective: 1000px;
+  margin: 3% auto 2% auto;
+  padding: 0 0 0 4%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pohja img { /* Kuvien muotoiluja */
+  max-width: 22.5%;
+  max-height: auto;
+  margin: 0.5%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.pohja img.flip { /* kuvan kääntöä */
+  transform: rotateX(360deg);
+}
+
+.pohja img.flip2 { /* kuvan kääntöä */
+  transform: rotateX(360deg);
+  transform-style: preserve-3d;
+}
