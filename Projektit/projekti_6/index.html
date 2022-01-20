@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Lomake">
+    <meta name="keywords" content="Lomake">
+    <meta name="author" content="Antti Kuusisto">
+    <link rel="stylesheet" href="tyyli.css">
+    <script src="koodi.js" charset="utf-8"></script>
+    <title>Lomake</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Tietojenkeräys</h1>
+      </header>
+      <section id="lo1">
+        <form id="henkilo_tiedot" class="" name="tieto_lomake">
+          <h2>Tietojenkeräyslomake</h2>
+          <label for="etunimi">Etunimi</label>
+          <input type="text" id="etunimi" name="etunimi" placeholder="etunimi" value="" required><br>
+          <label for="sukunimi">Sukunimi</label>
+          <input type="text" id="sukunimi" name="sukunimi" placeholder="sukunimi" value="" required><br>
+          <label for="lahiosoite">Lähiosoite</label>
+          <input type="text" id="lahiosoite" name="lahiosoite" placeholder="osoite" value="" required><br>
+          <label for="postinumero">Postinumero</label>
+          <input type="text" id="postinumero" name="postinumero" placeholder="postinumero" value="" required><br>
+          <label for="postitoimipaikka">Postitoimipaikka</label>
+          <input type="text" id="postitoimipaikka" name="postitoimipaikka" placeholder="p.toimipaikka" value="" required><br>
+          <label for="puhelin">Puhelin</label>
+          <input type="tel" id="puhelin_oma" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="puhelin_oma" placeholder="000-000-0000" value="" required><br>
+          <label for="sahkoposti" for="key">Sähköposti</label>
+          <input type="text" id="sahkoposti_oma" class="key1" placeholder="sähköposti" value="" required autofocus>
+          <button type="submit" onclick="tallenna()">Lähetä</button>
+        </form>
+      </section>
+      <section id="al1">
+        <h3>Poista tietosi</h3>
+        <label for="poTie">Poista tietosi</label>
+        <input type="text" id="poTie" name="poTie" value="" placeholder="sähköposti">
+        <button type="button" id="poista">Poista</button>
+      </section>
+      <section id="al2">
+        <h3>Katso omat tietosi</h3>
+        <label for="naTie">Katso tietosi</label>
+        <input type="text" name="naTie" id="naTie" placeholder="sähköposti" value="">
+        <button type="button" id="hae">Nouda</button>
+      </section>
+    </main>
+  </body>
+</html>

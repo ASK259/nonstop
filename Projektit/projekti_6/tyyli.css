@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html, main {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  size: 1.5vw;
+  color: #505F90;
+  background: #172556;
+}
+
+h1 {
+  text-align: center;
+}
+
+input {
+  background: #07123A;
+  border-color: transparent;
+  color: #505F90;
+}
+
+button {
+  background: #07123A;
+  border-color: transparent;
+  color: #505F90;
+}
+
+#lo1 {
+  margin: 5% 0 0 40%;
+}
