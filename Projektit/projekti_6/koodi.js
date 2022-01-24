@@ -33,9 +33,8 @@ function nouda() {
     alert("Et ole antanut tietojasi tai olet antanut väärän sähköpostiosoitteen!")
   } else {
       let tie = window.localStorage.getItem(key);
-      console.log(tie);
-      let tes =
-      console.log(tes);
+      const he = JSON.parse(tie);
+      console.log(he);
       let te = document.createElement("p");
       te.setAttribute("id", "talTie");
       let ti = document.createTextNode(tie);
