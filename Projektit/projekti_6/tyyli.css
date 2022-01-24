@@ -3,7 +3,6 @@
 }
 
 body, html, main {
-  margin: 0;
   font-family: 'Quicksand', sans-serif;
   size: 1.5vw;
   color: #505F90;
@@ -22,10 +21,32 @@ input {
 
 button {
   background: #07123A;
-  border-color: transparent;
+  border-color: #303F74;
   color: #505F90;
 }
 
 #lo1 {
   margin: 5% 0 0 40%;
+}
+
+#lo1 label {
+  margin: 2% 0% 0% 0%;
+  padding: 0% 0% 0% 0%;
+}
+
+#lo1 input {
+  margin: 2% 0 0 2%;
+}
+
+#lo1 button {
+  margin: 2% 0 0 10%;
+  padding: 1%;
+}
+
+#al1 {
+  margin: 15% 0 0 40%;
+}
+
+#al2 {
+  margin: 15% 0 0 40%;
 }
