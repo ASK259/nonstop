@@ -2,51 +2,51 @@
   box-sizing: border-box;
 }
 
-body, html, main {
+body, html, main { /* Yleiset väri- ja fontti määrittelyt */
   font-family: 'Quicksand', sans-serif;
   size: 1.5vw;
   color: #505F90;
   background: #172556;
 }
 
-h1 {
+h1 { /* Otsikon asettelu */
   text-align: center;
 }
 
-input {
+input { /* input-kenttien väri asetukset*/
   background: #07123A;
   border-color: transparent;
   color: #505F90;
 }
 
-button {
+button { /* Button-elementtien väri asetukset */
   background: #07123A;
   border-color: #303F74;
   color: #505F90;
 }
 
-#lo1 {
+#lo1 { /* lomakkeen sijainti */
   margin: 5% 0 0 40%;
 }
 
-#lo1 label {
+#lo1 label { /*label-alueiden asettelua */
   margin: 2% 0% 0% 0%;
   padding: 0% 0% 0% 0%;
 }
 
-#lo1 input {
+#lo1 input { /*input-alueiden asettelua */
   margin: 2% 0 0 2%;
 }
 
-#lo1 button {
+#lo1 button { /*lomakkeen Lähetä-painikkeen asettelu */
   margin: 2% 0 0 10%;
   padding: 1%;
 }
 
-#al1 {
-  margin: 15% 0 0 40%;
+#al1 { /* poista tietosi alueen asettelu */
+  margin: 10% 0 10% 40%;
 }
 
-#al2 {
+#al2 { /* katso tietosi alueen asettelu */
   margin: 15% 0 0 40%;
 }

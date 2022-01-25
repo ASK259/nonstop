@@ -15,8 +15,8 @@
       <header>
         <h1>Yhteystietojenkeräys</h1>
       </header>
-      <section id="lo1">
-        <form id="henkilo_tiedot" class="" name="tieto_lomake">
+      <section id="lo1"> <!-- Alue lomakkeelle -->
+        <form id="henkilo_tiedot" class="" name="tieto_lomake" autocomplete="off">
           <h2>Täytä tähän yhteystietosi</h2>
           <label for="etunimi">Etunimi:</label>
           <input type="text" id="etunimi" name="etunimi" placeholder="etunimi" value="" required><br>
@@ -31,18 +31,18 @@
           <label for="puhelin">Puhelin:</label>
           <input type="tel" id="puhelin_oma" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="puhelin_oma" placeholder="000-000-0000" value="" required><br>
           <label for="sahkoposti" for="key">Sähköposti:</label>
-          <input type="text" id="sahkoposti_oma" class="key1" placeholder="sähköposti" value="" required autofocus><br>
-          <button type="submit">Lähetä</button>
+          <input type="email" id="sahkoposti_oma" class="key1" placeholder="sähköposti" value="" required autofocus><br>
+          <button type="submit" id="läh" name="button">Lähetä</button>
         </form>
       </section>
-      <section id="al2">
+      <section id="al2"> <!-- Alue omien tietojen katselulle -->
         <h3>Katso omat tietosi</h3>
         <label for="naTie">Katso tietosi</label>
         <input type="text" name="naTie" id="naTie" placeholder="sähköposti" value="">
         <button type="button" id="hae">Nouda</button>
       </section>
       <section id="al1">
-        <h3>Poista tietosi</h3>
+        <h3>Poista tietosi</h3> <!-- Alue omien tietojen poistamiselle -->
         <label for="poTie">Poista tietosi</label>
         <input type="text" id="poTie" name="poTie" value="" placeholder="sähköposti">
         <button type="button" id="poista">Poista</button>

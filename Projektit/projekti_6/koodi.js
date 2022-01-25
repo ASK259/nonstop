@@ -1,10 +1,11 @@
 window.onload = function() {
+  document.getElementById("läh").onclick = tarkista;
   document.getElementById("henkilo_tiedot").onsubmit = tallenna;
   document.getElementById("poista").onclick = del;
   document.getElementById("hae").onclick = nouda;
 }
 
-function Luohenkilo(enim,snim,osi,posnu,pospa,puhe,sahpo) {
+function Luohenkilo(enim,snim,osi,posnu,pospa,puhe,sahpo) { // constructor jota käytetään henkilön luomiseen
   this.etunimi = enim;
   this.sukunimi = snim;
   this.lahiosoite = osi;
@@ -14,43 +15,96 @@ function Luohenkilo(enim,snim,osi,posnu,pospa,puhe,sahpo) {
   this.sahkoposti_oma = sahpo;
 }
 
-function tallenna() {
-  let eni = document.getElementById("etunimi").value;
-  let sni = document.getElementById("sukunimi").value;
-  let os = document.getElementById("lahiosoite").value;
-  let ponu = document.getElementById("postinumero").value;
-  let popa = document.getElementById("postitoimipaikka").value;
-  let puh = document.getElementById("puhelin_oma").value;
-  let sapo = document.getElementById("sahkoposti_oma").value;
-  const person = new Luohenkilo(eni,sni,os,ponu,popa,puh,sapo);
-  window.localStorage.setItem(sapo,JSON.stringify(person));
+function tallenna() { //Funktio jolla luetaan tiedot,kutsutaan constructor ja tallennetaan paikalliseen tiedostoon
+  let eni = document.getElementById("etunimi").value; // luetaan etunimi
+  let sni = document.getElementById("sukunimi").value; // luetaan sukunimi
+  let os = document.getElementById("lahiosoite").value; // luetaan osoite
+  let ponu = document.getElementById("postinumero").value; // luetaan postinumero
+  let popa = document.getElementById("postitoimipaikka").value; // luetaan postitoimipaikka
+  let puh = document.getElementById("puhelin_oma").value; // luetaan puhelin numero
+  let sapo = document.getElementById("sahkoposti_oma").value; // luetaan sähköpostiosoite
+  const person = new Luohenkilo(eni,sni,os,ponu,popa,puh,sapo); // luodaan objekti constructorilla
+  window.localStorage.setItem(sapo,JSON.stringify(person)); // objekti JSON muotoon ja paikalliseen tiedostoon
 }
 
-function nouda() {
-  let teAl = document.getElementById("al2");
-  let key = document.getElementById("naTie").value;
-  if (localStorage.getItem(key) === null) {
-    alert("Et ole antanut tietojasi tai olet antanut väärän sähköpostiosoitteen!")
+function nouda() { // Hakeen tiedot paikallisesta tiedostosta ja tulostaa näytölle
+  let teAl = document.getElementById("al2"); // muuttuja section-alueelle johon tulee henkilön tiedot
+  let key = document.getElementById("naTie").value; // luetaan henkilön avain tietoihin
+  if (localStorage.getItem(key) === null) { //
+    alert("Et ole antanut tietojasi tai olet antanut väärän sähköpostiosoitteen!");
+    document.getElementById("naTie").value = "";
   } else {
-      let tie = window.localStorage.getItem(key);
-      const he = JSON.parse(tie);
-      console.log(he);
-      let te = document.createElement("p");
-      te.setAttribute("id", "talTie");
-      let ti = document.createTextNode(tie);
-      te.appendChild(ti);
-      teAl.appendChild(te);
+      let tie = window.localStorage.getItem(key); // hakee paikallisesta tiedostosta objektin muuttujaan
+      const he = JSON.parse(tie); // muuttaa objektin JSON muodosta JavaScript muotoon
+      const {etunimi, sukunimi, lahiosoite, postinumero, postitoimipaikka, puhelin_oma, sahkoposti_oma} = he; // ES6 tavalla tietoja objektista
+      let tes = `Tietosi: ${etunimi} ${sukunimi} ${lahiosoite} ${postinumero} ${postitoimipaikka} ${puhelin_oma} ${sahkoposti_oma}.`;
+      // Yllä muuttujaan Template Literals tyylillä näytölle tulostettavat tiedot
+      let te = document.createElement("p"); // luodaan p-elementti
+      te.setAttribute("id", "talTie"); // p-elementille id-atribuutti
+      let ti = document.createTextNode(tes); // TextNode p-elementtiin
+      te.appendChild(ti); // TextNode:n kiinnitys p-elementtiin
+      teAl.appendChild(te); // p-elementin kiinnitys section-alueeseen
+      document.getElementById("naTie").value = "";
       }
 }
 
-function del() {
-  let key = document.getElementById("poTie").value;
-  let poTe = document.getElementById("talTie");
-  if (localStorage.getItem(key) === null) {
+function del() { // poistaa tiedot paikallisesta tiedostosta
+  let key = document.getElementById("poTie").value; // lukee käyttäjän avaimen
+  let poTe = document.getElementById("talTie"); // muuttuja alueelle, jossa lukee näytöllä käyttäjän tiedot
+  if (localStorage.getItem(key) === null) { // tarkistaa avaimen
     alert("Et ole antanut tietojasi tai olet antanut väärän sähköpostiosoitteen!")
+    document.getElementById("poTie").value = "";
   } else {
-      poTe.remove();
-      localStorage.removeItem(key);
-      alert("Tietosi on poistettu!");
+      if (window.confirm("Haluatko varmasti poistaa tietosi")) {
+      localStorage.removeItem(key); // poistaa tiedot paikallisesta tiedostosta
+      alert("Tietosi on poistettu!"); // ilmoittaa, että tiedot on poistettu
+      poTe.remove(); // poistaa näytöltä käyttäjän tiedot
+      document.getElementById("poTie").value = "";
+      }
     }
+}
+
+function tarkista() { // kenttien tarkistus
+  let a = document.getElementById("etunimi").value;
+  let b = document.getElementById("sukunimi").value;
+  let c = document.getElementById("lahiosoite").value;
+  let d = document.getElementById("postinumero").value;
+  let e = document.getElementById("postitoimipaikka").value;
+  let g = document.getElementById("sahkoposti_oma").value;
+  const tark = (arv) => (arv.length == 5) ? true : false; // postinumeron pituuden tarkistus funktio
+  if ( a == "" || eiNum(a) == true) { //etunimen tarkistus
+    alert("Syötä etunimesi!");
+    tieto_lomake.etunimi.focus();
+    return (false);
+  } else if ( b == "" || eiNum(b) == true) { //sukunimen tarkistus
+      alert("Syötä sukunimesi!");
+      tieto_lomake.sukunimi.focus();
+      return (false);
+  } else if (c == "") {
+      alert(`Syötä osoitteesi`); // osoitteen tarkistus
+      tieto_lomake.lahiosoite.focus();
+      return (false);
+  } else if (isNaN(d) || tark(d) == false) { // postinumeron tarkistus
+      alert("Syötä postinumerosi!");
+      tieto_lomake.postinumero.focus();
+      return (false);
+  } else if (e == "" || eiNum(e) == true) { // postitoimipaikan tarkistus
+      alert(`Syötä postitoimipaikkasi!`);
+      tieto_lomake.postitoimipaikka.focus();
+      return (false);
+  } else if (g == "" || emailIsValid(g) == false) { // sähköpostiosoitteen tarkistus
+       alert("Anna oikea sähköpostiosoitteesi!");
+       tieto_lomake.sahkoposti_oma.focus();
+       return (false);
+  }
+}
+
+function emailIsValid (email) { // funktio sähköpostin tarkistukseen
+  console.log(email);
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+}
+
+function eiNum(te) { // funktio tarkastamaan onko kentässä numeroita.
+  console.log(te);
+  return /\d/.test(te);
 }
