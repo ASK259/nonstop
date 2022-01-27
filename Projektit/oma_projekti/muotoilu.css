@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Responsiivisuus toimii käytetyillä yksiköillä: prosentit %, viewport width vw ja viewport height vh.
+En tiedä mitä tapahtuu mikäli käyttää eri yksiköitä.*/
+
+/* Rungon muotoilut  */
+body, html, main {
+  height: 100%;
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1vw;
+  color: white;
+  background: #191970;
+  color: white;
+  background: #191970;
+}
+
+header {
+  background: #778899;
+  color: #191970;
+  font-size: 1.5vw;
+  margin: 0.2%;
+  border-radius: 1vw;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+nav {
+  width: 33.33%;
+  text-align: center;
+  padding: 2% 0 0 0;
+}
+
+.navi, a:link {           /* a:hover MUST come after a:link and a:visited */
+  color: black;              /* a:active MUST come after a:hover */
+  text-decoration: none;
+  }
+
+ a:visited {
+  color: white;
+  }
+
+ a:hover {
+  color: #c2c2d2;
+  }
+
+ a.active {
+    color: #DCDCDC;
+  }
+
+h1 {
+  width: 33.33%;
+}
+
+#teOt {
+  text-align: center;
+}
+
+#laOt {
+  text-align: center;
+}
+
+#tervehdys_te {
+  margin: 5% 20% 5% 20%;
+}
+
+#par1E, #par1L {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#par1E {
+  background-image: url("pa1Ku.jpg");
+  min-height: 45%;
+  min-width: 100%;
+}
+
+#etu_tek1 {
+  margin: 5% 20% 5% 10%;
+  position: relative;
+}
+
+#etuKu1 {
+  float: right;
+  display: flex;
+  height: 30%;
+  width: 35%;
+  margin: 5% 0 0 10%;
+}
+
+#etuKu1 > img {
+  border-radius: 1vw;
+}
+
+/* Footer */
+footer {
+   display: flex;
+   flex-wrap: nowrap;
+   background: #778899;
+   color: #DCDCDC;
+ }
+
+#ala_kuva {
+  width: 33.33%;
+  padding: 1% 0 1% 0;
+}
+
+#ala_kuva > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#tekija {
+  width: 33.33%;
+  text-align: center;
+  padding: 2% 0 0 0;
+}
+
+#linkkeja {
+  width: 33.33%;
+  text-align: center;
+  list-style-type: none;
+}
+
+#lasAl {
+  margin: 5% 15% 5% 15%;
+}
+
+.ri1 {
+  padding: 0.5%;
+  margin: 1%;
+}
+
+.ri2 {
+  padding: 0.5%;
+  margin: 1%;
+}
+
+.ri3 {
+  padding: 0.5%;
+  margin: 1%;
+}
+
+.ri4 {
+  padding: 0.5%;
+  margin: 1%;
+}
+
+#tulostus {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+#syotTied {
+  width: 33.33%;
+}
+
+#haeTied {
+  width: 33.33%;
+}
+
+#poistaTied {
+  width: 33.33%;
+}
+
+#syotTied, #haeTied, #poistaTied > h3 {
+  text-align: center;
+}
