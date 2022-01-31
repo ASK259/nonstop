@@ -24,6 +24,7 @@ function tallenna() { //Funktio jolla luetaan tiedot,kutsutaan constructor ja ta
   let puh = document.getElementById("puhelin_oma").value; // luetaan puhelin numero
   let sapo = document.getElementById("sahkoposti_oma").value; // luetaan sähköpostiosoite
   const person = new Luohenkilo(eni,sni,os,ponu,popa,puh,sapo); // luodaan objekti constructorilla
+  console.log(person);
   window.localStorage.setItem(sapo,JSON.stringify(person)); // objekti JSON muotoon ja paikalliseen tiedostoon
 }
 

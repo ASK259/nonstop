@@ -132,12 +132,7 @@ footer {
   margin: 5% 15% 5% 15%;
 }
 
-.ri1 {
-  padding: 0.5%;
-  margin: 1%;
-}
-
-.ri2 {
+.ri1, .ri2 {
   padding: 0.5%;
   margin: 1%;
 }
@@ -147,7 +142,7 @@ footer {
   margin: 1%;
 }
 
-.ri4 {
+.ri4, .ri5 {
   padding: 0.5%;
   margin: 1%;
 }

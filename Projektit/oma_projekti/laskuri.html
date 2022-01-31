@@ -23,7 +23,7 @@
       </header>
       <h2 id="laOt">Vaihteistonvälitys laskuri</h2>
       <section id="lasAl">
-        <form id="laskuri" action="laskuri.html" method="post">
+        <form id="laskuri"  name="laskuri" method="post" action="laskuri.html">
           <label class="ri1" for="merkki">Merkki</label>
           <input type="text" class="ri1" id="merkki" name="merkki" value="">
           <label class="ri1" for="malli">Malli</label>
@@ -32,16 +32,22 @@
           <input type="text" class="ri1" id="tunnus" name="tunnus" value="" placeholder="rek.nro tai muu"><br>
           <label class="ri2" for="rpmC">Moottorin kierrosluku</label>
           <input type="text" class="ri2" id="rpmC" name="rpmC" value="" placeholder="Kasvuväli">
-          <label class="ri2" for="gear">Vaihde</label>
-          <input type="text" class="ri2" id="gear" name="gear" value=""><br>
-          <label class="ri3" for="aks1">1. Akselin hammasluku</label>
-          <input type="text" class="ri3" id="aks1" name="aks1" value="">
-          <label class="ri3" for="aks2">2. Akselin hammasluku</label>
-          <input type="text" class="ri3" id="aks2" name="aks2" value=""><br>
-          <label class="ri4" for="pinion">Pieni lautaspyörä</label>
-          <input type="text" class="ri4" id="pinion" name="pinion" value="">
-          <label class="ri4" for="crownW">Iso lautaspyörä</label>
-          <input type="text" class="ri4" id="crownW" name="crownW" value=""><br>
+          <label class="ri2" for="rpmS">Kierrosten alku</label>
+          <input type="text" class="ri2" id="rpmS" name="rpmS" value="">
+          <label class="ri2" for="rpmE">Kierrosten loppu</label>
+          <input type="text" class="ri2" id="rpmE" name="rpmE" value=""><br>
+          <label class="ri3" for="gear">Vaihde</label>
+          <input type="text" class="ri3" id="gear" name="gear" value="">
+          <label class="ri3" for="tDia">Renkaan halkaisia</label>
+          <input type="text" class="ri3" id="tDia" name="tDia" value=""><br>
+          <label class="ri4" for="aks1">1. Akselin hammasluku</label>
+          <input type="text" class="ri4" id="aks1" name="aks1" value="">
+          <label class="ri4" for="aks2">2. Akselin hammasluku</label>
+          <input type="text" class="ri4" id="aks2" name="aks2" value=""><br>
+          <label class="ri5" for="pinion">Pieni lautaspyörä</label>
+          <input type="text" class="ri5" id="pinion" name="pinion" value="">
+          <label class="ri5" for="crownW">Iso lautaspyörä</label>
+          <input type="text" class="ri5" id="crownW" name="crownW" value=""><br>
           <button type="submit" id="laske" name="button">Laske</button>
         </form>
       </section>
