@@ -1,9 +1,14 @@
-window.onload = function() {
+//const obj = new LuoTieto1(mer,mal,tun,ge,nop,ak1,ak2,pin,crW,tDi);
+/*window.onload = function() {
   document.getElementById("laskuri").onsubmit = tuoTie;
+  document.getElementById("laske").onclick = tuNayt;
   document.getElementById("laske").onclick = tarkistaKen;
   document.getElementById("laTu").onclick = valTu;
   document.getElementById("poista").onclick = poTu;
-}
+  document.getElementById("tuSyAr").textContent = obj.kirTie;
+}*/
+
+const test = tu => console.log(tu);
 
 function LuoTieto(mer,mal,tun,ge,nop,ak1,ak2,pin,crW,tDi) {
   this.merkki = mer;
@@ -58,17 +63,29 @@ function tuoTie() {
   let tire = renkMit(tDi).toFixed(3);
   let alkNop = maAlkpNop(tire,vaihKokval);
   let nop = noKiLu(alkNop,rpmC,rpmS,rpmE);
-  const obj = new LuoTieto(mer,mal,tun,ge,nop,ak1,ak2,pin,crW,tDi)
+  const obj = new LuoTieto1(mer,mal,tun,ge,nop,ak1,ak2,pin,crW,tDi);
+  //document.getElementById("tuSyAr").textContent = obj.kirTie;
   let key = document.getElementById("tunnus").value;
   window.localStorage.setItem(tun,JSON.stringify(obj));
+  alert(`Tuloksesi: ${obj.kirTie}.`);
 }
 
 const noKiLu = (alN,rpmC,rpmS,rpmE) => {
   let nop = [];
   for (var i = rpmS; i <= rpmE; i+= rpmC) {
-    nop.push(`Kierrosluvulla ${i * 1000} nopeus on ${alN.toFixed(2) * i} km\h. `);
+    nop.push(`Kierrosluvulla ${i * 1000} nopeus on ${alN.toFixed(2) * i} km\h `);
   }
   return nop;
+}
+
+function tuNayt() {
+  let key = document.getElementById("tunnus").value;
+  console.log(key);
+  let ha = window.localStorage.getItem(key);
+  console.log(ha);
+  let ti = JSON.parse(ha);
+  console.log(ti);
+  document.getElementById("tuSyAr").textContent = ti.kirTie;
 }
 
 const aksSuhdLu = (ak1,ak2) => ak2 / ak1;
@@ -84,16 +101,7 @@ const maAlkpNop = (ti,ra) => ti / ra * 60;
 function valTu() {
   let key = document.getElementById("haTie").value;
   let ha = window.localStorage.getItem(key);
-  console.log(ha);
   let ti = JSON.parse(ha)
-  //console.log(Object.values(ti));
-  let tu = `Test ${ti.gear}`;
-  let te;
-  for (const property in ti) {
-    te = `${property}: ${ti[property]}`;
-  }
-
-  console.log(te);
   document.getElementById("haTu").textContent = ti.kirTie;
 }
 
@@ -108,4 +116,13 @@ function poTu() {
 
 function tarkistaKen() {
 
+}
+
+window.onload = function() {
+  document.getElementById("laskuri").onsubmit = tuoTie;
+  document.getElementById("laske").onclick = tuNayt;
+  document.getElementById("laske").onclick = tarkistaKen;
+  document.getElementById("laTu").onclick = valTu;
+  document.getElementById("poista").onclick = poTu;
+  document.getElementById("tuSyAr").textContent = obj.kirTie;
 }
