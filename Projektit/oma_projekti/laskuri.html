@@ -48,7 +48,8 @@
           <input type="text" class="ri5" id="pinion" name="pinion" value="">
           <label class="ri5" for="crownW">Iso lautaspyörä</label>
           <input type="text" class="ri5" id="crownW" name="crownW" value=""><br>
-          <button type="submit" id="laske" name="button">Laske</button>
+          <button type="button" id="laske" onclick="validateForm()" ondblclick="tuoTie()" name="button">Laske</button>
+          <input type="reset" name="" value="Tyhjennä">
         </form>
       </section>
       <section id="par1L">
@@ -63,14 +64,14 @@
           <h3>Hae laskettuja tuloksia</h3>
           <label for="haTie">Hae tuloksia</label>
           <input type="text" id="haTie" name="haTie" value="">
-          <button type="button" id="laTu" name="button">Hae</button>
+          <button type="button" id="laTu" onclick="valTu()" name="button">Hae</button>
           <p id="haTu"></p>
         </article>
         <article id="poistaTied">
           <h3>Poista laskettuja tuloksia</h3>
           <label for="poTie">Poista tuloksia</label>
           <input type="text" id="poTie" name="poTie" value="">
-          <button type="button" id="poista" name="button">Poista</button>
+          <button type="button" id="poista" onclick="poTu()" name="button">Poista</button>
         </article>
       </section>
       <article>
