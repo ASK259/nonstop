@@ -1,29 +1,4 @@
-//const obj = new LuoTieto1(mer,mal,tun,ge,nop,ak1,ak2,pin,crW,tDi);
-/*window.onload = function() {
-  document.getElementById("laske").onclick = tuoTie;
-  document.getElementById("laske").onclick = tuNayt;
-  document.getElementById("laske").onclick = tarkistaKen;
-  document.getElementById("laTu").onclick = valTu;
-  document.getElementById("poista").onclick = poTu;
-  //document.getElementById("tuSyAr").textContent = obj.kirTie;
-}*/
-
 const test = tu => console.log(tu);
-
-function LuoTieto(mer,mal,tun,ge,nop,ak1,ak2,pin,crW,tDi) {
-  this.merkki = mer;
-  this.malli = mal;
-  this.tunnus = tun;
-  this.gear = ge;
-  this.nopeudet = nop;
-  this.ak1 = ak1;
-  this.ak2 = ak2;
-  this.pinion = pin;
-  this.crownW = crW;
-  this.tDia = tDi;
-  this.kirTie = `Merkki ${mer} Malli ${mal} Vaihde ${ge} Nopeudet kierrosluvuilla: ${nop} 1. Akselinhammasluku ${ak1}
-    2. Akselinhammasluku ${ak2} Pienilautaspyörä ${pin} Isolautaspyörä ${crW} renkaanhalkaisia ${tDi}`
-}
 
 class LuoTieto1 {
   constructor(mer,mal,tun,ge,nop,ak1,ak2,pin,crW,tDi) {
@@ -38,11 +13,9 @@ class LuoTieto1 {
     this.crownW = crW;
     this.tDia = tDi;
     this.kirTie = `Merkki ${mer} Malli ${mal} Vaihde ${ge} Nopeudet kierrosluvuilla: ${nop} 1. Akselinhammasluku ${ak1}
-      2. Akselinhammasluku ${ak2} Pienilautaspyörä ${pin} Isolautaspyörä ${crW} renkaanhalkaisia ${tDi}`
+      2. Akselinhammasluku ${ak2} pienenlautaspyöränhammasluku on ${pin} Isonlautaspyöränhammasluku on ${crW} renkaan halkaisia on ${tDi}mm`
   }
 }
-/*LuoTieto.prototype.kirTie = function() {return `Merkki ${this.merkki} Malli ${this.malli} Vaihde ${this.gear} Nopeudet kierrosluvuilla: ${this.nopeudet} 1. Akselinhammasluku ${this.ak1}
-  2. Akselinhammasluku ${this.ak2} Pienilautaspyörä ${this.pinion} Isolautaspyörä ${this.crownW} renkaanhalkaisia ${this.tDia}`;}*/
 
 function tuoTie() {
   let mer = document.getElementById("merkki").value;
@@ -57,6 +30,7 @@ function tuoTie() {
   let ak2 = document.getElementById("aks2").value;
   let pin = document.getElementById("pinion").value;
   let crW = document.getElementById("crownW").value;
+  let key = document.getElementById("tunnus").value;
   let vaiSuhLu = aksSuhdLu(ak1,ak2);
   let peraSuhLu = perSuhdLu(crW,pin);
   let vaihKokval = vaihKok(vaiSuhLu,peraSuhLu);
@@ -64,29 +38,18 @@ function tuoTie() {
   let alkNop = maAlkpNop(tire,vaihKokval);
   let nop = noKiLu(alkNop,rpmC,rpmS,rpmE);
   const obj = new LuoTieto1(mer,mal,tun,ge,nop,ak1,ak2,pin,crW,tDi);
+  console.log(obj);
   document.getElementById("tuSyAr").textContent = obj.kirTie;
-  let key = document.getElementById("tunnus").value;
   window.localStorage.setItem(tun,JSON.stringify(obj));
-  alert(`Tuloksesi: ${obj.kirTie}.`);
 }
 
 const noKiLu = (alN,rpmC,rpmS,rpmE) => {
   let nop = [];
   for (var i = rpmS; i <= rpmE; i+= rpmC) {
-    nop.push(`Kierrosluvulla ${i * 1000} nopeus on ${alN.toFixed(2) * i} km\h `);
+    nop.push(`Kierrosluvulla: ${i * 1000} nopeus on ${alN.toFixed(2) * i} km\h `);
   }
   return nop;
 }
-
-/*function tuNayt() {
-  let key = document.getElementById("tunnus").value;
-  console.log(key);
-  let ha = window.localStorage.getItem(key);
-  console.log(ha);
-  let ti = JSON.parse(ha);
-  console.log(ti);
-  document.getElementById("tuSyAr").textContent = ti.kirTie;
-}*/
 
 const aksSuhdLu = (ak1,ak2) => ak2 / ak1;
 
@@ -100,9 +63,15 @@ const maAlkpNop = (ti,ra) => ti / ra * 60;
 
 function valTu() {
   let key = document.getElementById("haTie").value;
-  let ha = window.localStorage.getItem(key);
-  let ti = JSON.parse(ha)
-  document.getElementById("haTu").textContent = ti.kirTie;
+  if (localStorage.getItem(key) === null) {
+    alert("Ei löydy tietoja. Tarkista tunnus.");
+    document.getElementById("haTie").value = "";
+  } else {
+    let ha = window.localStorage.getItem(key);
+    let ti = JSON.parse(ha);
+    document.getElementById("haTu").textContent = ti.kirTie;
+    document.getElementById("haTie").value = "";
+  }
 }
 
 function poTu() {
@@ -111,7 +80,13 @@ function poTu() {
   window.confirm("Haluatko varmasti poistaa tietosi");
   localStorage.removeItem(key);
   poTe.textContent = "";
+  document.getElementById("poTie").value = "";
+  document.getElementById("tuSyAr").textContent = "";
   alert("Tietosi on poistettu!");
+}
+
+function Pona() {
+  document.getElementById("tuSyAr").textContent = "";
 }
 
 function validateForm() {
@@ -128,7 +103,7 @@ function validateForm() {
   let pin = document.getElementById("pinion").value;
   let crW = document.getElementById("crownW").value;
   const tark = (arv) => (arv.length == 4) ? true : false; // kierrosluvun pituuden tarkistus funktio
-  if (mer.length > 20 || /\d/ig.test(mer) == true || mer.length == 0 ) {
+  if (mer.length > 20 || /\d/ig.test(mer) == true || mer.length == 0 || /\W/g.test(mer) == true ) {
     alert(`Syötä merkki!`);
     laskuri.merkki.focus();
     return (false);
@@ -178,7 +153,3 @@ function validateForm() {
     return (false);
   }
 }
-
-/*window.onload = function() {
-  document.getElementById("laske").onclick = tarkistaKen;
-}*/

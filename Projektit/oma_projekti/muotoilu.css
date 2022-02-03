@@ -76,21 +76,27 @@ h1 {
 
 #par1E {
   background-image: url("pa1Ku.jpg");
-  min-height: 45%;
+  height: 45%;
   min-width: 100%;
 }
 
+#par1L {
+  background-image: url("paLa.jpg");
+  height: 45%;
+  min-width: 100%;
+}
 #etu_tek1 {
   margin: 5% 20% 5% 10%;
   position: relative;
+  display: flex;
 }
 
 #etuKu1 {
   float: right;
   display: flex;
-  height: 30%;
-  width: 35%;
-  margin: 5% 0 0 10%;
+  height: 15%;
+  width: 15%;
+  margin: 1% 5% 5% 5%;
 }
 
 #etuKu1 > img {
@@ -103,6 +109,8 @@ footer {
    flex-wrap: nowrap;
    background: #778899;
    color: #DCDCDC;
+   min-width: 100%;
+   bottom: 0;
  }
 
 #ala_kuva {
@@ -114,6 +122,9 @@ footer {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  width: 30%;
+  height: 30%;
+  border-radius: 1vw;
 }
 
 #tekija {
@@ -166,4 +177,46 @@ footer {
 
 #syotTied, #haeTied, #poistaTied > h3 {
   text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  body, html, main {
+    font-size: 2.5vw;
+  }
+
+  #etuKu1 {
+    height: 30%;
+    width: 35%;
+    margin: 5% 0 0 10%;
+  }
+
+  #par1E, #par1L {
+    background-attachment: scroll;
+  }
+
+  #par1E {
+  height: 20%;
+  }
+
+  #par1L {
+  height: 20%;
+  }
+
+  #syotTied, #haeTied, #poistaTied {
+    width: 100%;
+  }
+
+  #poistaTied > input {
+    width: 50%;
+  }
+
+  #haeTied > input {
+   width: 50%;
+ }
+ #laskuri > input {
+   width: 100%;
+ }
+ #tyLo {
+   width: 30%;
+ }
 }
