@@ -1,6 +1,6 @@
-const test = tu => console.log(tu);
+const test = tu => console.log(tu); // funktio, jos pitää tarkastaa konsolissa, jonkin muuttujan sisältö
 
-class LuoTieto1 {
+class LuoTieto1 { // constructor objektille
   constructor(mer,mal,tun,ge,nop,ak1,ak2,pin,crW,tDi) {
     this.merkki = mer;
     this.malli = mal;
@@ -14,142 +14,142 @@ class LuoTieto1 {
     this.tDia = tDi;
     this.kirTie = `Merkki ${mer} Malli ${mal} Vaihde ${ge} Nopeudet kierrosluvuilla: ${nop} 1. Akselinhammasluku ${ak1}
       2. Akselinhammasluku ${ak2} pienenlautaspyöränhammasluku on ${pin} Isonlautaspyöränhammasluku on ${crW} renkaan halkaisia on ${tDi}mm`
+      // yllä näytölle tulostuva teksti
   }
 }
 
-function tuoTie() {
-  let mer = document.getElementById("merkki").value;
-  let mal = document.getElementById("malli").value;
-  let tun = document.getElementById("tunnus").value;
-  let rpmC = document.getElementById("rpmC").value / 1000;
-  let rpmS = document.getElementById("rpmS").value  / 1000;
-  let rpmE = document.getElementById("rpmE").value  / 1000 ;
-  let ge = document.getElementById("gear").value;
-  let tDi = document.getElementById("tDia").value;
-  let ak1 = document.getElementById("aks1").value;
-  let ak2 = document.getElementById("aks2").value;
-  let pin = document.getElementById("pinion").value;
-  let crW = document.getElementById("crownW").value;
-  let key = document.getElementById("tunnus").value;
-  let vaiSuhLu = aksSuhdLu(ak1,ak2);
-  let peraSuhLu = perSuhdLu(crW,pin);
-  let vaihKokval = vaihKok(vaiSuhLu,peraSuhLu);
-  let tire = renkMit(tDi).toFixed(3);
-  let alkNop = maAlkpNop(tire,vaihKokval);
-  let nop = noKiLu(alkNop,rpmC,rpmS,rpmE);
-  const obj = new LuoTieto1(mer,mal,tun,ge,nop,ak1,ak2,pin,crW,tDi);
-  console.log(obj);
-  document.getElementById("tuSyAr").textContent = obj.kirTie;
-  window.localStorage.setItem(tun,JSON.stringify(obj));
+function tuoTie() { // lukee tiedot lomakkeesta, laskee tiedot, luo objektin ja tallentaa tiedot localStorage:n
+  let mer = document.getElementById("merkki").value; // luetaan merkki
+  let mal = document.getElementById("malli").value; // luetaan malli
+  let tun = document.getElementById("tunnus").value; // luetaan tunnus tiedoille
+  let rpmC = document.getElementById("rpmC").value / 1000; // luetaan kierrosten kasvuväli
+  let rpmS = document.getElementById("rpmS").value  / 1000; // luetaan kierrosten alku
+  let rpmE = document.getElementById("rpmE").value  / 1000 ; // luetaan kierrosten loppu
+  let ge = document.getElementById("gear").value; // luetaan vaihde
+  let tDi = document.getElementById("tDia").value; // luetaan renkaanhalkaisia
+  let ak1 = document.getElementById("aks1").value; // luetaan 1. akselinhammasluku
+  let ak2 = document.getElementById("aks2").value; // luetaan 2. akselinhammasluku
+  let pin = document.getElementById("pinion").value; // luetaan pienenlautaspyöränhammasluku
+  let crW = document.getElementById("crownW").value; // luetaan isonlautaspyöränhammasluku
+  let key = document.getElementById("tunnus").value; // luetaan key
+  let vaiSuhLu = aksSuhdLu(ak1,ak2); // lasketaan vaihteensuhdeluku
+  let peraSuhLu = perSuhdLu(crW,pin); // lasketaan peränsuhdeluku
+  let vaihKokval = vaihKok(vaiSuhLu,peraSuhLu); // lasketaan vaihteenkonaisluku
+  let tire = renkMit(tDi).toFixed(3); // lasketaan renkaanympärysmitta
+  let alkNop = maAlkpNop(tire,vaihKokval); // lasketaan alkunopeus
+  let nop = noKiLu(alkNop,rpmC,rpmS,rpmE); // lasketaan nopeudet eri kierrosluvuilla
+  const obj = new LuoTieto1(mer,mal,tun,ge,nop,ak1,ak2,pin,crW,tDi); // luodaan objekti constructorilla
+  document.getElementById("tuSyAr").textContent = obj.kirTie; // tulostetaan näytölle objektin tiedot
+  window.localStorage.setItem(tun,JSON.stringify(obj)); // lähetetään objekti localStorage:n
 }
 
-const noKiLu = (alN,rpmC,rpmS,rpmE) => {
+const noKiLu = (alN,rpmC,rpmS,rpmE) => { // funktio laskee nopeuden kierrosluvuille
   let nop = [];
   for (var i = rpmS; i <= rpmE; i+= rpmC) {
-    nop.push(`Kierrosluvulla: ${i * 1000} nopeus on ${alN.toFixed(2) * i} km\h `);
+    nop.push(`Kierrosluvulla: ${i * 1000} nopeus on ${alN.toFixed(2) * i} km\h `); // luo tekstin tuloksilla varustettuna
   }
-  return nop;
+  return nop; // palauttaa lasketut tiedot
 }
 
-const aksSuhdLu = (ak1,ak2) => ak2 / ak1;
+const aksSuhdLu = (ak1,ak2) => ak2 / ak1; // laskee vaihteensuhdeluvun
 
-const perSuhdLu = (crW,pin) => crW / pin;
+const perSuhdLu = (crW,pin) => crW / pin; // laskee peränsuhdeluvun
 
-const vaihKok = (vaih,per) => vaih * per;
+const vaihKok = (vaih,per) => vaih * per; // laskee vaihteen kokonaisvälityksen
 
-const renkMit = tDi => tDi * Math.PI / 1000;
+const renkMit = tDi => tDi * Math.PI / 1000; // laskee renkaanympärysmitan
 
-const maAlkpNop = (ti,ra) => ti / ra * 60;
+const maAlkpNop = (ti,ra) => ti / ra * 60; // laskee nopeuden kierrosluvulla 1000rpm
 
-function valTu() {
-  let key = document.getElementById("haTie").value;
-  if (localStorage.getItem(key) === null) {
+function valTu() { // hakee tiedot localStorage:sta
+  let key = document.getElementById("haTie").value; // luetaan key
+  if (localStorage.getItem(key) === null) { // tarkastetaan key
     alert("Ei löydy tietoja. Tarkista tunnus.");
     document.getElementById("haTie").value = "";
   } else {
-    let ha = window.localStorage.getItem(key);
-    let ti = JSON.parse(ha);
-    document.getElementById("haTu").textContent = ti.kirTie;
-    document.getElementById("haTie").value = "";
+    let ha = window.localStorage.getItem(key); // haetaan objekti localStorage:sta
+    let ti = JSON.parse(ha); // muutetaan JavaScript muotoon
+    document.getElementById("haTu").textContent = ti.kirTie; // tulostetaan tiedot näytölle
+    document.getElementById("haTie").value = ""; // tyhjennetään key:n kenttä
   }
 }
 
-function poTu() {
-  let key = document.getElementById("poTie").value;
-  let poTe = document.getElementById("haTu");
-  window.confirm("Haluatko varmasti poistaa tietosi");
-  localStorage.removeItem(key);
-  poTe.textContent = "";
-  document.getElementById("poTie").value = "";
-  document.getElementById("tuSyAr").textContent = "";
-  alert("Tietosi on poistettu!");
+function poTu() { // poistaa tiedot localStorage:sta
+  let key = document.getElementById("poTie").value; // luetaan key
+  let poTe = document.getElementById("haTu"); // muutuja tekstialueelle
+  window.confirm("Haluatko varmasti poistaa tietosi"); // varmistus tietojen poistosta
+  localStorage.removeItem(key); // poisto localStorage:sta
+  poTe.textContent = ""; // mikäli on näutöllä haettuna tietoja, ne poistetaan
+  document.getElementById("poTie").value = ""; // tyhjennetään key:n kenttä
+  document.getElementById("tuSyAr").textContent = ""; // tyhjennetään laskettujen arvojen tekstialue
+  alert("Tietosi on poistettu!"); // ilmoitus, että tiedot on poistettu
 }
 
-function Pona() {
+function Pona() { // poistaa lasketut tiedot näytöltä
   document.getElementById("tuSyAr").textContent = "";
 }
 
-function validateForm() {
-  let mer = document.getElementById("merkki").value;
-  let mal = document.getElementById("malli").value;
-  let tun = document.getElementById("tunnus").value;
-  let rpmC = document.getElementById("rpmC").value;
-  let rpmS = document.getElementById("rpmS").value;
-  let rpmE = document.getElementById("rpmE").value;
-  let ge = document.getElementById("gear").value;
-  let tDi = document.getElementById("tDia").value;
-  let ak1 = document.getElementById("aks1").value;
-  let ak2 = document.getElementById("aks2").value;
-  let pin = document.getElementById("pinion").value;
-  let crW = document.getElementById("crownW").value;
+function validateForm() { // tarkastaa lomakkeen
+  let mer = document.getElementById("merkki").value; // lukee merkki kentän
+  let mal = document.getElementById("malli").value; // lukee malli kentän
+  let tun = document.getElementById("tunnus").value; // lukee tunnus kentän
+  let rpmC = document.getElementById("rpmC").value; // lukee kierrosten kasvuväli kentän
+  let rpmS = document.getElementById("rpmS").value; // lukee kierrosten alku kentän
+  let rpmE = document.getElementById("rpmE").value; // lukee kierrosten loppu kentän
+  let ge = document.getElementById("gear").value; // lukee vaihde kentän
+  let tDi = document.getElementById("tDia").value; // lukee renkaanhalkaisia kentän
+  let ak1 = document.getElementById("aks1").value; // lukee 1. akselinhammasluku kentän
+  let ak2 = document.getElementById("aks2").value; // lukee 2. akselinhammasluku kentän
+  let pin = document.getElementById("pinion").value; // lukee pienenlautaspyöränhammasluku kentän
+  let crW = document.getElementById("crownW").value; // lukee isonlautaspyöränhammasluku kentän
   const tark = (arv) => (arv.length == 4) ? true : false; // kierrosluvun pituuden tarkistus funktio
-  if (mer.length > 20 || /\d/ig.test(mer) == true || mer.length == 0 || /\W/g.test(mer) == true ) {
-    alert(`Syötä merkki!`);
-    laskuri.merkki.focus();
+  if (mer.length > 20 || /\d/ig.test(mer) == true || mer.length == 0 || /\W/g.test(mer) == true ) { //merkki kentän tarkistus
+    alert(`Syötä merkki!`); // viesti mitä pitää tehdä
+    laskuri.merkki.focus(); // kohdistus kenttään
     return (false);
-  } else if (mal.length > 20 || mal.length == 0) {
-    alert(`Syötä malli!`);
-    laskuri.malli.focus();
+  } else if (mal.length > 20 || mal.length == 0) { // malli kentän tarkistus
+    alert(`Syötä malli!`); // viesti mitä pitää tehdä
+    laskuri.malli.focus(); // kohdistus kenttään
     return (false);
-  } else if (tun.length > 15 || tun.length == 0) {
-    alert(`Syötä tunnus!`);
-    laskuri.tunnus.focus();
+  } else if (tun.length > 15 || tun.length == 0) { // tunnus kentän tarkistus
+    alert(`Syötä tunnus!`); // viesti mitä pitää tehdä
+    laskuri.tunnus.focus(); // kohdistus kenttään
     return (false);
-  } else if (rpmC <= 4 || /\D/ig.test(rpmC) == true) {
-    alert(`Syötä kierrosluvun nousuväli!`);
-    laskuri.rpmC.focus();
+  } else if (rpmC <= 4 || /\D/ig.test(rpmC) == true) { // kierrosten kasvuväli kentän tarkistus
+    alert(`Syötä kierrosluvun nousuväli!`); // viesti mitä pitää tehdä
+    laskuri.rpmC.focus(); // kohdistus kenttään
     return (false);
-  } else if (tark(rpmS) == false || /\D/ig.test(rpmS) == true) {
-    alert(`Syötä aloitus kierrosluku!`);
-    laskuri.rpmS.focus();
+  } else if (tark(rpmS) == false || /\D/ig.test(rpmS) == true) { // kierrosten alku kentän tarkistus
+    alert(`Syötä aloitus kierrosluku!`); // viesti mitä pitää tehdä
+    laskuri.rpmS.focus(); // kohdistus kenttään
     return (false);
-  } else if (tark(rpmE) == false || /\D/ig.test(rpmE) == true) {
-    alert(`Syötä kierrosluvun päättymispiste!`);
-    laskuri.rpmE.focus();
+  } else if (tark(rpmE) == false || /\D/ig.test(rpmE) == true) { // kierrosten loppu kentän tarkistus
+    alert(`Syötä kierrosluvun päättymispiste!`); // viesti mitä pitää tehdä
+    laskuri.rpmE.focus(); // kohdistus kenttään
     return (false);
-  } else if (ge.length != 1 || isNaN(ge)) {
-    alert(`Syötä vaihde!`);
-    laskuri.gear.focus();
+  } else if (ge.length != 1 || isNaN(ge)) { // vaihde kentän tarkistus
+    alert(`Syötä vaihde!`); // viesti mitä pitää tehdä
+    laskuri.gear.focus(); // kohdistus kenttään
     return (false);
-  } else if (tDi.length > 4 || tDi.length == 0 || /\D/ig.test(tDi) == true) {
-    alert(`Syötä renkaanhalkaisia!`);
-    laskuri.tDia.focus();
+  } else if (tDi.length > 4 || tDi.length == 0 || /\D/ig.test(tDi) == true) { // renkaanhalkaisia kentän tarkistus
+    alert(`Syötä renkaanhalkaisia!`); // viesti mitä pitää tehdä
+    laskuri.tDia.focus(); // kohdistus kenttään
     return (false);
-  } else if (ak1.length > 3 || ak1.length == 0 || /\D/ig.test(ak1) == true){
-    alert(`Syötä 1. akselinhammasluku!`);
-    laskuri.aks1.focus();
+  } else if (ak1.length > 3 || ak1.length == 0 || /\D/ig.test(ak1) == true){ // 1. akselinhammasluku kentän tarkistus
+    alert(`Syötä 1. akselinhammasluku!`); // viesti mitä pitää tehdä
+    laskuri.aks1.focus(); // kohdistus kenttään
     return (false);
-  } else if (ak2.length > 3 || ak2.length == 0 || /\D/ig.test(ak2) == true) {
-    alert(`Syötä 2. akselinhammasluku!`);
-    laskuri.aks2.focus();
+  } else if (ak2.length > 3 || ak2.length == 0 || /\D/ig.test(ak2) == true) { // 2. akselinhammasluku kentän tarkistus
+    alert(`Syötä 2. akselinhammasluku!`); // viesti mitä pitää tehdä
+    laskuri.aks2.focus(); // kohdistus kenttään
     return (false);
-  } else if (pin.length > 2 || pin.length == 0 || /\D/ig.test(pin) == true) {
-    alert(`Syötä pienenlautaspyöränhammasluku!`);
-    laskuri.pinion.focus();
+  } else if (pin.length > 2 || pin.length == 0 || /\D/ig.test(pin) == true) { // pienenlautaspyöränhammasluku kentän tarkistus
+    alert(`Syötä pienenlautaspyöränhammasluku!`); // viesti mitä pitää tehdä
+    laskuri.pinion.focus(); // kohdistus kenttään
     return (false);
-  } else if (crW.length > 3 || crW.length == 0 || /\D/ig.test(crW) == true) {
-    alert(`Syötä isonlautaspyöränhammasluku!`);
-    laskuri.crownW.focus();
-    return (false);
+  } else if (crW.length > 3 || crW.length == 0 || /\D/ig.test(crW) == true) { // isonlautaspyöränhammasluku kentän tarkistus
+    alert(`Syötä isonlautaspyöränhammasluku!`); // viesti mitä pitää tehdä
+    laskuri.crownW.focus(); // kohdistus kenttään
+    return (false); 
   }
 }

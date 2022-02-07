@@ -84,7 +84,7 @@ button { /* Button-elementtien väri asetukset */
   margin: 15% 0 0 40%;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) { /* alypuhelin pystyasennossa muotoilut */
   .yks { /* lomakkeen kentätä row:sta column:si */
   display: flex;
   flex-direction: column;
@@ -100,7 +100,7 @@ button { /* Button-elementtien väri asetukset */
   }
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 850px) { /* tabletti muotoilut*/
   #lo1{
     margin: 5% 25% 40% 25%;
   }

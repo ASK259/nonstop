@@ -14,7 +14,7 @@ body, html, main {
   background: #191970;
 }
 
-header {
+header { /* otsikko alueen muotoilut */
   background: #778899;
   color: #191970;
   font-size: 1.5vw;
@@ -24,7 +24,7 @@ header {
   flex-wrap: nowrap;
 }
 
-nav {
+nav { /* navigointi alueen muotoilut */
   width: 33.33%;
   text-align: center;
   padding: 2% 0 0 0;
@@ -47,23 +47,19 @@ nav {
     color: #DCDCDC;
   }
 
-h1 {
+h1 { /* Sivuston otsikon muotoilut. Tehty suoraan elementtiin, koska h1 käytetään vain kerran sivulla */
   width: 33.33%;
 }
 
-#teOt {
+#teOt, #laOt { /* Sivu otsikon muotoilu */
   text-align: center;
 }
 
-#laOt {
-  text-align: center;
-}
-
-#tervehdys_te {
+#tervehdys_te { /* etusivun yläosion muotoilu */
   margin: 5% 20% 5% 20%;
 }
 
-#par1E, #par1L {
+#par1E, #par1L {  /* parallax efektin muodostaminen */
   position: relative;
   background-attachment: fixed;
   background-position: center;
@@ -71,24 +67,25 @@ h1 {
   background-size: cover;
 }
 
-#par1E {
+#par1E {  /* etusivun parallax:n muotoilut */
   background-image: url("pa1Ku.jpg");
   height: 45%;
   min-width: 100%;
 }
 
-#par1L {
+#par1L {  /* laskuri sivun parallax:n muotoilut */
   background-image: url("paLa.jpg");
   height: 45%;
   min-width: 100%;
 }
-#etu_tek1 {
+
+#etu_tek1 { /* etusivun tekstiosion muotoilut */
   margin: 5% 20% 5% 10%;
   position: relative;
   display: flex;
 }
 
-#etuKu1 {
+#etuKu1 { /* etusivun kuvan muotoilut */
   float: right;
   display: flex;
   height: 15%;
@@ -96,12 +93,11 @@ h1 {
   margin: 1% 5% 5% 5%;
 }
 
-#etuKu1 > img {
+#etuKu1 > img { /* etusivun kuvan reunojen pyöristys */
   border-radius: 1vw;
 }
 
-/* Footer */
-footer {
+footer { /* Footer alueen muotoilut */
    display: flex;
    flex-wrap: nowrap;
    background: #778899;
@@ -110,12 +106,12 @@ footer {
    bottom: 0;
  }
 
-#ala_kuva {
+#ala_kuva { /* footerin täytekuvan alueen määrittely muotoilut */
   width: 33.33%;
   padding: 1% 0 1% 0;
 }
 
-#ala_kuva > img {
+#ala_kuva > img { /* footerin täytekuvan muotoilut */
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -124,39 +120,34 @@ footer {
   border-radius: 1vw;
 }
 
-#tekija {
+#tekija { /* tekijä alueen määrittely ja muotoilu */
   width: 33.33%;
   text-align: center;
   padding: 2% 0 0 0;
 }
 
-#linkkeja {
+#linkkeja { /* sivustolinkkejä alueen määrittely ja muotoilu */
   width: 33.33%;
   text-align: center;
   list-style-type: none;
 }
 
-table {
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-#lasAl {
+#lasAl { /* lomakkeelle varatun alueen muotoilua */
   margin: 1% 1% 1% 1%;
 }
 
-#laskuri {
+#laskuri { /* lomakkeen alue muotoilua */
   padding: 5% 25% 5% 25%;
 }
 
-.ri3Kpl {
+.ri3Kpl { /* kolme paria sisältävän rivin muotoilu */
   display: flex;
   flex-direction: row;
   width: 100%;
   padding: 1% 0 1% 0;
 }
 
-.ri1, .ri2 {
+.ri1, .ri2 { /*kolme paria sisältävän rivin sisällön muotoilu */
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -165,14 +156,14 @@ table {
   padding: 0 1% 0 1%;
 }
 
-.ri2Kpl {
+.ri2Kpl { /* kaksi paria sisältävän rivin muotoilu */
   display: flex;
   flex-direction: row;
   width: 100%;
   padding: 1% 0 1% 0;
 }
 
-.ri3, .ri4, .ri5 {
+.ri3, .ri4, .ri5 { /*kaksi paria sisältävän rivin sisällön muotoilu */
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -181,38 +172,26 @@ table {
   padding: 0 1% 0 1%;
 }
 
-.nap {
+.nap { /* painike rivin muotoilu */
   display: flex;
   padding: 1% 5% 1% 5%;
 }
 
-#laske, #tyLo {
+#laske, #tyLo { /* painikkeiden sijoittelua */
   margin: auto;
 }
 
-#tulostus {
+#tulostus { /* tulosalue flexbox moodiin */
   display: flex;
   flex-wrap: nowrap;
 }
 
-#syotTied {
-  width: 33.33%;
-}
-
-#haeTied {
-  width: 33.33%;
-}
-
-#poistaTied {
+#syotTied, #haeTied, #poistaTied { /* laskettujen tietojen alueen muotoilu */
   width: 33.33%;
   text-align: center;
 }
 
-#syotTied, #haeTied, #poistaTied > h3 {
-  text-align: center;
-}
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) { /* alypuhelin pystyasennossa muotoilut */
   body, html, main {
     font-size: 3.5vw;
   }
@@ -259,25 +238,25 @@ table {
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 600px) { /* alypuhelin vaaka-asennossa muotoilut */
   body, html, main {
     font-size: 1.35vw;
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) { /* tabletti muotoilut*/
   body, html, main {
     font-size: 1.5vw;
   }
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 992px) { /* isotabletti muotoilut */
   body, html, main {
     font-size: 1.5vw;
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1200px) { /* pieni kannettava muotoilut */
   body, html, main {
     font-size: 1vw;
   }

@@ -1,53 +1,53 @@
-<!DOCTYPE html>
-<html lang="fi">
+<!DOCTYPE html> <!-- tyyppimääritys Html5 -->
+<html lang="fi"> <!-- sivun kielen kertominen selaimelle -->
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Lomake">
-    <meta name="keywords" content="Lomake">
-    <meta name="author" content="Antti Kuusisto">
-    <link rel="stylesheet" href="tyyli.css">
-    <script src="koodi.js" charset="utf-8"></script>
-    <title>Lomake</title>
+    <meta charset="utf-8"> <!-- merkkikoodauksen määrittely -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- responsiivisuuden ilmoitus selaimelle -->
+    <meta name="description" content="Lomake"> <!-- kertoo hakukoneelle mitä sivusto sisältää -->
+    <meta name="keywords" content="Lomake"> <!-- avainsanoja hakukoneelle -->
+    <meta name="author" content="Antti Kuusisto"> <!-- tekijä -->
+    <link rel="stylesheet" href="tyyli.css"> <!-- linkki CSS - tiedostoon -->
+    <script src="koodi.js" charset="utf-8"></script> <!-- linkki JavaScript - tiedostoon -->
+    <title>Lomake</title> <!-- Välilehdessä näkyvä otsikko -->
   </head>
   <body>
     <main>
       <header>
-        <h1>Yhteystietojenkeräys</h1>
+        <h1>Yhteystietojenkeräys</h1> <!-- Sivuotsikko -->
       </header>
       <section id="lo1"> <!-- Alue lomakkeelle -->
         <form id="henkilo_tiedot" action="index.html" method="post" name="tieto_lomake" autocomplete="off">
-          <h2>Täytä tähän yhteystietosi</h2>
-          <div class="yks">
+          <h2>Täytä tähän yhteystietosi</h2> <!-- lomakkeen otsikko -->
+          <div class="yks"> <!-- rivin määrittely -->
             <label class="ri1" for="etunimi">Etunimi:</label>
             <input type="text" class="ri1" id="etunimi" name="etunimi" placeholder="etunimi" value="" required><br>
           </div>
-          <div class="yks">
+          <div class="yks"> <!-- rivin määrittely -->
             <label class="ri2" for="sukunimi">Sukunimi:</label>
             <input type="text" class="ri2" id="sukunimi" name="sukunimi" placeholder="sukunimi" value="" required><br>
           </div>
-          <div class="yks">
+          <div class="yks"> <!-- rivin määrittely -->
             <label class="ri3" for="lahiosoite">Lähiosoite:</label>
             <input type="text" class="ri3" id="lahiosoite" name="lahiosoite" placeholder="osoite" value="" required><br>
           </div>
-          <div class="yks">
+          <div class="yks"> <!-- rivin määrittely -->
             <label class="ri4" for="postinumero">Postinumero:</label>
             <input type="text" class="ri4" id="postinumero" name="postinumero" placeholder="postinumero" value="" required><br>
           </div>
-          <div class="yks">
+          <div class="yks"> <!-- rivin määrittely -->
             <label class="ri5" for="postitoimipaikka">Postitoimipaikka:</label>
             <input type="text" class="ri5" id="postitoimipaikka" name="postitoimipaikka" placeholder="p.toimipaikka" value="" required><br>
           </div>
-          <div class="yks">
+          <div class="yks"> <!-- rivin määrittely -->
             <label class="ri6" for="puhelin">Puhelin:</label>
             <input type="tel" class="ri6" id="puhelin_oma" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="puhelin_oma" placeholder="000-000-0000" value="" required><br>
           </div>
-          <div class="yks">
+          <div class="yks"> <!-- rivin määrittely -->
             <label for="sahkoposti" class="ri7" for="key">Sähköposti:</label>
             <input type="email" class="ri7" id="sahkoposti_oma" class="key1" placeholder="sähköposti" value="" required autofocus><br>
           </div>
-          <div class="yks">
-            <div class="lah">
+          <div class="yks"> <!-- rivin määrittely -->
+            <div class="lah"> <!-- rivin yksilöinti -->
               <button type="submit" id="läh" name="button">Lähetä</button>
             </div>
           </div>

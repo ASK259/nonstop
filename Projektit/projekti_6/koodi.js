@@ -74,38 +74,36 @@ function tarkista() { // kenttien tarkistus
   let g = document.getElementById("sahkoposti_oma").value;
   const tark = (arv) => (arv.length == 5) ? true : false; // postinumeron pituuden tarkistus funktio
   if ( a == "" || eiNum(a) == true) { //etunimen tarkistus
-    alert("Syötä etunimesi!");
-    tieto_lomake.etunimi.focus();
+    alert("Syötä etunimesi!"); // viesti mitä pitää tehdä
+    tieto_lomake.etunimi.focus(); // kohdistus kenttään
     return (false);
   } else if ( b == "" || eiNum(b) == true) { //sukunimen tarkistus
-      alert("Syötä sukunimesi!");
-      tieto_lomake.sukunimi.focus();
+      alert("Syötä sukunimesi!"); // viesti mitä pitää tehdä
+      tieto_lomake.sukunimi.focus(); // kohdistus kenttään
       return (false);
-  } else if (c == "" || c.test(/\W/ig) == true) {
-      alert(`Syötä osoitteesi`); // osoitteen tarkistus
-      tieto_lomake.lahiosoite.focus();
+  } else if (c == "" || c.test(/\W/ig) == true) { // osoitteen tarkistus
+      alert(`Syötä osoitteesi`);  // viesti mitä pitää tehdä
+      tieto_lomake.lahiosoite.focus(); // kohdistus kenttään
       return (false);
   } else if (isNaN(d) || tark(d) == false) { // postinumeron tarkistus
-      alert("Syötä postinumerosi!");
-      tieto_lomake.postinumero.focus();
+      alert("Syötä postinumerosi!"); // viesti mitä pitää tehdä
+      tieto_lomake.postinumero.focus(); // kohdistus kenttään
       return (false);
   } else if (e == "" || eiNum(e) == true || e.length < 15) { // postitoimipaikan tarkistus
-      alert(`Syötä postitoimipaikkasi!`);
-      tieto_lomake.postitoimipaikka.focus();
+      alert(`Syötä postitoimipaikkasi!`); // viesti mitä pitää tehdä
+      tieto_lomake.postitoimipaikka.focus(); // kohdistus kenttään
       return (false);
   } else if (g == "" || emailIsValid(g) == false) { // sähköpostiosoitteen tarkistus
-       alert("Anna oikea sähköpostiosoitteesi!");
-       tieto_lomake.sahkoposti_oma.focus();
+       alert("Anna oikea sähköpostiosoitteesi!"); // viesti mitä pitää tehdä
+       tieto_lomake.sahkoposti_oma.focus(); // kohdistus kenttään
        return (false);
   }
 }
 
 function emailIsValid (email) { // funktio sähköpostin tarkistukseen
-  console.log(email);
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 }
 
 function eiNum(te) { // funktio tarkastamaan onko kentässä numeroita.
-  console.log(te);
   return /\d/.test(te);
 }
