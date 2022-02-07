@@ -26,21 +26,53 @@ button { /* Button-elementtien väri asetukset */
 }
 
 #lo1 { /* lomakkeen sijainti */
-  margin: 5% 0 0 40%;
+  margin: 5% 35% 40% 35%;*/
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
 }
 
-#lo1 label { /*label-alueiden asettelua */
+.yks { /*rivien erottelu ja flex-ominaisuuden lisäys */
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 1% 0 1% 0;
+}
+
+.ri1, .ri2, .ri3, .ri4, .ri5, .ri6, .ri7 { /* rivien yksilöinti ja muotoilu */
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  width: 50%;
+}
+
+.lah { /* lähetä-painikkeen yksilöinti ja muotoilu */
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  margin: auto;
+}
+
+#lo1 label, { /*label-alueiden asettelua*/
   margin: 2% 0% 0% 0%;
   padding: 0% 0% 0% 0%;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 50%;
 }
 
-#lo1 input { /*input-alueiden asettelua */
+#lo1 input { /*input-alueiden asettelua*/
   margin: 2% 0 0 2%;
+  display: flex;
+  flex-wrap: nowrap;
 }
 
-#lo1 button { /*lomakkeen Lähetä-painikkeen asettelu */
+#lo1 button { /*lomakkeen Lähetä-painikkeen asettelu*/
   margin: 2% 0 0 10%;
   padding: 1%;
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 #al1 { /* poista tietosi alueen asettelu */
@@ -48,5 +80,28 @@ button { /* Button-elementtien väri asetukset */
 }
 
 #al2 { /* katso tietosi alueen asettelu */
+
   margin: 15% 0 0 40%;
+}
+
+@media only screen and (max-width: 600px) {
+  .yks { /* lomakkeen kentätä row:sta column:si */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  }
+
+  .lah {
+    margin: 0;
+  }
+
+  #al1, #al2 {
+    margin: 5%;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  #lo1{
+    margin: 5% 25% 40% 25%;
+  }
 }

@@ -18,21 +18,39 @@
       <section id="lo1"> <!-- Alue lomakkeelle -->
         <form id="henkilo_tiedot" action="index.html" method="post" name="tieto_lomake" autocomplete="off">
           <h2>Täytä tähän yhteystietosi</h2>
-          <label for="etunimi">Etunimi:</label>
-          <input type="text" id="etunimi" name="etunimi" placeholder="etunimi" value="" required><br>
-          <label for="sukunimi">Sukunimi:</label>
-          <input type="text" id="sukunimi" name="sukunimi" placeholder="sukunimi" value="" required><br>
-          <label for="lahiosoite">Lähiosoite:</label>
-          <input type="text" id="lahiosoite" name="lahiosoite" placeholder="osoite" value="" required><br>
-          <label for="postinumero">Postinumero:</label>
-          <input type="text" id="postinumero" name="postinumero" placeholder="postinumero" value="" required><br>
-          <label for="postitoimipaikka">Postitoimipaikka:</label>
-          <input type="text" id="postitoimipaikka" name="postitoimipaikka" placeholder="p.toimipaikka" value="" required><br>
-          <label for="puhelin">Puhelin:</label>
-          <input type="tel" id="puhelin_oma" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="puhelin_oma" placeholder="000-000-0000" value="" required><br>
-          <label for="sahkoposti" for="key">Sähköposti:</label>
-          <input type="email" id="sahkoposti_oma" class="key1" placeholder="sähköposti" value="" required autofocus><br>
-          <button type="submit" id="läh" name="button">Lähetä</button>
+          <div class="yks">
+            <label class="ri1" for="etunimi">Etunimi:</label>
+            <input type="text" class="ri1" id="etunimi" name="etunimi" placeholder="etunimi" value="" required><br>
+          </div>
+          <div class="yks">
+            <label class="ri2" for="sukunimi">Sukunimi:</label>
+            <input type="text" class="ri2" id="sukunimi" name="sukunimi" placeholder="sukunimi" value="" required><br>
+          </div>
+          <div class="yks">
+            <label class="ri3" for="lahiosoite">Lähiosoite:</label>
+            <input type="text" class="ri3" id="lahiosoite" name="lahiosoite" placeholder="osoite" value="" required><br>
+          </div>
+          <div class="yks">
+            <label class="ri4" for="postinumero">Postinumero:</label>
+            <input type="text" class="ri4" id="postinumero" name="postinumero" placeholder="postinumero" value="" required><br>
+          </div>
+          <div class="yks">
+            <label class="ri5" for="postitoimipaikka">Postitoimipaikka:</label>
+            <input type="text" class="ri5" id="postitoimipaikka" name="postitoimipaikka" placeholder="p.toimipaikka" value="" required><br>
+          </div>
+          <div class="yks">
+            <label class="ri6" for="puhelin">Puhelin:</label>
+            <input type="tel" class="ri6" id="puhelin_oma" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="puhelin_oma" placeholder="000-000-0000" value="" required><br>
+          </div>
+          <div class="yks">
+            <label for="sahkoposti" class="ri7" for="key">Sähköposti:</label>
+            <input type="email" class="ri7" id="sahkoposti_oma" class="key1" placeholder="sähköposti" value="" required autofocus><br>
+          </div>
+          <div class="yks">
+            <div class="lah">
+              <button type="submit" id="läh" name="button">Lähetä</button>
+            </div>
+          </div>
         </form>
       </section>
       <section id="al2"> <!-- Alue omien tietojen katselulle -->

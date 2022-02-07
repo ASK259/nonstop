@@ -81,7 +81,7 @@ function tarkista() { // kenttien tarkistus
       alert("Syötä sukunimesi!");
       tieto_lomake.sukunimi.focus();
       return (false);
-  } else if (c == "") {
+  } else if (c == "" || c.test(/\W/ig) == true) {
       alert(`Syötä osoitteesi`); // osoitteen tarkistus
       tieto_lomake.lahiosoite.focus();
       return (false);
@@ -89,7 +89,7 @@ function tarkista() { // kenttien tarkistus
       alert("Syötä postinumerosi!");
       tieto_lomake.postinumero.focus();
       return (false);
-  } else if (e == "" || eiNum(e) == true) { // postitoimipaikan tarkistus
+  } else if (e == "" || eiNum(e) == true || e.length < 15) { // postitoimipaikan tarkistus
       alert(`Syötä postitoimipaikkasi!`);
       tieto_lomake.postitoimipaikka.focus();
       return (false);

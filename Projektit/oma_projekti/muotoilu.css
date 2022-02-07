@@ -2,15 +2,12 @@
   box-sizing: border-box;
 }
 
-/* Responsiivisuus toimii käytetyillä yksiköillä: prosentit %, viewport width vw ja viewport height vh.
-En tiedä mitä tapahtuu mikäli käyttää eri yksiköitä.*/
-
 /* Rungon muotoilut  */
 body, html, main {
   height: 100%;
   margin: 0;
   font-family: 'Quicksand', sans-serif;
-  font-size: 1vw;
+  font-size: 1.25vw;
   color: white;
   background: #191970;
   color: white;
@@ -139,23 +136,58 @@ footer {
   list-style-type: none;
 }
 
+table {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
 #lasAl {
-  margin: 5% 15% 5% 15%;
+  margin: 1% 1% 1% 1%;
+}
+
+#laskuri {
+  padding: 5% 25% 5% 25%;
+}
+
+.ri3Kpl {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 1% 0 1% 0;
 }
 
 .ri1, .ri2 {
-  padding: 0.5%;
-  margin: 1%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 16.66%;
+  padding: 0 1% 0 1%;
 }
 
-.ri3 {
-  padding: 0.5%;
-  margin: 1%;
+.ri2Kpl {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 1% 0 1% 0;
 }
 
-.ri4, .ri5 {
-  padding: 0.5%;
-  margin: 1%;
+.ri3, .ri4, .ri5 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 25%;
+  padding: 0 1% 0 1%;
+}
+
+.nap {
+  display: flex;
+  padding: 1% 5% 1% 5%;
+}
+
+#laske, #tyLo {
+  margin: auto;
 }
 
 #tulostus {
@@ -173,6 +205,7 @@ footer {
 
 #poistaTied {
   width: 33.33%;
+  text-align: center;
 }
 
 #syotTied, #haeTied, #poistaTied > h3 {
@@ -181,7 +214,7 @@ footer {
 
 @media only screen and (max-width: 600px) {
   body, html, main {
-    font-size: 2.5vw;
+    font-size: 3.5vw;
   }
 
   #etuKu1 {
@@ -202,21 +235,50 @@ footer {
   height: 20%;
   }
 
-  #syotTied, #haeTied, #poistaTied {
+  .ri3Kpl, .ri2Kpl {
+    display: flex;
+    flex-direction: column;
     width: 100%;
   }
 
-  #poistaTied > input {
-    width: 50%;
+  .ri1, .ri2, .ri3, .ri4, .ri5 {
+    /*display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;*/
+    align-items: center;
+    width: 80%;
   }
 
-  #haeTied > input {
-   width: 50%;
- }
- #laskuri > input {
-   width: 100%;
- }
- #tyLo {
-   width: 30%;
- }
+  #tulostus {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #syotTied, #haeTied, #poistaTied {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  body, html, main {
+    font-size: 1.35vw;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  body, html, main {
+    font-size: 1.5vw;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  body, html, main {
+    font-size: 1.5vw;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  body, html, main {
+    font-size: 1vw;
+  }
 }

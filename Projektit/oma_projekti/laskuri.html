@@ -24,32 +24,44 @@
       <h2 id="laOt">Vaihteistonvälitys laskuri</h2>
       <section id="lasAl">
         <form id="laskuri"  name="laskuri" method="post" action="laskuri.html">
-          <label class="ri1" for="merkki">Merkki</label>
-          <input type="text" class="ri1" id="merkki" name="merkki" value="" placeholder="merkki">
-          <label class="ri1" for="malli">Malli</label>
-          <input type="text" class="ri1" id="malli" name="malli" value="" placeholder="malli">
-          <label class="ri1" for="tunnus">Tunnus</label>
-          <input type="text" class="ri1" id="tunnus" name="tunnus" value="" placeholder="rek.nro tai muu"><br>
-          <label class="ri2" for="rpmC">Moottorin kierrosluku</label>
-          <input type="text" class="ri2" id="rpmC" name="rpmC" value="" placeholder="Kasvuväli">
-          <label class="ri2" for="rpmS">Kierrosten alku</label>
-          <input type="text" class="ri2" id="rpmS" name="rpmS" value="" placeholder="1000 - 9999">
-          <label class="ri2" for="rpmE">Kierrosten loppu</label>
-          <input type="text" class="ri2" id="rpmE" name="rpmE" value="" placeholder="1000 - 9999"><br>
-          <label class="ri3" for="gear">Vaihde</label>
-          <input type="text" class="ri3" id="gear" name="gear" value="" placeholder="vaihde">
-          <label class="ri3" for="tDia">Renkaan halkaisia</label>
-          <input type="text" class="ri3" id="tDia" name="tDia" value="" placeholder="millimetreinä"><br>
-          <label class="ri4" for="aks1">1. Akseli</label>
-          <input type="text" class="ri4" id="aks1" name="aks1" value="" placeholder="hammasluku">
-          <label class="ri4" for="aks2">2. Akseli</label>
-          <input type="text" class="ri4" id="aks2" name="aks2" value="" placeholder="hammasluku"><br>
-          <label class="ri5" for="pinion">Pieni lautaspyörä</label>
-          <input type="text" class="ri5" id="pinion" name="pinion" value="" placeholder="hammasluku">
-          <label class="ri5" for="crownW">Iso lautaspyörä</label>
-          <input type="text" class="ri5" id="crownW" name="crownW" value="" placeholder="hammasluku"><br>
-          <button type="button" id="laske" onclick="validateForm()" ondblclick="tuoTie()" name="button">Laske</button>
-          <input type="reset" id="tyLo"name="" value="Tyhjennä">
+          <div class="ri3Kpl">
+            <label class="ri1" for="merkki">Merkki</label>
+            <input type="text" class="ri1" id="merkki" name="merkki" value="" placeholder="merkki">
+            <label class="ri1" for="malli">Malli</label>
+            <input type="text" class="ri1" id="malli" name="malli" value="" placeholder="malli">
+            <label class="ri1" for="tunnus">Tunnus</label>
+            <input type="text" class="ri1" id="tunnus" name="tunnus" value="" placeholder="rek.nro tai muu"><br>
+          </div>
+          <div class="ri3Kpl">
+            <label class="ri2" for="rpmC">Moottorin kierrosluku</label>
+            <input type="text" class="ri2" id="rpmC" name="rpmC" value="" placeholder="Kasvuväli">
+            <label class="ri2" for="rpmS">Kierrosten alku</label>
+            <input type="text" class="ri2" id="rpmS" name="rpmS" value="" placeholder="1000 - 9999">
+            <label class="ri2" for="rpmE">Kierrosten loppu</label>
+            <input type="text" class="ri2" id="rpmE" name="rpmE" value="" placeholder="1000 - 9999"><br>
+          </div>
+          <div class="ri2Kpl">
+            <label class="ri3" for="gear">Vaihde</label>
+            <input type="text" class="ri3" id="gear" name="gear" value="" placeholder="vaihde">
+            <label class="ri3" for="tDia">Renkaan halkaisia</label>
+            <input type="text" class="ri3" id="tDia" name="tDia" value="" placeholder="millimetreinä"><br>
+          </div>
+          <div class="ri2Kpl">
+            <label class="ri4" for="aks1">1. Akseli</label>
+            <input type="text" class="ri4" id="aks1" name="aks1" value="" placeholder="hammasluku">
+            <label class="ri4" for="aks2">2. Akseli</label>
+            <input type="text" class="ri4" id="aks2" name="aks2" value="" placeholder="hammasluku"><br>
+          </div>
+          <div class="ri2Kpl">
+            <label class="ri5" for="pinion">Pieni lautaspyörä</label>
+            <input type="text" class="ri5" id="pinion" name="pinion" value="" placeholder="hammasluku">
+            <label class="ri5" for="crownW">Iso lautaspyörä</label>
+            <input type="text" class="ri5" id="crownW" name="crownW" value="" placeholder="hammasluku"><br>
+          </div>
+          <div class="nap">
+            <button type="button" id="laske" onclick="validateForm()" ondblclick="tuoTie()" name="button">Laske</button>
+            <input type="reset" id="tyLo"name="" value="Tyhjennä">
+          </div>
         </form>
       </section>
       <section id="par1L"></section>
@@ -74,9 +86,6 @@
           <button type="button" id="poista" onclick="poTu()" name="button">Poista</button>
         </article>
       </section>
-      <article>
-
-      </article>
       <footer>
         <div id="ala_kuva">
           <img src="foKu.jpg" alt="Vetonivel" style="max-width:100%;height:auto;">
