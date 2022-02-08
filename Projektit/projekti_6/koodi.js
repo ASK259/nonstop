@@ -73,11 +73,11 @@ function tarkista() { // kenttien tarkistus
   let e = document.getElementById("postitoimipaikka").value;
   let g = document.getElementById("sahkoposti_oma").value;
   const tark = (arv) => (arv.length == 5) ? true : false; // postinumeron pituuden tarkistus funktio
-  if ( a == "" || eiNum(a) == true) { //etunimen tarkistus
+  if ( a == "" || eiNum(a) == true || keTe(a) == true) { //etunimen tarkistus
     alert("Syötä etunimesi!"); // viesti mitä pitää tehdä
     tieto_lomake.etunimi.focus(); // kohdistus kenttään
     return (false);
-  } else if ( b == "" || eiNum(b) == true) { //sukunimen tarkistus
+  } else if ( b == "" || eiNum(b) == true || keTe(a) == true) { //sukunimen tarkistus
       alert("Syötä sukunimesi!"); // viesti mitä pitää tehdä
       tieto_lomake.sukunimi.focus(); // kohdistus kenttään
       return (false);
@@ -89,7 +89,7 @@ function tarkista() { // kenttien tarkistus
       alert("Syötä postinumerosi!"); // viesti mitä pitää tehdä
       tieto_lomake.postinumero.focus(); // kohdistus kenttään
       return (false);
-  } else if (e == "" || eiNum(e) == true || e.length < 15) { // postitoimipaikan tarkistus
+  } else if (e == "" || eiNum(e) == true || e.length < 15 || keTe(a) == true) { // postitoimipaikan tarkistus
       alert(`Syötä postitoimipaikkasi!`); // viesti mitä pitää tehdä
       tieto_lomake.postitoimipaikka.focus(); // kohdistus kenttään
       return (false);
@@ -98,6 +98,10 @@ function tarkista() { // kenttien tarkistus
        tieto_lomake.sahkoposti_oma.focus(); // kohdistus kenttään
        return (false);
   }
+}
+
+function keTe(te) {
+  return /[^A-Za-z0-9_]/.test(te);
 }
 
 function emailIsValid (email) { // funktio sähköpostin tarkistukseen
