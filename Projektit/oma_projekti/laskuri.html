@@ -23,40 +23,40 @@
       </header>
       <h2 id="laOt">Vaihteistonvälitys laskuri</h2> <!-- Sivu otsikko -->
       <section id="lasAl"> <!-- alue lomakkeelle -->
-        <form id="laskuri"  name="laskuri" method="post" action="laskuri.html">
+        <form id="laskuri"  name="laskuri" method="post" action="laskuri.html" autocomplete="off">
           <div class="ri3Kpl"> <!-- lomakkeen 1. rivi -->
             <label class="ri1" for="merkki">Merkki</label>
-            <input type="text" class="ri1" id="merkki" name="merkki" value="" placeholder="merkki">
+            <input type="text" class="ri1" id="merkki" name="merkki" value="" placeholder="merkki" required>
             <label class="ri1" for="malli">Malli</label>
-            <input type="text" class="ri1" id="malli" name="malli" value="" placeholder="malli">
+            <input type="text" class="ri1" id="malli" name="malli" value="" placeholder="malli" required>
             <label class="ri1" for="tunnus">Tunnus</label>
-            <input type="text" class="ri1" id="tunnus" name="tunnus" value="" placeholder="rek.nro tai muu"><br>
+            <input type="text" class="ri1" id="tunnus" name="tunnus" value="" placeholder="rek.nro tai muu" required>
           </div>
           <div class="ri3Kpl"> <!-- lomakkeen 2. rivi -->
             <label class="ri2" for="rpmC">Moottorin kierrosluku</label>
-            <input type="text" class="ri2" id="rpmC" name="rpmC" value="" placeholder="Kasvuväli">
+            <input type="text" class="ri2" id="rpmC" name="rpmC" value="" placeholder="Kasvuväli" required>
             <label class="ri2" for="rpmS">Kierrosten alku</label>
-            <input type="text" class="ri2" id="rpmS" name="rpmS" value="" placeholder="1000 - 9999">
+            <input type="text" class="ri2" id="rpmS" name="rpmS" value="" placeholder="1000 - 9999" required>
             <label class="ri2" for="rpmE">Kierrosten loppu</label>
-            <input type="text" class="ri2" id="rpmE" name="rpmE" value="" placeholder="1000 - 9999"><br>
+            <input type="text" class="ri2" id="rpmE" name="rpmE" value="" placeholder="1000 - 9999" required>
           </div>
           <div class="ri2Kpl"> <!-- lomakkeen 3. rivi -->
             <label class="ri3" for="gear">Vaihde</label>
-            <input type="text" class="ri3" id="gear" name="gear" value="" placeholder="vaihde">
+            <input type="text" class="ri3" id="gear" name="gear" value="" placeholder="vaihde" required>
             <label class="ri3" for="tDia">Renkaan halkaisia</label>
-            <input type="text" class="ri3" id="tDia" name="tDia" value="" placeholder="millimetreinä"><br>
+            <input type="text" class="ri3" id="tDia" name="tDia" value="" placeholder="millimetreinä" required>
           </div>
           <div class="ri2Kpl"> <!-- lomakkeen 4. rivi -->
             <label class="ri4" for="aks1">1. Akseli</label>
-            <input type="text" class="ri4" id="aks1" name="aks1" value="" placeholder="hammasluku">
+            <input type="text" class="ri4" id="aks1" name="aks1" value="" placeholder="hammasluku" required>
             <label class="ri4" for="aks2">2. Akseli</label>
-            <input type="text" class="ri4" id="aks2" name="aks2" value="" placeholder="hammasluku"><br>
+            <input type="text" class="ri4" id="aks2" name="aks2" value="" placeholder="hammasluku" required>
           </div>
           <div class="ri2Kpl"> <!-- lomakkeen 5. rivi -->
             <label class="ri5" for="pinion">Pieni lautaspyörä</label>
-            <input type="text" class="ri5" id="pinion" name="pinion" value="" placeholder="hammasluku">
+            <input type="text" class="ri5" id="pinion" name="pinion" value="" placeholder="hammasluku" required>
             <label class="ri5" for="crownW">Iso lautaspyörä</label>
-            <input type="text" class="ri5" id="crownW" name="crownW" value="" placeholder="hammasluku"><br>
+            <input type="text" class="ri5" id="crownW" name="crownW" value="" placeholder="hammasluku" required>
           </div>
           <div class="nap"> <!-- lomakkeen painike rivi -->
             <button type="button" id="laske" onclick="validateForm()" ondblclick="tuoTie()" name="button">Laske</button>
@@ -77,6 +77,7 @@
           <label for="haTie">Hae tuloksia</label>
           <input type="text" id="haTie" name="haTie" value="">
           <button type="button" id="laTu" onclick="valTu()" name="button">Hae</button>
+          <button type="button" id="tyTu" onclick="tyhTu()" name="button">Tyhjennä</button>
           <p id="haTu"></p> <!-- alue, jolle tulostetaan haetut tiedot -->
         </article>
         <article id="poistaTied"> <!-- alue tallennettujen tietojen poistamiselle -->

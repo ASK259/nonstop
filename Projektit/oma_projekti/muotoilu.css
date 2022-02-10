@@ -196,6 +196,14 @@ footer { /* Footer alueen muotoilut */
     font-size: 3.5vw;
   }
 
+  h1 {
+    font-size: 3vw;
+  }
+
+  nav {
+    font-size: 2.5vw;
+  }
+
   #etuKu1 {
     height: 30%;
     width: 35%;
@@ -212,6 +220,10 @@ footer { /* Footer alueen muotoilut */
 
   #par1L {
   height: 20%;
+  }
+
+  footer {
+    font-size: 2.5vw;
   }
 
   .ri3Kpl, .ri2Kpl {

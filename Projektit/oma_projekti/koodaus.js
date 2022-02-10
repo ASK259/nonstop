@@ -45,8 +45,12 @@ function tuoTie() { // lukee tiedot lomakkeesta, laskee tiedot, luo objektin ja 
 
 const noKiLu = (alN,rpmC,rpmS,rpmE) => { // funktio laskee nopeuden kierrosluvuille
   let nop = [];
+  let rpm;
+  let kmh;
   for (var i = rpmS; i <= rpmE; i+= rpmC) {
-    nop.push(`Kierrosluvulla: ${i * 1000} nopeus on ${alN.toFixed(2) * i} km\h `); // luo tekstin tuloksilla varustettuna
+    rpm = i * 1000;
+    kmh = alN * i;
+    nop.push(`Kierrosluvulla: ${rpm.toFixed()} nopeus on ${kmh.toFixed(3)} km\h `); // luo tekstin tuloksilla varustettuna
   }
   return nop; // palauttaa lasketut tiedot
 }
@@ -89,6 +93,9 @@ function Pona() { // poistaa lasketut tiedot näytöltä
   document.getElementById("tuSyAr").textContent = "";
 }
 
+function tyhTu() {
+  document.getElementById('haTu').textContent = '';
+}
 function validateForm() { // tarkastaa lomakkeen
   let mer = document.getElementById("merkki").value; // lukee merkki kentän
   let mal = document.getElementById("malli").value; // lukee malli kentän
@@ -150,6 +157,6 @@ function validateForm() { // tarkastaa lomakkeen
   } else if (crW.length > 3 || crW.length == 0 || /\D/ig.test(crW) == true) { // isonlautaspyöränhammasluku kentän tarkistus
     alert(`Syötä isonlautaspyöränhammasluku!`); // viesti mitä pitää tehdä
     laskuri.crownW.focus(); // kohdistus kenttään
-    return (false); 
+    return (false);
   }
 }
