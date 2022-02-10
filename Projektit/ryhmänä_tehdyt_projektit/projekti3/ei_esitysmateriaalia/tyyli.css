@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.8em;
+  color: #7C400E;
+  /*background-color: #FFD9BA;*/
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-size: 27px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: 'Zhi Mang Xing', cursive;
+  font-size: 27px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 27px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+}
+
+.tausta-1, .tausta-2 {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tausta-1 {
+    background-image: url("harrastuskuva.jpg");
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.tausta-2 {
+  background-image: url("muokattu1.2,2500.jpg");
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.etusivupaketti {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+}
+
+.etusivupaketti h1.source {
+  display: inline;
+  background-color: #FFD9BA;
+  padding: 20px;
+}
+
+.etusivupaketti2  {
+  position: absolute;
+  top: 60%;
+  width: 100%;
+  text-align: center;
+}
+
+.etusivupaketti2 span.source2 {
+  background-color: #FFD9BA;
+  opacity: 0.4;
+  padding:5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8pt;
+}
+
+.otsikkopaketti {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+}
+
+.otsikkopaketti span.source {
+  font-size: 8pt;
+}
+
+.tekijät {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+}
+
+.tekijät h2.source3 {
+  display: inline;
+  background-color: #FFD9BA;
+  padding:10px;
+}
+
+.tekijät2 {
+  position: absolute;
+  top: 60%;
+  width: 100%;
+  text-align: center;
+}
+
+.tekijät2 span.source4 {
+  background-color: #FFD9BA;
+  opacity: 0.4;
+  font-size: 8pt;
+  padding:5px;
+}
+
+.te {
+  background: #FFD9BA;
+  position: relative;
+  text-align: justify;
+  font-size: 15px;
+  padding: 20px 30px;
+}
+
+@media only screen and (max-device-width: 1000px) {
+ .tausta-1, .tausta-2 {
+    background-attachment: scroll;
+  }
+
+  .tekijät {
+    position: relative;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .tekijät h2.source3 {
+    display:inline-flex;
+    background-color: #FFD9BA;
+    padding:10px;
+  }
+
+  .tekijät2 {
+    position: relative;
+    top: 70%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .tekijät2 span.source4 {
+    display: inline-flex;
+    background-color: #FFD9BA;
+    opacity: 0.4;
+    font-size: 8pt;
+    padding:5px;
+  }
+}

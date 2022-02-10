@@ -1,0 +1,169 @@
+
+
+/* Tässä yleiset asetukset */
+* {
+  color:white;
+  box-sizing: border-box;
+  font-family: sofia-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 50px;
+}
+
+body {
+  background-color:black;
+}
+
+/*Alla yläpalkin muotoilut */
+nav {
+  text-align:center;
+  position:fixed;
+  background-color:black;
+  width:100%;
+  top:0;
+  height:40px;
+  padding:7px;
+  border-bottom:1px solid white
+}
+nav a {
+  margin:10px;
+}
+header {
+  text-align:center;
+  margin-top:50px;
+  height:50px;
+  border-bottom:1px solid white;
+}
+
+li {
+  list-style: none;
+}
+/* Alla kuvaosuus */
+section.galleria {
+  margin: 80px 15%;
+}
+
+section h2 {
+  margin: 0% 5vw;
+  padding: 0 30px;
+}
+
+div.kuvat {
+  display:flex;
+  flex-wrap:wrap;
+}
+
+figure {
+  display:block;
+  text-align:center;
+  flex:1;
+  min-width:200px;
+}
+img {
+  max-height:300px;
+}
+/* Artikkelin muotoilut */
+h2 {
+  margin:40px 18vw 0px;
+}
+article.sisältö {
+  margin:3px 15vw;
+  padding:5%;
+  font-size:17px;
+  text-align:justify;
+  hyphens:auto;
+}
+
+h3 {
+  position:sticky;
+  top:40px;
+  padding:10px;
+  background-color: hsla(20,100%,80%,1);
+  color:black;
+}
+
+/* Ja sitten vielä alapalkki */
+footer.alapalkki {
+display:flex;
+flex-direction:row;
+justify-content:center;
+align-items: center;
+border-top: 1px solid white;
+margin:0% 10%;
+}
+
+.footer1 {
+  flex:1;
+  text-align: center;
+}
+.footer2 {
+  flex:1;
+  text-align: center;
+}
+.footer3 {
+  flex:1;
+  text-align: center;
+}
+
+footer img {
+max-height:110px;
+}
+ul.sivustot {
+  line-height:1.3;
+}
+ul.tekijät {
+  line-height:0.4
+}
+
+  @media (max-width:864px){
+    article.sisältö {
+      margin:3px 10%;
+    }
+
+    section.galleria {
+      margin: 80px 10%;
+    }
+
+  @media (max-width:658px){
+    article.sisältö {
+      margin:3px 5%;
+    }
+
+    section.galleria {
+      margin: 80px 5%;
+    }
+  }
+  @media (max-width:864px){
+      .footer1 {
+        flex:1;
+        text-align: center;
+      }
+      .footer2 {
+        flex:1;
+        text-align: center;
+      }
+      .footer3 {
+        flex:1;
+        text-align: center;
+      }
+    }
+   @media (max-width:658px){
+       footer.alapalkki {
+         margin:0;
+       }
+
+      .footer1 {
+        flex:1;
+        text-align: center;
+      }
+      .footer2 {
+        flex:1;
+      }
+      .footer3 {
+        flex:2;
+      }
+  }

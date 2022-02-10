@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet"
+    <title></title>
+    <link rel="stylesheet" href="lomake.css"
+
+
+    <title></title>
+  </head>
+  <body>
+    <div class="boksi">
+    <main>
+      <header>
+        <div class="logo">
+          <img src="Kuvat/semilogo.png" alt="">
+        </div>
+          <div class="otsikko"><h2>Ilmoittautuminen seminaariin</h2></div>
+          <div class="etu">
+          <a href="etusivu.html">Takaisin etusivulle</a>
+          </div>
+        </header>
+
+
+<div class="container">
+  <section>
+  <b><form action="" method="get">
+    <table>
+    <tr>
+      <td><label for="etu">Etunimet:</label></td>
+      <td><input type="text" id="etu" name="etu" placeholder="Etunimet"</td>
+    </tr>
+    <tr>
+      <td><label for="suku">Sukunimi:</label></td>
+      <td><input type="text" id="suku" name="suku" placeholder="Sukunimi"</td>
+    </tr>
+    <tr>
+      <td><label for="synt">Syntymäaika:</label></td>
+      <td><input type="date" id="synt" name="synt" placeholder="Syntymäaika"></td>
+    </tr>
+    <tr>
+      <td><label for="osoite">Osoite:</label></td>
+      <td><input type="text" id="osoite" name="osoite" placeholder="Osoite"></td>
+    </tr>
+    <tr>
+    <td><label for="posti">Postinumero:</label></td>
+    <td><input type="number" id="posti" name="posti" placeholder="Postinumero"></td>
+    </tr>
+    <tr>
+    <td><label for="kaupunki">Kaupunki:</label><br></td>
+    <td><input type="text" id="kaupunki" name="kaupunki" placeholder="Kaupunki"></td>
+    </tr>
+    <tr>
+    <td><label for="sähkö">Sähköposti:</label></td>
+    <td><input type="email" id="sähkö" name="sähkö" placeholder="Sähköposti"></td>
+    </tr>
+    <td><label for="numero">Puhelinnumero:</label></td>
+    <td><input type="text" id="numero" name="numero" placeholder="Puhelinnumero"></td>
+    </tr>
+
+    <tr>
+    <td><label for="nimike">Ammattinimike:</label></td>
+    <td><select id="nimike" name="nimike">
+      <option value=""></option>
+      <option value="opi">Opiskelija</option>
+      <option value="yri">Yrittäjä</option>
+      <option value="töi">Töissä</option>
+      <option value="työ">Työtön</option>
+    </td>
+    </tr>
+
+    <tr>
+    <td><label for="oppityö">Oppilaitos/Työnantaja:</label></td>
+    <td><input type="text" id="oppityö" name="oppityö" placeholder="Oppilaitos/Työnantaja"></td>
+    </tr>
+
+    <td><label for="liput">Valitse yksi:</label></td>
+    <tr>
+      <td><label for="lip1">Lippu 1</td>
+      <td><input type="radio" id="lip1" name="liput" value="lip1"></td>
+    </tr>
+    <tr>
+      <td><label for="lip2">Lippu 2</td>
+      <td><input type="radio" id="lip2" name="liput" value="lip2"></td>
+    </tr>
+    <tr>
+      <td><label for="lip3">Lippu 3</td>
+      <td><input type="radio" id="lip3" name="liput" value="lip3"></td>
+    </tr>
+    <tr>
+      <td><label for="lip4">Lippu 4</td>
+      <td><input type="radio" id="lip4" name="liput" value="lip4"></td>
+    </tr>
+
+    <tr>
+   <td><label for="ruoka">Erityisruokavaliot:</label></td>
+    </tr>
+    <tr>
+      <td><label for="glu">Gluteeniton</label></td>
+      <td><input type="checkbox" id="glu" name="glu" value="glu"</td>
+    </tr>
+    <tr>
+      <td><label for="lak">Laktoosi-intorelanssi</label></td>
+      <td><input type="checkbox" id="lak" name="lak" value="lak"</td>
+    </tr>
+    <tr>
+      <td><label for="kas">Kasvissyöjä</label></td>
+      <td><input type="checkbox" id="kas" name="kas" value="kas"</td>
+    </tr>
+    <tr>
+      <td><label for="veg">Vegaani</label></td>
+      <td><input type="checkbox" id="veg" name="veg" value="veg"</td>
+    </tr>
+
+   <tr>
+  <td><label for="lisä">Lisätiedot:</label></td>
+    <td><textarea style="resize: none;" name="lisä" class="lisä" rows="8" cols="40"></textarea></td>
+    <td><button type="button" name="button" onclick="tarkista()">Lähetä</button></td>
+   </tr>
+ </form></b>
+  </table>
+</div>
+</main>
+  </body>
+</html>

@@ -1,0 +1,228 @@
+/*Main muotoilu*/
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+/*Antilta c+p*/
+body, html, main {
+  height: 100%;
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  color: white;
+  background: #191970;
+  color: white;
+  background: #191970;
+  width:100%;
+}
+
+
+
+/* Otsikkopalkin muotoilu, Antin css c+p*/
+header {
+  background: #778899;
+  color: #191970;
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 2vw;
+  padding: 0.5vw;
+  margin: 0.2%;
+  border-radius: 1vw;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+/* Pääotsikko */
+/* Otsikko alue */
+header {
+  background: #778899;
+  color: #191970;
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 2vw;
+  padding: 0.5vw;
+  margin: 0.2%;
+  border-radius: 1vw;
+  display: flex;
+  flex-wrap: nowrap;
+
+}
+
+/* Pääotsikko */
+#Potsikko {
+  width: 33.33%;
+  padding: 0 0 0 5.5vw;
+  margin: 2.6vw 0;
+}
+
+/* Asettulun vuoksi */
+#vali {
+  width: 33.33%;
+}
+
+/* Navigaatio alue */
+.navi {
+  margin: 2vw 1.2vw;
+  list-style-type: none;
+  }
+
+/* Sivulinkkien muotoilu  */
+.navi, a:link {
+  display: flex;               /* a:hover MUST come after a:link and a:visited */
+  color: black;              /* a:active MUST come after a:hover */
+  padding: 1vh 1.5vw;
+  text-decoration: none;
+  }
+
+ a:visited {
+  color: white;
+  }
+
+ a:hover {
+  color: #c2c2d2;
+  }
+
+ a.active {
+    color: #DCDCDC;
+  }
+
+/* Main muotoilu */
+
+div.kuvaus {
+  margin:5% 20%;
+}
+
+section {
+  margin:10% 19%;
+}
+
+/* Lomakkeen muotoilut*/
+
+fieldset {
+  padding:5%;
+  border-radius: 1vw;
+}
+
+legend {
+  font-size: 18px;
+}
+
+form {
+}
+
+table {
+  width:100%;
+}
+
+td {
+  width:50%;
+  border-bottom:1px solid black;
+  padding:10px;
+}
+
+
+input {
+  width:98%
+}
+input.submit {
+  width:80px;
+}
+
+textarea {
+  width:100%;
+  resize: none;
+}
+
+/* Footer muotoilu, Antti c+p */
+
+footer {
+   display: flex;
+   flex-wrap: nowrap;
+   background: black;
+   color: #DCDCDC;
+   align-items: center;
+ }
+
+/* Tekijät */
+.tekijat {
+   width: 30%;
+   list-style-type: none;
+   padding: 0 0 0 3.5%;
+ }
+
+/* Logo */
+.alakuva {
+  padding: 0.9% 5% 0 15%;
+  width: 30%;
+ }
+
+/* Sivustolinkit */
+.linkkeja {
+    width: 40%;
+    list-style-type: none;
+    padding: 0 0 0 9%;
+ }
+
+.linkkeja a:link {
+  display: flex;
+  float: left;
+  color: #4169e1;
+  padding: 1vh 1.5vw;
+  text-decoration: none;
+  }
+
+ a:visited {
+  color: white;
+  }
+
+ a:hover {
+  color: #696969;
+  }
+
+ a.active {
+    color: #191970;
+    color: #DCDCDC;
+  }
+
+
+/* Media queryt */
+
+@media only screen and (max-width:600px) {
+  section.lomake {
+    margin:2%;
+    margin-top:50px;
+  }
+/* + Kopiot Antilta*/
+  #Potsikko {
+    width: 33.33%;
+    padding: 0.9vh 0 0 5.5vw;
+  }
+  .alakuva {
+    padding: 10% 4% 0 4%;
+   }
+
+  .tekijat {
+     list-style-type: none;
+     padding: 7.5% 0 0 7.5%;
+   }
+}
+
+@media only screen and (min-width: 600px) {
+  .alakuva {
+    padding: 0.9% 4% 0 4%;
+   }
+}
+
+@media only screen and (min-width: 768px) {
+    .alakuva {
+    padding: 0.9% 3% 0 10%;
+    width: 30%;
+   }
+}
+
+@media only screen and (min-width: 992px) {
+  .alakuva {
+    padding: 0.9% 5% 0 15%;
+    width: 30%;
+  }
+}

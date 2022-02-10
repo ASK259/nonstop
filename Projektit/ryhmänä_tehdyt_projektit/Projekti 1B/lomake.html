@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width initial-scale=1.0">
+<link rel="stylesheet" href="lomake.css">
+<link rel="stylesheet" href="https://use.typekit.net/ylj6rec.css">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital@1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+<script src="koodi.js"></script>
+<title>Projekti 1B - Ilmoittautuminen</title>
+</head>
+<body>
+
+
+
+
+<main>
+  <header>
+    <h1 id="Potsikko">Robotiikkaseminaari</h1> <!--Tilaisuuden nimi ja sivuston otsikko -->
+    <div id="vali"></div> <!-- muotoilullinen seikka -->
+    <nav class="navi"> <!-- sivuston sivut -->
+      <a  href="">Etusivu</a>
+      <a class="active" href="lomake.html">Ilmoittautuminen</a>
+    </nav>
+  </header>
+
+  <div class="kuvaus">
+  <h1 id="otsikko">Tervetuloa seminaariin!</h1>
+  <br>
+  <p id="kuvaus">Vahvistaaksenne ilmoittautumisenne teidän tulee täyttää tietonne alla olevaan lomakkeeseen. Ilmoittaumiset ovat sitovia.</p>
+  </div>
+
+  <section class="lomake">
+
+    <fieldset>
+      <legend>  Täytä tietosi tänne  </legend>
+
+      <form id="kyselylomake" action="" onsubmit="return validateForm()" method="post" autocomplete="off">
+         <!--  note to self - Vaihtoehdot oli GET (URL) ja POST (HTTP), joista GET näyttää siirrettävän tiedon eikä näin ollen ole tietoturvallinen arkaluontoiselle tiedolle  -->
+        <table>
+          <tr>
+            <td>  <label for="nimi">Nimi:</label></td>
+            <td><input type="text" id="nimi" name="nimisyotto" placeholder="Koko nimenne" required></td>
+            <td class="popup" onclick="poppari1()">❓
+              <span class="popuptext" id="nimique">Syötä etu- ja sukunimesi</span>
+          </tr>
+          <tr>
+            <td><label for="ika">Ikä:</label></td>
+            <td><input type="text" id="ika" name="ikasyotot" placeholder="Ikä"></td>
+            <td class="popup"  onclick="poppari2()">❓
+              <span class="popuptext" id="ikaque">Syötä ikäsi numeromuodossa 1-99</span>
+          </tr>
+          <tr>
+            <td><label for="email">Sähköposti:</label></td>
+            <td><input type="email" id="email" name="emailsyotto" placeholder="Sähköpostiosoitteenne" required></td>
+            <td class="popup" onclick="poppari3()">❓
+              <span class="popuptext" id="emailque">Syötä sähköposti muodossa etunimi.sukunimi@email.com</span>
+          </tr>
+          <tr>
+            <td><label for="amnimi">Ammattinimike:</label></td>
+            <td><select name="ammattinimike" onchange="pvalikko()">
+                  <option value="">Valikaa yksi</option>
+                  <option value="tyossa">Työssä</option>
+                  <option value="tyoton">Työtön</option>
+                  <option value="opiskelija">Opiskelija</option>
+                  <option value="yrittaja">Yrittäjä</option>
+            </td>
+          </tr>
+          <tr>
+            <td><label>Valitkaa pakettinne:</label></td>
+            <td>
+              <table class="välipöytä">
+                <tr>
+                  <td><label for="">Paketti 1, 79€<br> Illallinen</label></td>
+                  <td><input type="radio" id="pak" name="paketti" value=79
+                    onclick="pakettiHinta()"></td>
+                </tr>
+                <tr>
+                  <td><label for="">Paketti 2, 150€<br> Illallinen ja majoitus</label></td>
+                  <td><input type="radio"  name="paketti" value=150
+                    onclick="pakettiHinta()"></td>
+                </tr>
+                <tr>
+                  <td><label for="">Paketti 3, 200€<br> Illallinen, majoitus ja kuljetus</label></td>
+                  <td><input type="radio" name="paketti" value=200
+                    onclick="pakettiHinta()"></td>
+                </tr>
+              </table>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="">Lisätkää ruokavalionne:</label></td>
+            <td>
+              <table class="välipöytä2">
+                <tr>
+                  <td><label>Ei erikoisruokavalioita</label></td>
+                  <td><input type="checkbox" id="val" name="ruokavalio" value="normaali" onclick="myF()"></td>
+                </tr>
+                <tr>
+                  <td><label>Laktoositon</label></td>
+                  <td><input type="checkbox" name="ruokavalio" value="laktoositon" onclick="myF()"></td>
+                </tr>
+                <tr>
+                  <td><label>Gluteeniton</label></td>
+                  <td><input type="checkbox" name="ruokavalio" value="gluteeniton" onclick="myF()"></td>
+                </tr>
+                <tr>
+                  <td><label>Pesco-lakto-ovo-vegetaristi</label></td>
+                  <td><input type="checkbox" name="ruokavalio" value="pesco_lakto_ovo_vegetaristi" onclick="myF()"></td>
+                </tr>
+                <tr>
+                  <td><label>Lakto-ovo-vegetaristi</label></td>
+                  <td><input type="checkbox" name="ruokavalio" value="lakto_ovo_vegetaristi" onclick="myF()"></td>
+                </tr>
+                <tr>
+                  <td><label>Vegaani</label></td>
+                  <td><input type="checkbox" name="ruokavalio" value="vegaani" onclick="myF()"></td>
+                </tr>
+                <tr>
+                  <td><label>Allergia, lisätkää kohteet lisätietoihin</label></td>
+                  <td><input type="checkbox" name="ruokavalio" value="allergia" onclick="myF()"></td>
+                </tr>
+                <tr>
+                  <td><label>Muu erikoisruokavalio, selventäkää lisätiedoissa</label></td>
+                  <td><input type="checkbox" name="ruokavalio" value="muu" onclick="myF()"></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="lisat">Lisätietoja:</label></td>
+            <td><textarea name="lisatiedot" onchange="textA()" rows="10"  placeholder="Vapaat kommentit"></textarea></td>
+            <!-- Note to self- Textarea pitää sulkea, muuten se "näyttää koodin läpi"-->
+          </tr>
+        </table>
+        <br>
+        <input class="submit" type="submit" onclick="tiedot()" value="ilmoittaudu">
+      </form>
+    </fiendset>
+  </section>
+
+  <footer class="alapalkki"> <!-- footer -->
+    <ul class="tekijat"> <!-- tekijät -->
+        <li>Antti</li>
+        <li>Iina</li>
+        <li>Johanna</li>
+        <li>Logo Pixabay</li>
+    </ul>
+    <div class="alakuva"> <!-- logo -->
+      <img src="roblogo.png" alt="logo" style="max-width:100%;">
+    </div>
+    <ul class="linkkeja"> <!-- sivustolinkit -->
+      <li><a href="https://roboyhd.fi/">Suomen robotiikkayhdistys</a></li>
+      <li><a href="https://www.vttresearch.com/fi/aiheet/automaatio-ja-robotiikka">Automaatio ja robotiikka</a></li>
+      <li><a href="https://www.kyberturvallisuuskeskus.fi/fi/">Kyberturvallisuuskeskus</a></li>
+      <li><a href="https://xn--tekoly-eua.info/">Infoa tekoälystä</a></li>
+    </ul>
+  </footer>
+</main>
+
+</body>
+</html>

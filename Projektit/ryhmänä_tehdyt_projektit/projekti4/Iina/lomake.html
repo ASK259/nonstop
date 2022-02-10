@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width initial-scale=1.0">
+<link rel="stylesheet" href="css/lomake.css">
+<link rel="stylesheet" href="https://use.typekit.net/ylj6rec.css">
+<title>Harjoitus - lomakesivu- itse lomake</title>
+</head>
+<body>
+
+  <header>
+    <div class="jarjestaja"><h1>Purjehdusseura P4</h1></div>
+    <nav>
+        <ul>
+          <li><a href="lomakeindex.html">Tapahtumasta</a></li>
+          <li><a href="lomake.html">Ilmoittautuminen</a></li>
+        </ul>
+    </nav>
+  </header>
+
+<main>
+  <section class="lomake">
+
+    <fieldset>
+      <legend>  Täytä tietosi tänne  </legend>
+
+      <form action="" method="post" autocomplete="off">
+         <!--  note to self - Vaihtoehdot oli GET (URL) ja POST (HTTP), joista GET näyttää siirrettävän tiedon eikä näin ollen ole tietoturvallinen arkaluontoiselle tiedolle  -->
+        <table>
+          <tr>
+            <td>  <label for="snimi">Sukunimi:</label></td>
+            <td><input type="text" id="snimi" name="snimi" placeholder="Sukunimenne"></td>
+          </tr>
+          <tr>
+            <td><label for="enimet">Etunimet:</label></td>
+            <td><input type="text" id="enimet" name="enimet" placeholder="Etunimenne"></td>
+          </tr>
+          <tr>
+            <td><label for="synty">Syntymäaika:</label></td>
+            <td><input type="date" id="synty" name="synty" placeholder="Syntymäaikanne"></td>
+          </tr>
+          <tr>
+            <td><label for="kosoite">Katuosoite:</label></td>
+            <td><input type="text" id="kosoite" name="kosoite" placeholder="Katuosoitteenne"></td>
+          </tr>
+          <tr>
+            <td><label for="pnro">Postinumero:</label></td>
+            <td><input type="number" id="pnro" name="pnro" placeholder="Postinumeronne"></td>
+          </tr>
+          <tr>
+            <td><label for="ptpaikka">Postitoimipaikka:</label><br></td>
+            <td><input type="text" id="ptpaikka" name="ptpaikka" placeholder="Postitoimipaikka"></td>
+          </tr>
+          <tr>
+            <td><label for="email">Sähköposti:</label></td>
+            <td><input type="email" id="email" name="email" placeholder="Sähköpostinne"></td>
+          </tr>
+          <tr>
+            <td><label for="toimi">Työnantaja tai oppilaitos:</label></td>
+            <td><input type="text" id="toimi" name="toimi" placeholder="Työnantaja tai oppilaitos"></td>
+          </tr>
+          <tr>
+            <td><label for="amnimi">Ammattinimike:</label></td>
+            <td><select id="amnimi" name="amnimi">
+                  <option value="">Valikaa yksi</option>
+                  <option value="tyoton">Työtön</option>
+                  <option value="opis">Opiskelija</option>
+                  <option value="työssä">Palkollinen</option>
+                  <option value="yrit">Yrittäjä</option>
+                  <option value="vap">Vapaaherra</option>
+                  <option value="ADD">Vaikeasti selitettävä nimike</option>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="menu">Valitkaa pakettinne:</label></td>
+            <td>
+              <table class="välipöytä">
+                <tr>
+                  <td><label for="p1">Paketti 1, 79€<br> Illallinen</label></td>
+                  <td><input type="radio" id="p1" name="menu" value="p1"></td>
+                </tr>
+                <tr>
+                  <td><label for="p2">Paketti 2, 150€<br> Illallinen ja majoitus</label></td>
+                  <td><input type="radio" id="p2" name="menu" value="p2"></td>
+                </tr>
+                <tr>
+                  <td><label for="p3">Paketti 3, 200€<br> Illallinen, majoitus ja kuljetus</label></td>
+                  <td><input type="radio" id="p3" name="menu" value="p3"></td>
+                </tr>
+              </table>
+            </td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="erkki">Lisätkää ruokavalionne:</label></td>
+            <td>
+              <table class="välipöytä2">
+                <tr>
+                  <td><label for="lakt">Laktoositon</label></td>
+                  <td><input type="checkbox" id="lakt" name="lakt" value="lakt"></td>
+                </tr>
+                <tr>
+                  <td><label for="glut">Gluteeniton</label></td>
+                  <td><input type="checkbox" id="glut" name="glut" value="glut"></td>
+                </tr>
+                <tr>
+                  <td><label for="pesco">Pesco-lakto-ovo-vegetaristi</label></td>
+                  <td><input type="checkbox" id="pesco" name="pesco" value="pesco"></td>
+                </tr>
+                <tr>
+                  <td><label for="lovo">Lakto-ovo-vegetaristi</label></td>
+                  <td><input type="checkbox" id="lovo" name="lovo" value="lovo"></td>
+                </tr>
+                <tr>
+                  <td><label for="veg">Vegaani</label></td>
+                  <td><input type="checkbox" id="veg" name="veg" value="veg"></td>
+                </tr>
+                <tr>
+                  <td><label for="aller">Allergia, lisätkää kohteet lisätietoihin</label></td>
+                  <td><input type="checkbox" id="aller" name="aller" value="aller"></td>
+                </tr>
+                <tr>
+                  <td><label for="muu">Muu erikoisruokavalio, selventäkää lisätiedoissa</label></td>
+                  <td><input type="checkbox" id="muu" name="muu" value="muu"></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="lisat">Lisätietoja:</label></td>
+            <td><textarea id="lisat" name="lisat" rows="10"  placeholder="Vapaat kommentit"></textarea></td>
+            <!-- Note to self- Textarea pitää sulkea, muuten se "näyttää koodin läpi"-->
+          </tr>
+        </table>
+        <br>
+        <input class="submit" type="submit" value="Ilmoittaudu">
+      </form>
+    </fiendset>
+
+  </section>
+
+  </main>
+
+<footer>
+  <h3>© Iina Hakala</h3>
+</footer>
+
+</body>
+</html>

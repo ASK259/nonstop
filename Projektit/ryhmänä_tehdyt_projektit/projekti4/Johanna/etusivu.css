@@ -1,0 +1,128 @@
+
+
+body, html
+{
+  height: 100%;
+  margin: 0;
+  line-height: 4em;
+  scroll-behavior: smooth;
+  background-color: cadetblue;
+}
+
+header
+{
+background-color: #DEB887;
+}
+
+div.header img
+{
+  float: left;
+  width: 100px;
+  height: 100px;
+}
+
+header
+{
+  border: 7px solid cadetblue;
+  border-style: solid;
+}
+
+div.header h1
+{
+  position: relative;
+  top: 20px;
+  left: 10px;
+  font-family: 'Satisfy', cursive;
+  font-size: 60px;
+  text-decoration-line: underline;
+}
+
+div.linkit
+{
+  font-family: 'Satisfy', cursive;
+  font-size: 25px;
+}
+
+ul
+{
+  text-align: right;
+  list-style: none;
+  margin-top: -35px;
+}
+
+ul li
+{
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px
+}
+
+.pic1, .pic2, .pic3
+{
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.pic1
+{
+  background-image: url(Kuvat/pic1.jpg);
+  min-height: 100%;
+}
+
+div.pic2
+{
+  background-image: url(Kuvat/pic2.jpg);
+  min-height: 100%;
+}
+
+div.pic3
+{
+  background-image: url(Kuvat/pic3.jpg);
+  min-height: 100%;
+}
+
+h2
+{
+font-family: 'Satisfy', cursive;
+text-align: center;
+font-size: 30px;
+text-decoration: underline;
+}
+
+div.text h1
+{
+  font-family: 'Satisfy', cursive;
+  text-align: center;
+  font-size: 40px;
+  text-decoration: underline;
+}
+
+div.text h3
+{
+  font-family: 'Satisfy';
+  text-align: center;
+  font-size: 25px;
+}
+
+p
+{
+  background-color: white;
+  background-position: center;
+  text-align: center;
+  display: flex;
+  font-size: 18px;
+}
+footer h2
+{
+  font-family: 'Satisfy', cursive;
+  text-align: center;
+}
+
+footer p
+{
+  text-align: center;
+  font-family: 'Satisfy'
+}

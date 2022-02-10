@@ -1,0 +1,185 @@
+
+body {
+  color:black;
+}
+
+* {
+  margin:0;
+  padding:0;
+}
+
+/* Otsikkopalkin muotoilu */
+
+header {
+  height:10vh;
+  display:flex;
+  border-bottom: 2px solid navy;
+  position:fixed;
+  width:100%;
+  top:0;
+  background-color: white;
+}
+div.jarjestaja {
+  display: inline-block;
+  flex:1;
+  display: flex;
+  align-items: center;
+  padding-left: 19%;
+}
+
+h1 {
+  display: inline-block;
+  flex:1;
+  text-align: left;
+  /* font-family: 'Ephesis', cursive; */
+  font-family: p22-allyson-pro,sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+nav {
+  display: inline-block;
+  flex:1;
+  padding-right: 19%;
+}
+
+ul {
+  list-style-type: none;
+  text-align: center;
+  display:flex;
+  height:100%;
+  align-items: center;
+}
+
+li {
+  display:inline;
+  flex:1;
+}
+nav a  {
+  color:black;
+  margin-left: 10px;
+}
+
+/* Main muotoilu */
+
+main {
+  margin-top:15%;
+}
+
+section {
+  margin:50px 19%;
+}
+
+h2 {
+  margin:20px 0;
+  margin-bottom:19vh;
+  border-bottom: 1px solid navy;
+}
+
+div.teksti {
+  text-align: justify;
+}
+/* parallax */
+.kuva1, .kuva2, .kuva3 {
+  height:62vh;
+  margin:8% 18%;
+}
+
+div.kuva1 {
+  background-image: url(kuvat/kate.jpg);
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80%;
+}
+
+div.kuva2 {
+  background-image: url(kuvat/ruokasali.jpg);
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80%;
+}
+
+div.kuva3 {
+
+  background-image: url(kuvat/laituri.jpg);
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80%;
+}
+/* Footer muotoilu */
+
+footer {
+  height: 7vh;
+  display:flex;
+  align-items: center;
+  border-top:2px solid navy;
+  margin-top:15vh;
+
+}
+
+h3 {
+  display: inline-block;
+  flex:1;
+  text-align: center;
+}
+
+/* Lomakkeen muotoilut*/
+
+fieldset {
+  padding:5%;
+}
+
+legend {
+
+}
+
+form {
+}
+
+table {
+  width:100%;
+}
+
+td {
+  width:50%;
+  border-bottom:1px solid black;
+  padding:10px;
+}
+
+
+input {
+  width:98%
+}
+input.submit {
+  width:80px;
+}
+
+textarea {
+  width:100%;
+}
+
+
+
+/* Media queryt */
+
+@media only screen and (max-width:514px) {
+
+  div.jarjestaja {
+    padding-left:5%;
+  }
+
+  nav {
+    padding:10px;
+  }
+
+  .kuva1, .kuva2, .kuva3 {
+    max-height:60vh;
+    margin:0, 5%;
+  }
+
+}

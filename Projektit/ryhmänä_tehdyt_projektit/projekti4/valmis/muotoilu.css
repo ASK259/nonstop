@@ -1,0 +1,355 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Responsiivisuus toimii käytetyillä yksiköillä: prosentit %, viewport width vw ja viewport height vh.
+En tiedä mitä tapahtuu mikäli käyttää eri yksiköitä.*/
+
+/* Rungon muotoilut  */
+body, html, main {
+  height: 100%;
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1vw;
+  color: white;
+  background: #191970;
+  color: white;
+  background: #191970;
+}
+
+/* Otsikko alue */
+header {
+  background: #778899;
+  color: #191970;
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 2vw;
+  padding: 0.5vw;
+  margin: 0.2%;
+  border-radius: 1vw;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+/* Pääotsikko */
+#Potsikko {
+  width: 33.33%;
+  padding: 0 0 0 5.5vw;
+}
+
+/* Asettulun vuoksi */
+#vali {
+  width: 33.33%;
+}
+
+/* Navigaatio alue */
+.navi {
+  margin: 2vw 0.1vw;
+  list-style-type: none;
+  }
+
+/* Sivulinkkien muotoilu  */
+.navi, a:link {
+  display: flex;               /* a:hover MUST come after a:link and a:visited */
+  color: black;              /* a:active MUST come after a:hover */
+  padding: 1vh 1.5vw;
+  text-decoration: none;
+  }
+
+ a:visited {
+  color: white;
+  }
+
+ a:hover {
+  color: #c2c2d2;
+  }
+
+ a.active {
+    color: #DCDCDC;
+  }
+
+
+
+/* Kuvien reunojen pyöristys */
+img {
+  border-radius: 10px;
+}
+
+/* Tarkentavan otsikon viereisen kuvan muotoilut */
+.kuva-1 {
+  float: right;
+  display: flex;
+  height: 20%;
+  width: 35%;
+  margin: 0.1vh 5vw 0 0;
+
+}
+
+/* Tarkentavan otsikon asettelu */
+.otsikko {
+  margin: 10% 5% 2% 6.6%;
+}
+
+/* Teksti ennen parallax:a */
+.teksti-1{
+  margin: 20% 10% 5% 7%;
+  position: relative;
+}
+
+/* Parallax efektin luonti  */
+.tausta-1, .tausta-2, .tausta-3 {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Parallax 1. */
+.tausta-1 {
+    background-image: url("2kuva.jpg");
+    min-height: 45%;
+    min-width: 100%;
+}
+
+/* Parallax 1. teksti */
+#t-1t {
+  position: absolute;
+  top: 10%;
+  margin: 0 0 0 5%;
+  width: 33.33%;
+  text-align: left;
+  font-size: 1vw;
+}
+
+/*  Tekstialue parallax 1. ja 2. välissä */
+.teksti-2 {
+  margin: 5% 10% 5% 7%;
+}
+
+/* Parallax 2. */
+.tausta-2 {
+  background-image: url("3kuva.jpg");
+  min-height: 40%;
+  min-width: 100%;
+}
+
+/* Parallax 2. teksti */
+#t-2t {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 33.33%;
+  text-align: center;
+  font-size: 1vw;
+}
+
+/* Tekstialue parallax 2. ja 3. välissä */
+.teksti-3 {
+  margin: 5% 10% 5% 10%;
+  display: flex;
+  flex-wrap: nowrap;
+ }
+
+/* hintatietojen muotoilu */
+.hinnat {
+  margin: auto;
+}
+
+/* Parallax 3. */
+ .tausta-3 {
+   background-image: url("4kuva.jpg");
+   min-height: 60%;
+   min-width: 100%;
+ }
+
+/* Parallax 3. teksti */
+ #t-3t {
+   position: absolute;
+   top: 10%;
+   left: 10%;
+   width: 33.33%;
+   text-align: center;
+   font-size: 1vw;
+ }
+
+/* Tekstialue ennen footer:a */
+ .teksti-4 {
+   margin: 5% 10% 5% 6%;
+ }
+
+/* Footer */
+footer {
+   display: flex;
+   flex-wrap: nowrap;
+   background: black;
+   color: #DCDCDC;
+ }
+
+/* Tekijät */
+.tekijat {
+   width: 30%;
+   list-style-type: none;
+   padding: 0 0 0 3.5%;
+ }
+
+/* Logo */
+.alakuva {
+  padding: 0.9% 5% 0 15%;
+  width: 30%;
+ }
+
+/* Sivustolinkit */
+.linkkeja {
+    width: 40%;
+    list-style-type: none;
+    padding: 0 0 0 9%;
+ }
+
+.linkkeja a:link {
+  display: flex;
+  float: left;
+  color: #4169e1;
+  padding: 1vh 1.5vw;
+  text-decoration: none;
+  }
+
+ a:visited {
+  color: white;
+  }
+
+ a:hover {
+  color: #696969;
+  }
+
+ a.active {
+    color: #191970;
+    color: #DCDCDC;
+  }
+/* Responsiivisuus. Responsiivi suutta olen säätänyt Firefox:n kehittäjätyökalujen mukaan. */
+@media only screen and (max-width: 600px) {
+  body, html, main {
+    font-size: 2.5vw;
+  }
+
+  #Potsikko {
+    width: 33.33%;
+    padding: 0.9vh 0 0 5.5vw;
+  }
+
+  .tausta-1, .tausta-2, .tausta-3 {
+    background-attachment: scroll;
+  }
+
+  .tausta-3 {
+  background-image: url("4kuva-r4.jpg");
+  }
+
+  #t-1t, #t-2t {
+    font-size: 2.5vw;
+  }
+
+  #t-3t {
+    font-size: 2.5vw;
+    top: 50%;
+    left: 35%;
+  }
+  .alakuva {
+    padding: 10% 4% 0 4%;
+   }
+
+  .tekijat {
+     list-style-type: none;
+     padding: 7.5% 0 0 7.5%;
+   }
+}
+
+@media only screen and (min-width: 600px) {
+  body, html, main {
+    font-size: 2vw;
+  }
+
+  .tausta-1, .tausta-2, .tausta-3 {
+    background-attachment: fixed;
+  }
+
+  .tausta-1 {
+      min-height: 50%;
+  }
+
+  .tausta-3 {
+  background-image: url("4kuva-r4.jpg");
+  }
+
+  .alakuva {
+    padding: 0.9% 4% 0 4%;
+   }
+
+  #t-1t, #t-2t, #t-3t {
+    font-size: 2vw;
+  }
+
+  #t-3t {
+    top: 1.5%;
+    left: 1.5%;
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  body, html, main {
+    font-size: 2vw;
+  }
+
+  .tausta-1, .tausta-2, .tausta-3 {
+    background-attachment: fixed;
+  }
+
+  #t-1t, #t-2t, #t-3t {
+    font-size: 1.5vw;
+  }
+
+  #t-3t {
+    top: 5%;
+    left: 3%;
+  }
+
+  .alakuva {
+    padding: 0.9% 3% 0 10%;
+    width: 30%;
+   }
+}
+
+@media only screen and (min-width: 992px) {
+  body, html, main {
+    font-size: 1.5vw;
+  }
+
+  .tausta-3 {
+    background-image: url("4kuva.jpg");
+  }
+
+  .alakuva {
+    padding: 0.9% 5% 0 15%;
+    width: 30%;
+   }
+
+  #t-1t, #t-2t, #t-3t {
+    font-size: 1.5vw;
+  }
+
+  #t-3t {
+    left: 6%;
+     text-align: center;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+
+  body, html, main {
+    font-size: 1vw;
+  }
+
+  #t-1t, #t-2t, #t-3t {
+    font-size: 1vw;
+  }
+}

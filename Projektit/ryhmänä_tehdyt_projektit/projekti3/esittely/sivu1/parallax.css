@@ -1,0 +1,222 @@
+/* https://paletton.com/#uid=10u0u0kiXpk8JEzdUunn7kWsxfB Linkki väreihin */
+* {
+  margin: 0;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.8em;
+    scroll-behavior: smooth;
+    color: #7C400E;
+    background-color: #7C400E;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-family: 'Zhi Mang Xing', cursive;
+  font-size: 1.5em;
+  letter-spacing: 0.31em;
+}
+
+h3 {
+  font-size: 1.17em;
+}
+/* Parallax efektin määrittely*/
+.sivu-1, .sivu-2, .sivu-3, .sivu-4, .sivu-5 {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.sivu-1 {
+ background-image: url("3-1.jpg");
+ min-height: 100%;
+}
+
+.sivu-2 {
+  background-image: url("kuva1.jpg");
+  min-height: 100%;
+}
+
+.sivu-3 {
+  background-image: url("kuva3.jpg");
+  min-height: 100%;
+}
+
+.sivu-4 {
+  background-image: url("joh2-2.jpg");
+  min-height: 100%;
+}
+
+.sivu-5 {
+  background-image: url("3-1.jpg");
+  min-height: 100%;
+}
+/*Ensimmäisen kuvan otsikon muotoilu*/
+.etusivupaketti {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+}
+
+.etusivupaketti h1.source {
+  display: inline;
+  background-color: #FFD9BA;
+  padding: 1em;
+}
+
+.etusivupaketti2 {
+  position: absolute;
+  top: 60%;
+  width: 100%;
+  text-align: center;
+}
+
+.etusivupaketti2 span.source2{
+  display: inline;
+  background: #FFD9BA;
+  font-size: 8pt;
+  padding: 0.31em;
+}
+
+/* Muiden kuvien otsikoiden muotoilu*/
+.otsikkopaketti {
+  height: 5%;
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  background: #FFD9BA;
+  opacity: 0.6;
+}
+
+.otsikkopaketti span.source3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8pt;
+}
+
+/*Tekstiosuuden muotoilut*/
+.teksti {
+  position: relative;
+  margin-top: 100%;
+  width: 100%;
+  text-align: center;
+  background: #FFD9BA;
+}
+
+/*Viimeisen kuvan tekijöiden sijainnin muotoilu*/
+.tekijät {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+}
+
+.tekijät h2.source4 {
+  display: inline-flex;
+  background-color: #FFD9BA;
+  padding: 0.94em;
+}
+
+.tekijät2 {
+  position: absolute;
+  top: 70%;
+  width: 100%;
+  text-align: center;
+}
+
+.tekijät2 span.source5 {
+  display: inline-flex;
+  background: #FFD9BA;
+  font-size: 8pt;
+  padding: 0.25em;
+}
+
+/* Responsiivisuus katsottu Googlen DEvTools "palkikka"*/
+
+@media only screen and (max-device-width: 992px) {
+  .sivu-1, .sivu-2, .sivu-3, .sivu-4, .sivu-5  {
+    background-attachment: scroll;
+  }
+
+  .teksti {
+    position: relative;
+    margin-top: 100%;
+    width: 100%;
+    text-align: center;
+    background: #FFD9BA;
+  }
+
+  .tekijät {
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .tekijät h2.source4 {
+    display: inline-flex;
+    background-color: #FFD9BA;
+    padding: 15px;
+  }
+
+  .tekijät2 {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .tekijät2 span.source5 {
+    display: inline-flex;
+    background: #FFD9BA;
+    font-size: 8pt;
+  }
+}
+
+@media only screen and (max-device-width: 600px) {
+
+  .sivu-1, .sivu-2, .sivu-3, .sivu-4, .sivu-5  {
+    background-attachment: scroll;
+  }
+
+  .teksti {
+    margin-bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: #FFD9BA;
+  }
+
+  .tekijät {
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .tekijät h2.source4 {
+    display: inline-flex;
+    background-color: #FFD9BA;
+    padding: 0.625em;
+  }
+
+  .tekijät2 {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .tekijät2 span.source5 {
+    display: inline-flex;
+    background: #FFD9BA;
+    font-size: 8pt;
+  }
+}

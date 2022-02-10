@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="laskin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nelilaskin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="nelilaskin.css">
+    <script src="koodi.js" charset="utf-8"></script>
+</head>
+<body>
+    <header>
+        <h1>Nelilaskin</h1>
+    </header>
+    <main>
+        <table id="laskin">
+            <tr>
+                <td style="background-color: #D3D3D3;"colspan="4"><p id="tulos"></p></td>
+            </tr>
+            <tr>
+                <td><button id="tyhjenna" type="button" onclick="tyhjennys()">AC</button></td>
+                <td><button id="korjaus" type="button" onclick=kumitus()>C</button></td>
+                <td><button id="prosentti" type="button" onclick="lisaa('%')">%</button></td>
+                <td><button id="jaa" type="button" onclick="lisaa('/')">/</button></td>
+            </tr>
+            <tr>
+                <td><button id="7" type="button" value="7" onclick="lisaa('7')">7</button></td>
+                <td><button id="8" type="button" value="8" onclick="lisaa('8')">8</button></td>
+                <td><button id="9" type="button" value="9" onclick="lisaa('9')">9</button></td>
+                <td><button id="kerro" type="button" onclick="lisaa('*')">*</button></td>
+            </tr>
+            <tr>
+                <td><button id="4" type="button" value="4" onclick="lisaa('4')">4</button></td>
+                <td><button id="5" type="button" value="5" onclick="lisaa('5')">5</button></td>
+                <td><button id="6" type="button" value="6" onclick="lisaa('6')">6</button></td>
+                <td><button id="miinus" type="button" onclick="lisaa('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button id="1" type="button" onclick="lisaa('1')">1</button></td>
+                <td><button id="2" type="button" onclick="lisaa('2')">2</button></td>
+                <td><button id="3" type="button" onclick="lisaa('3')">3</button></td>
+                <td><button id="plus" type="button" onclick="lisaa('+')">+</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button style="width: 100%;" id="0" type="button" onclick="lisaa('0')">0</button></td>
+                <td><button id="pilkku" type="button" onclick="lisaa('.')">,</button></td>
+                <td><button id="on" type="button" onclick="laske()">=</button></td>
+            </tr>
+        </table>
+    </main>
+    <footer>
+        <div class="alapalkki">
+            <ul class="tekijat">
+                <li>Antti Kuusisto</li>
+                <li>Iina Hakala</li>
+                <li>Johanna Malin</li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>

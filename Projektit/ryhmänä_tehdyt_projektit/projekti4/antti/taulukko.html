@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ilmottautuminen</title>
+    <link rel="stylesheet" href="muotoilu.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1 id="Potsikko">Seminaari</h1>
+        <div id="vali">
+        </div>
+        <nav class="navi">
+          <li><a href="index.html">Etusivu</a></li>
+          <li><a class="active" href="taulukko.html">Ilmottautuminen</a></li>
+          <li><a href="index3.html">tyhjä</a></li>
+          <li><a href="index4.html">tyhjä</a></li>
+        </nav>
+      </header>
+      <section>
+        <form class="tiedot" action="index.html" method="post">
+          <div class="rivi-1">
+            <label for="etunimi" class="vasen-1">Etunimi:</label>
+            <input class="" type="text" id="enimi">
+            <label for="sukunimi" class="oikea-1">Sukunimi:</label>
+            <input class="" type="text" id="snimi">
+            </div>
+          <br>
+          <label for="osoite" class="rivi-2">Osoite:</label>
+          <input  type="text" id="osoite">
+          <label for="postinumero" class="rivi-2">Postinumero:</label>
+          <input type="number" id="ponumero">
+          <label for="postitoimipaikka" class="rivi-2" >Postitoimipaikka:</label>
+          <input type="text" id="ptpaikka">
+          <br>
+          <br>
+          <label for="puhelinnumero" class="vasen-2" >Puhelinnumero:</label>
+          <input class="" type="tel" id="pnumero" placeholder="000-000-0000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+          <label for="sahkoposti" class="oikea-2">Sähköposti:</label>
+          <input type="email" id="sposti">
+          <br>
+          <br>
+          <label for="tyonantaja" class="">Työnantaja:</label>
+          <input class="" type="text" id="t-antaja">
+          <label for="ammattinimike">Ammattinimike:</label>
+          <input type="text" id="a-nimike">
+          <br>
+          <br>
+          <div class="alue">
+            <div class="alue-1">
+              <label for="lippuvaihtoehto">Lippuvaihtoehto:</label>
+              <br>
+              <input type="radio" id="li1" name="lippu">
+              <label for="li1">Lippu 1</label>
+              <br>
+              <input type="radio" id="li2" name="lippu">
+              <label for="li2">Lippu 2</label>
+              <br>
+              <input type="radio" id="li3" name="lippu">
+              <label for="li3">Lippu 3</label>
+              <br>
+            </div>
+            <div class="alue-2">
+              <label for="pakettivaihtoehto">Pakettivaihtoehto:</label>
+              <br>
+              <input type="radio" id="pa1" name="paketti">
+              <label for="pa1">Paketti 1</label>
+              <br>
+              <input type="radio" id="pa2" name="paketti">
+              <label for="pa2">Paketti 2</label>
+              <br>
+              <input type="radio" id="pa3" name="paketti">
+              <label for="pa3">Paketti 3</label>
+              <br>
+            </div>
+            <div class="alue-3">
+              <label for="erikoisruokavalio">Erikoisruokavalio:</label>
+              <br>
+              <input type="checkbox" id="rvalio1" name="ruoka1">
+              <label for="ruoka1">Jotain</label>
+              <br>
+              <input type="checkbox" id="rvalio2" name="ruoka2">
+              <label for="ruoka2">Jotain 2</label>
+              <br>
+              <input type="checkbox" id="rvalio3" name="ruoka3">
+              <label for="ruoka3">Jotain 3</label>
+              <br>
+              <input type="checkbox" id="rvalio4" name="ruoka4">
+              <label for="ruoka4">Jotain 4</label>
+            </div>
+          </div>
+          <br>
+          <label for="lisatiedot">Lisätiedot:</label>
+          <br>
+          <textarea name="lisatiedot" class="lisa" rows="8" cols="60"></textarea>
+        </form>
+      </section>
+        <footer class="alapalkki">
+          <ul class="tekijat">
+              <li>hfdatrrfdcytcyyc</li>
+              <li>hctycgutcyvyv</li>
+              <li>ccghgvycuhvvh</li>
+          </ul>
+          <div class="tayte"></div>
+          <div class="alakuva">
+            <img src="p4ap1.jpg" alt="kuva" style="max-width:100%;">
+          </div>
+          <div class="tayte"></div>
+          <ul class="linkkeja">
+            <li><a href="https://www.w3schools.com/">w3schools</a></li>
+            <li><a href="https://www.w3schools.com/">w3schools</a></li>
+            <li><a href="https://www.w3schools.com/">w3schools</a></li>
+            <li><a href="https://www.w3schools.com/">w3schools</a></li>
+          </ul>
+      </footer>
+    </main>
+  </body>
+</html>

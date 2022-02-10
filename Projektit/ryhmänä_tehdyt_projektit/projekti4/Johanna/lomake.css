@@ -1,0 +1,59 @@
+
+
+body
+{
+  margin: auto;
+  padding: 40px;
+  background-color: cadetblue;
+  text-align: center;
+  }
+
+div.etu
+{
+  text-emphasis-position: below;
+  font-family: 'Satisfy', cursive;
+  font-size: 18px;
+}
+
+div.boksi
+{
+  border: 7px solid #DEB887;
+  border-style: dotted;
+}
+
+
+input
+{
+    text-align: center;
+}
+
+table
+{
+  width:100%;
+  display: inline-block;
+    text-align: right;
+  }
+
+h2
+{
+  font-size: 2em;
+  font-family: 'Satisfy', cursive;
+}
+
+form
+{
+  font-style: italic;
+  margin-left: 40%;
+  margin-right: 40%;
+  width: 30%;
+}
+
+label
+{
+ display: inline-block;
+ text-align: left;
+ width: 85px;
+ padding-right: 20px;
+ word-spacing: 5px;
+ white-space: nowrap;
+}
