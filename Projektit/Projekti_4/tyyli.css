@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  background: #018DA1;
+  color: #015662;
+  height: 100%;
+  margin: 0;
+  font-size: 1vw;
+}
+
+#pohja {
+  margin: 5% 25% 0 25%;
+  text-align: center;
+}
+
+#toiminnot {
+  margin: 5% 25% 0 25%;
+  display: flex;
+  flex-direction: row;
+  /*align-items: center;*/
+}
+
+#as {
+  height: 10%;
+  width: 80%;
+}
+
+#lis {
+  margin: 0 1% 0 1%;
+  width: 25%;
+  background: #2FB5C8;
+  border-color: transparent;
+}
+
+h1 {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  text-align: center;
+}
+
+li {
+  height: 5%;
+  background: #2FB5C8;
+  color: #015662;
+  align-items: flex-end;
+  margin: 1% 0 1% 0;
+  text-align: center;
+  border-radius: 1vh;
+  /*/padding: 1% 0 0 0;*/
+}
+
+.listaTyyli2 {
+  height: 5%;
+  background: #01707F;
+  color: white;
+}
+
+#pois {
+  float: right;
+  margin: 1% 1% 0 0;
+  border-color: transparent;
+  background: #018DA1;
+  border-radius: 50%;
+}
+
+.piilota {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  body, html {
+    font-size: 4vw;
+  }
+}
+
+@media only screen and (min-width: 600px) { /* alypuhelin pystyasennossa muotoilut */
+  body, html {
+    font-size: 3vw;
+  }
+}
+@media only screen and (min-width: 768px) { /* tabletti muotoilut*/
+  body, html {
+    font-size: 2vw;
+  }
+}

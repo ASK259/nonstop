@@ -1,35 +1,56 @@
-var teh = document.getElementById("as");
-let lOT = document.getElementsByTagName("li");
-let eLT = document.querySelector("li");
-let liPa = document.getElementById("lisaa");
-let liEnt = document.getElementById("askare");
-console.log(teh);
+var tehtNi = document.getElementById("as"); // tehtävän nimi
+var lOT = document.getElementsByTagName("li");
+var eLT = document.querySelector("ul");
+var liPa = document.getElementById("lis"); // Lisäys näppäin
+var liEnt = document.getElementById("askare");
+var list = document.getElementById("lista");
+var muok = document.querySelector("li");
 
-function aPi() {
-  return teh.value.length;
+liPa.addEventListener("click", lisPainJalk);
+
+function tehtPi() {
+  return tehtNi.value.length;
 }
 
-
-function aPituus() {
-
+function listPi() {
+  return lOT.length;
 }
 
-function luoLi() {
-  let lLi = document.createElement("li");
-  lLS.appendChild(document.createTextNode(teh.value));
-  lLi.appendChild(lLS);
-  teh.value = "";
-}
-
-function lLPJ() {
-  if (aPi()>0) {
-    luoLi();
+function lisPainJalk() {
+  if (tehtPi() > 0) {
+    luoList();
+  } else {
+    alert(`Kirjoita tehtävä kenttään!`);
   }
 }
 
 function lLEJ() {
-  if (aPi()>0 && event.which == 13) {
-    luoLi();
+  if (event.which == 13) {
+    if (tehtPi() < 1) {
+      alert(`Kirjoita tehtävä kenttään!`);
+    } else {
+      luoList();
+    }
   }
 }
-liPa.document.getElementById("lisaa").addEventListener("click", lLPJ());
+
+function luoList() {
+  var lLi = document.createElement("li");
+  console.log(tehtNi.value);
+  var lLS = document.createTextNode(tehtNi.value);
+  lLi.appendChild(lLS);
+  eLT.appendChild(lLi);
+  tehtNi.value = "";
+  function ekaVari() {
+   lLi.classList.toggle("listaTyyli2");
+  }
+  lLi.addEventListener("click",ekaVari);
+  var poNap = document.createElement("button");
+  poNap.appendChild(document.createTextNode("X"));
+  poNap.setAttribute("id", "pois");
+  lLi.appendChild(poNap);
+  poNap.addEventListener("click", poTeh);
+  function poTeh() {
+     lLi.classList.add("piilota");
+  }
+}

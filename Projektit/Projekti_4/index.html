@@ -4,16 +4,20 @@
     <meta charset="utf-8">
     <title>Muistilista</title>
     <link rel="stylesheet" href="tyyli.css">
-    <script src="koodi.js" charset="utf-8"></script>
+
   </head>
   <body>
-      <h1>Tee seuraavat asiat</h1>
-      <section>
+      <h1>Tehtävälista</h1>
+      <section id="pohja">
         <p>Kirjoita tekstikenttään lisättävä askare</p>
         <p>Klikkaa tehtävää merkitäksesi sen tehdyksi</p>
         <p>X-painikkeesta poistat tehtävän</p>
-        <input type="text" id="as" name="askare" value="">
-        <button type="button" id="lis" name="button">Lisää</button>
+        <section id="toiminnot">
+          <input type="text" id="as" name="askare" onkeypress="lLEJ(event)" value="" placeholder="Tehtävä askare">
+          <button type="button" id="lis" name="button">Lisää</button>
+        </section>
+        <ul id="lista"></ul>
       </section>
+      <script type="text/javascript" src="koodi.js"></script>
   </body>
 </html>
