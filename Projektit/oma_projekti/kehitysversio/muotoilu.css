@@ -1,0 +1,275 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Rungon muotoilut  */
+body, html, main {
+  height: 100%;
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.25vw;
+  color: white;
+  background: #191970;
+  color: white;
+  background: #191970;
+}
+
+header { /* otsikko alueen muotoilut */
+  background: #778899;
+  color: #191970;
+  font-size: 1.5vw;
+  margin: 0.2%;
+  border-radius: 1vw;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+nav { /* navigointi alueen muotoilut */
+  width: 33.33%;
+  text-align: center;
+  padding: 2% 0 0 0;
+}
+
+.navi, a:link {           /* a:hover MUST come after a:link and a:visited */
+  color: black;              /* a:active MUST come after a:hover */
+  text-decoration: none;
+  }
+
+ a:visited {
+  color: white;
+  }
+
+ a:hover {
+  color: #c2c2d2;
+  }
+
+ a.active {
+    color: #DCDCDC;
+  }
+
+h1 { /* Sivuston otsikon muotoilut. Tehty suoraan elementtiin, koska h1 käytetään vain kerran sivulla */
+  width: 33.33%;
+}
+
+#teOt, #laOt { /* Sivu otsikon muotoilu */
+  text-align: center;
+}
+
+#tervehdys_te { /* etusivun yläosion muotoilu */
+  margin: 5% 20% 5% 20%;
+}
+
+#par1E, #par1L {  /* parallax efektin muodostaminen */
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#par1E {  /* etusivun parallax:n muotoilut */
+  background-image: url("pa1Ku.jpg");
+  height: 45%;
+  min-width: 100%;
+}
+
+#par1L {  /* laskuri sivun parallax:n muotoilut */
+  background-image: url("paLa.jpg");
+  height: 45%;
+  min-width: 100%;
+}
+
+#etu_tek1 { /* etusivun tekstiosion muotoilut */
+  margin: 5% 20% 5% 10%;
+  position: relative;
+  display: flex;
+}
+
+#etuKu1 { /* etusivun kuvan muotoilut */
+  float: right;
+  display: flex;
+  height: 15%;
+  width: 15%;
+  margin: 1% 5% 5% 5%;
+}
+
+#etuKu1 > img { /* etusivun kuvan reunojen pyöristys */
+  border-radius: 1vw;
+}
+
+footer { /* Footer alueen muotoilut */
+   display: flex;
+   flex-wrap: nowrap;
+   background: #778899;
+   color: #DCDCDC;
+   min-width: 100%;
+   bottom: 0;
+ }
+
+#ala_kuva { /* footerin täytekuvan alueen määrittely muotoilut */
+  width: 33.33%;
+  padding: 1% 0 1% 0;
+}
+
+#ala_kuva > img { /* footerin täytekuvan muotoilut */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  height: 30%;
+  border-radius: 1vw;
+}
+
+#tekija { /* tekijä alueen määrittely ja muotoilu */
+  width: 33.33%;
+  text-align: center;
+  padding: 2% 0 0 0;
+}
+
+#linkkeja { /* sivustolinkkejä alueen määrittely ja muotoilu */
+  width: 33.33%;
+  text-align: center;
+  list-style-type: none;
+}
+
+#lasAl { /* lomakkeelle varatun alueen muotoilua */
+  margin: 1% 1% 1% 1%;
+}
+
+#laskuri { /* lomakkeen alue muotoilua */
+  padding: 5% 25% 5% 25%;
+}
+
+.ri3Kpl { /* kolme paria sisältävän rivin muotoilu */
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 1% 0 1% 0;
+}
+
+.ri1, .ri2 { /*kolme paria sisältävän rivin sisällön muotoilu */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 16.66%;
+  padding: 0 1% 0 1%;
+}
+
+.ri2Kpl { /* kaksi paria sisältävän rivin muotoilu */
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 1% 0 1% 0;
+}
+
+.ri3, .ri4, .ri5 { /*kaksi paria sisältävän rivin sisällön muotoilu */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 25%;
+  padding: 0 1% 0 1%;
+}
+
+.nap { /* painike rivin muotoilu */
+  display: flex;
+  padding: 1% 5% 1% 5%;
+}
+
+#laske, #tyLo { /* painikkeiden sijoittelua */
+  margin: auto;
+}
+
+#tulostus { /* tulosalue flexbox moodiin */
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+#syotTied, #haeTied, #poistaTied { /* laskettujen tietojen alueen muotoilu */
+  width: 33.33%;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) { /* alypuhelin pystyasennossa muotoilut */
+  body, html, main {
+    font-size: 3.5vw;
+  }
+
+  h1 {
+    font-size: 3vw;
+  }
+
+  nav {
+    font-size: 2.5vw;
+  }
+
+  #etuKu1 {
+    height: 30%;
+    width: 35%;
+    margin: 5% 0 0 10%;
+  }
+
+  #par1E, #par1L {
+    background-attachment: scroll;
+  }
+
+  #par1E {
+  height: 20%;
+  }
+
+  #par1L {
+  height: 20%;
+  }
+
+  footer {
+    font-size: 2.5vw;
+  }
+
+  .ri3Kpl, .ri2Kpl {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .ri1, .ri2, .ri3, .ri4, .ri5 {
+    /*display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;*/
+    align-items: center;
+    width: 80%;
+  }
+
+  #tulostus {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #syotTied, #haeTied, #poistaTied {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 600px) { /* alypuhelin vaaka-asennossa muotoilut */
+  body, html, main {
+    font-size: 1.35vw;
+  }
+}
+
+@media only screen and (min-width: 768px) { /* tabletti muotoilut*/
+  body, html, main {
+    font-size: 1.5vw;
+  }
+}
+
+@media only screen and (min-width: 992px) { /* isotabletti muotoilut */
+  body, html, main {
+    font-size: 1.5vw;
+  }
+}
+
+@media only screen and (min-width: 1200px) { /* pieni kannettava muotoilut */
+  body, html, main {
+    font-size: 1vw;
+  }
+}

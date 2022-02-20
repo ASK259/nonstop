@@ -1,3 +1,6 @@
+window.onload = function() {
+}
+
 function arvaa() {
   let lu = document.forms["arvaaL"]["luku1"].value;
   let lu2 = document.forms["arvaaL"]["luku2"].value;
@@ -10,8 +13,14 @@ function arvaa() {
   let lu9 = document.forms["arvaaL"]["luku9"].value;
   let lu10 = document.forms["arvaaL"]["luku10"].value;
   console.log(lu);
-  let ar =[];
+  let te = document.getElementsByTagName("input");
+  console.log(te);
+  let pi;
+  pi++;
+  let gRII = (min, max) => {min = Math.ceil(min);max = Math.floor(max);return Math.floor(Math.random() * (max - min + 1) + min)};
+  if (pi = 1) {
+      let va = gRII(1, 10);
+  }
+  console.log(ar);
   let yh = 3;
-  let pi = 0;
-  let va = 4;
 }

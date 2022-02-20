@@ -1,0 +1,103 @@
+<!DOCTYPE html> <!-- tyyppimääritys Html5 -->
+<html lang="fi"> <!-- sivun kielen kertominen selaimelle -->
+  <head>
+    <meta charset="utf-8"> <!-- merkkikoodauksen määrittely -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- responsiivisuuden ilmoitus selaimelle -->
+    <meta name="description" content="Vaihdevälitys laskuri"> <!-- kertoo hakukoneelle mitä sivusto sisältää -->
+    <meta name="keywords" content="vaihdevälitysten laskeminen"> <!-- avainsanoja hakukoneelle -->
+    <meta name="author" content="Antti Kuusisto"> <!-- tekijä -->
+    <link rel="stylesheet" href="muotoilu.css"> <!-- linkki CSS - tiedostoon -->
+    <script src="koodaus.js" charset="utf-8"></script> <!-- linkki JavaScript - tiedostoon-->
+    <title>Vaihdevälitysten laskuri</title> <!-- Välilehdessä näkyvä otsikko -->
+  </head>
+  <body>
+    <main>
+      <header> <!-- Otsikkoalue -->
+        <nav>
+          <a href="index.html">Etusivu</a> <!-- Linkki etusivulle -->
+        </nav>
+        <h1>Vaihteistonvälityksistä</h1> <!-- Sivuston otsikko -->
+        <nav>
+          <a class="active" href="laskuri.html">Laskuri</a> <!-- Linkki laskuri sivulle -->
+        </nav>
+      </header>
+      <h2 id="laOt">Vaihteistonvälitys laskuri</h2> <!-- Sivu otsikko -->
+      <section id="lasAl"> <!-- alue lomakkeelle -->
+        <form id="laskuri"  name="laskuri" method="post" action="laskuri.html" autocomplete="on">
+          <div class="ri3Kpl"> <!-- lomakkeen 1. rivi -->
+            <label class="ri1" for="merkki">Merkki</label>
+            <input type="text" class="ri1" id="merkki" name="merkki" value="" placeholder="merkki" required>
+            <label class="ri1" for="malli">Malli</label>
+            <input type="text" class="ri1" id="malli" name="malli" value="" placeholder="malli" required>
+            <label class="ri1" for="tunnus">Tunnus</label>
+            <input type="text" class="ri1" id="tunnus" name="tunnus" value="" placeholder="rek.nro tai muu" required>
+          </div>
+          <div class="ri3Kpl"> <!-- lomakkeen 2. rivi -->
+            <label class="ri2" for="rpmC">Moottorin kierrosluku</label>
+            <input type="text" class="ri2" id="rpmC" name="rpmC" value="" placeholder="Kasvuväli" required>
+            <label class="ri2" for="rpmS">Kierrosten alku</label>
+            <input type="text" class="ri2" id="rpmS" name="rpmS" value="" placeholder="1000 - 9999" required>
+            <label class="ri2" for="rpmE">Kierrosten loppu</label>
+            <input type="text" class="ri2" id="rpmE" name="rpmE" value="" placeholder="1000 - 9999" required>
+          </div>
+          <div class="ri2Kpl"> <!-- lomakkeen 3. rivi -->
+            <label class="ri3" for="gear">Vaihde</label>
+            <input type="text" class="ri3" id="gear" name="gear" value="" placeholder="vaihde" required>
+            <label class="ri3" for="tDia">Renkaan halkaisia</label>
+            <input type="text" class="ri3" id="tDia" name="tDia" value="" placeholder="millimetreinä" required>
+          </div>
+          <div class="ri2Kpl"> <!-- lomakkeen 4. rivi -->
+            <label class="ri4" for="aks1">1. Akseli</label>
+            <input type="text" class="ri4" id="aks1" name="aks1" value="" placeholder="hammasluku" required>
+            <label class="ri4" for="aks2">2. Akseli</label>
+            <input type="text" class="ri4" id="aks2" name="aks2" value="" placeholder="hammasluku" required>
+          </div>
+          <div class="ri2Kpl"> <!-- lomakkeen 5. rivi -->
+            <label class="ri5" for="pinion">Pieni lautaspyörä</label>
+            <input type="text" class="ri5" id="pinion" name="pinion" value="" placeholder="hammasluku" required>
+            <label class="ri5" for="crownW">Iso lautaspyörä</label>
+            <input type="text" class="ri5" id="crownW" name="crownW" value="" placeholder="hammasluku" required>
+          </div>
+          <div class="nap"> <!-- lomakkeen painike rivi -->
+            <button type="button" id="laske" onclick="validateForm()" ondblclick="tuoTie()" name="button">Laske</button>
+            <input type="reset" id="tyLo"name="" value="Tyhjennä">
+          </div>
+        </form>
+      </section>
+      <section id="par1L"></section> <!-- parallax alue -->
+      <section id="tulostus"> <!-- osio tuloksille ja toiminnoille -->
+        <article id="syotTied"> <!-- alue lomakkeesta lasketuille tiedoille -->
+          <h3>Tulos syötetyistä arvoista</h3>
+          <label for="">Poista näytöltä</label>
+          <button type="button" id="poNa" onclick="Pona()" name="button">Poista</button>
+          <p id="tuSyAr"></p> <!-- alue, jolle tulostetaan lasketut tiedot -->
+        </article>
+        <article id="haeTied"> <!-- alue tallennettujen tietojen katsomiseen -->
+          <h3>Hae laskettuja tuloksia</h3>
+          <label for="haTie">Hae tuloksia</label>
+          <input type="text" id="haTie" name="haTie" value="">
+          <button type="button" id="laTu" onclick="valTu()" name="button">Hae</button>
+          <button type="button" id="tyTu" onclick="tyhTu()" name="button">Tyhjennä</button>
+          <p id="haTu"></p> <!-- alue, jolle tulostetaan haetut tiedot -->
+        </article>
+        <article id="poistaTied"> <!-- alue tallennettujen tietojen poistamiselle -->
+          <h3>Poista laskettuja tuloksia</h3>
+          <label for="poTie">Poista tuloksia</label>
+          <input type="text" id="poTie" name="poTie" value="">
+          <button type="button" id="poista" onclick="poTu()" name="button">Poista</button>
+        </article>
+      </section>
+      <footer> <!-- footer alue -->
+        <div id="ala_kuva">
+          <img src="foKu.jpg" alt="Vetonivel" style="max-width:100%;height:auto;">
+        </div>
+        <div id="tekija"> <!-- tekijä -->
+          <p>Antti Kuusisto</p>
+        </div>
+        <ul id="linkkeja"> <!-- aiheeseen liittyviä sivusto linkkejä -->
+          <li><a href="https://fi.wikipedia.org/wiki/Vaihteisto">Vaihteistoista</a></li>
+        </ul>
+      </footer>
+    </main>
+  </body>
+</html>

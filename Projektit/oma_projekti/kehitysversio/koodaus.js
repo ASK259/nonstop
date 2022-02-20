@@ -109,6 +109,9 @@ function valTu() { // hakee tiedot localStorage:sta
     let ha = window.localStorage.getItem(key); // haetaan objekti localStorage:sta
     let ti = JSON.parse(ha); // muutetaan JavaScript muotoon
     let te = ti.gears.slice();
+    let tu = [];
+    console.log(te);
+    console.log(tu);
     if (ti.gears.length > 1) {
       let ge = window.prompt(`Valitse seuraavista vaihteista ${te} se minkä tiedot haluat katsoa`, `kirjoita vaihteen numero`);
       console.log(ti.gears[ge]);
